@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>運ゲー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <h1>Second Stage</h1>
+  <div id="contents">
+    <p>75以上を出してください</p>
+
+    <div class="outline">
+      <p class="roulette" id="roulette">1</p>
+      <input type="button" value="スタート" id="start" onclick="start();"/>
+      <input type="button" value="ストップ" style="display: none" id="stop" onclick="stop();"/>
+    </div>
+
+    <a href="first.html" id="first_link"></a>
+    <a href="last.html" id="last_link"></a>
+  </div>
+  <!-- js -->
+  <script>
+    var roulette;
+
+    function start() {
+      roulette = setInterval(function() {
+        var idx = Math.floor( Math.random() * 99 ) + 1;
+        document.getElementById("roulette").innerHTML = idx;
+      }, 100);
+      document.getElementById("start").remove();
+      document.getElementById("stop").style.display = '';
+    };
+
+    function stop() {
+      if(roulette) {
+        clearInterval(roulette);
+        var num = Number(document.getElementById("roulette").textContent);
+
+        if(num >= 75) {
+          alert('クリア！次が最終ステージです。');
+          window.location.href = 'last.html';
+        } else {
+          alert('残念。最初からでーす。');
+          window.location.href = 'first.html';
+        }
+      };
+    };
+  </script>
+</body>
+</html>
