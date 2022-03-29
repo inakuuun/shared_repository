@@ -11,6 +11,7 @@
   <div id="contents">
     <p>下の4つのボタンの中に当たりが一つあります。どれか一つ選んで押してみてくださいー</p>
 
+    <!-- onclickを書くことで要素をクリックした時にjsが呼び出せます -->
     <div onclick="javascript:clickEvent(event);" class="btn-square-pop" id="btn1">1</div>
     <div onclick="javascript:clickEvent(event);" class="btn-square-pop" id="btn2">2</div>
     <div onclick="javascript:clickEvent(event);" class="btn-square-pop" id="btn3">3</div>
@@ -18,14 +19,23 @@
   </div>
   <!-- js -->
   <script>
+    // クリックされた時の処理を関数としてまとめてます
     function clickEvent(e) {
+      // 1~4って表示されてるdivのid名を配列に入れてます
       var ids_array = ['btn1', 'btn2', 'btn3', 'btn4'];
+      // 4つの要素のidをランダムに1つ取り出して変数に入れてます
+      // これを画面表示時(この関数の外)に書いちゃうと1~4クリックしたら必ず正解できるんですけど、
+      // クリック時に毎回ランダムに設定することでガチの1/4を実現してます。
       var hit_btn_id = ids_array[Math.floor(Math.random() * ids_array.length)];
 
+　　　　// もしクリックしたdivのid名がhit_btn_idの値(ランダムで選ばれたid名)と一致すれば
       if(e.target.id == hit_btn_id){
+        // 正解のアラート
         alert('正解。次のステージへ。');
+        // セカンドステージのhtmlへ遷移
         window.location.href = 'second.html';
       } else {
+        // 不一致ならハズレのアラート
         alert('ハズレでーす。もう一度挑戦してね。');
       };
     };

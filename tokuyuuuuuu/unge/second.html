@@ -14,6 +14,7 @@
     <div class="outline">
       <p class="roulette" id="roulette">1</p>
       <input type="button" value="スタート" id="start" onclick="start();"/>
+      <!-- styleでdisplay: noneを入れてるので画面開いた時には表示されてないです -->
       <input type="button" value="ストップ" style="display: none" id="stop" onclick="stop();"/>
     </div>
 
@@ -23,26 +24,44 @@
   <!-- js -->
   <script>
     var roulette;
-
+    
+    // スタートボタン押した時の処理
     function start() {
+      // setIntervalはタイマー処理できるもので、言い換えると「一定時間ごとに特定の処理を繰り返す」ことができるものです
+      // 参考サイト　https://techacademy.jp/magazine/5537
       roulette = setInterval(function() {
+        // idxには1~100の数字をランダムに入れてます
         var idx = Math.floor( Math.random() * 99 ) + 1;
+        // idがrouletteの要素(pタグ)の表示文字をidxの値に変更します
         document.getElementById("roulette").innerHTML = idx;
+        // 100というのは難病ごとに処理を繰り返すかの設定です
+        // 今は100ミリ秒後=0.1秒ごとにしてますが、1000にかえると秒ごとに数字が変わります
       }, 100);
+      // スタートボタンを複数回押させたくないので、1回スタートボタンを押したら画面上から消してます
       document.getElementById("start").remove();
+      // スタートボタンを消す代わりに初めに隠しておいたストップボタンを表示します
       document.getElementById("stop").style.display = '';
     };
 
+    // ストップボタンを押した時の処理
     function stop() {
       if(roulette) {
+        // clearIntervalはスタートボタン押した時に繰り返してるsetIntervalを止める記述です
+        // 参考サイト　http://www.htmq.com/js/clearinterval.shtml
         clearInterval(roulette);
+        // numの中にストップした時に表示されている数字を入れてます
         var num = Number(document.getElementById("roulette").textContent);
 
+        // もしnumの値が75以上であれば
         if(num >= 75) {
+          // クリアのアラート
           alert('クリア！次が最終ステージです。');
+          // ラストステージのhtmlへ遷移
           window.location.href = 'last.html';
         } else {
+          // 残念のアラート
           alert('残念。最初からでーす。');
+          // もう一回ファーストステージに戻す
           window.location.href = 'first.html';
         }
       };
