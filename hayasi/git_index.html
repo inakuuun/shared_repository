@@ -25,8 +25,9 @@
         ]
         const draw = () => {
             const key = Math.floor(Math.random()*results.length);            
-            const deru = document.getElementById("deru");
-            deru.textContent = results[key];
+            const deru = document.getElementById("deru");//classnameは取れない。
+            //deru.textContent = results[key];
+            alert(results[key]);
         }
     </script>
 </body>
