@@ -1,0 +1,19 @@
+header {
+    text-align: center;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.btn {
+    font-size: 25px;
+    margin: 20px 0;
+}
+
+#deru {
+    width: 500px;
+    font-size: 30px;
+    border: 3px solid burlywood;
+    margin: 0 auto;
+}
