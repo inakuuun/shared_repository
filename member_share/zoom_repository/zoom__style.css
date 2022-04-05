@@ -1,0 +1,38 @@
+header {
+    text-align: center;
+}
+
+.title {
+    font-size: 33px;
+    border: 2px solid aquamarine;
+    width: 645px;
+    margin: 0 auto;
+}
+
+.sub-title {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.img-style {
+    margin: 0 auto;
+    width: 35%;
+    padding-top: 80px;
+}
+
+.thumbnail {
+    width: 100%;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+p {
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+span {
+    color: red;
+}
