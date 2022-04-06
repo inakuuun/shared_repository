@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>電卓/javascript</title>
+</head>
+<body>
+    <form name="dentaku">
+        <table>
+            <tr>
+                <td colspan="4"><!--colspan属性・・・横方向にセルを結合させる  rowspan属性・・・縦方向にセルを結合させる-->
+                    <input type="text" class="display" name="display" value="" disabled><!--「input」タグで「type=”text”」にdisabled属性を付与した場合、入力項目が非活性となり、文字入力が出来ない状態となります。-->
+                </td><!--displayここ-->
+            </tr>
+
+
+            <tr>
+                <td><input type="button" value="7" onclick="get_calc(this)"></td>
+                <td><input type="button" value="8" onclick="get_calc(this)"></td>
+                <td><input type="button" value="9" onclick="get_calc(this)"></td>
+                <td><input type="button" value="÷" class="operator" name="div_btn" onclick="get_calc(this)"></td>
+            </tr><!--上から一段目(7~9 ÷)-->
+
+
+            <tr>
+                <td><input type="button" value="4" onclick="get_calc(this)"></td>
+                <td><input type="button" value="5" onclick="get_calc(this)"></td>
+                <td><input type="button" value="6" onclick="get_calc(this)"></td>
+                <td><input type="button" value="×" class="operator" name="multi_btn" onclick="get_calc(this)"></td>
+            </tr><!--上から二段目(4~6 ×)-->
+
+
+            <tr>
+                <td><input type="button" value="1" onclick="get_calc(this)"></td>
+                <td><input type="button" value="2" onclick="get_calc(this)"></td>
+                <td><input type="button" value="3" onclick="get_calc(this)"></td>
+                <td><input type="button" value="-" class="operator" onclick="get_calc(this)"></td>
+            </tr>
+
+
+            <tr>
+                <td><input type="button" value="0" onclick="get_calc(this)"></td>
+                <td><input type="button" value="C" onclick="get_calc(this)"></td>
+                <td><input type="button" value="=" class="equal" onclick="get_calc(this)"></td>
+                <td><input type="button" value="+" class="operator" onclick="get_calc(this)"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function get_calc(btn) {
+            if(btn.value === "=") {
+                document.dentaku.display.value = eval(document.dentaku.display.value);
+            } else if (btn.value == "C") {
+                document.dentaku.display.value = "";
+            } else {
+                if (btn.value === "×") {
+                 btn.value = "*";
+                }else if (btn.value == "÷"){
+                 btn.value = "/";
+                }
+                document.dentaku.display.value += btn.value;
+                document.dentaku.multi_btn.value ="×";
+                document.dentaku.div_btn.value = "÷";
+            }
+        }
+    </script>
+</body>
+</html>
