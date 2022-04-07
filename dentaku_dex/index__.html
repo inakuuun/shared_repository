@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>電卓自作</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             text-align: center;
             margin-top: 20px;
@@ -20,6 +23,10 @@
             border: solid 1px rgb(88,88,88);
             background: #e4e4e4;
             margin-bottom: 5px;/*resultとキーを離す*/
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 5px;
         }
         table {
             table-layout: fixed;/*tab幅の均一化*/
@@ -34,6 +41,7 @@
             border:  solid 1px rgb(88,88,88);
             background: white;
             cursor: pointer;/*カーソルを変更*/
+
         }
         button:active {/*:activeにすることでクリックしたら色が変わるように*/
             background: #e4e4e4;
@@ -74,13 +82,24 @@
     </div>
     <script>//eval('10 * 10') は、100と返す文字列を実行してその結果を返す意味eval()。
         const buttons = document.querySelectorAll('button');
-        const result = document.querySelectorAll('result');
+        const result = document.querySelector('#result');
 
+        let tabVal = "";
         function buttonPressed(event) {
+
             const text = event.target.textContent;
-            alert(text);
+
+            if(text === "=") {
+                tabVal = eval(tabVal);//=が押されたときには、eval(tabaval)で計算された文字列をtabValに代入
+            } else if(text === "C") {
+                tabVal = "";//クリアボタン押された時は、クリアすればいいのでこう入力
+                } else {
+                tabVal += text;//=以外のキーを押されたときには、末尾に押されたキーが加わる。
+            }
+            result.textContent = tabVal;//resultにtextを文字列としてeval()で画面に表示させる。
+            
         }
-        buttons.forEach(button => button.addEventListener('click',buttonPressed()));
+        buttons.forEach(button => button.addEventListener('click',buttonPressed));
     </script>
 </body>
 </html>
