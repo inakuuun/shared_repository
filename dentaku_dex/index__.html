@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電卓自作</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #container {
+            display: inline-block;/*resultの幅が突き抜けていたため設定*/
+            background: cadetblue;
+            padding: 5px;/*色のついたところを広げる*/
+        }
+        #result {
+            height: 50px;
+            border: solid 1px rgb(88,88,88);
+            background: #e4e4e4;
+            margin-bottom: 5px;/*resultとキーを離す*/
+        }
+        table {
+            table-layout: fixed;/*tab幅の均一化*/
+        }
+        td {
+            width: 50px;/*縦横幅*/
+            height: 50px;
+        }
+        button {
+            width: 100%;/*電卓tabと数字の比率枠内に収めるため*/
+            height: 100%;
+            border:  solid 1px rgb(88,88,88);
+            background: white;
+            cursor: pointer;/*カーソルを変更*/
+        }
+        button:active {/*:activeにすることでクリックしたら色が変わるように*/
+            background: #e4e4e4;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="result"></div>
+        <table>
+            <tbody>
+                <tr>
+                    <td><button>+</button></td>
+                    <td><button>-</button></td>
+                    <td><button>*</button></td>
+                    <td><button>/</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button>C</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button>=</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button>0</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>//eval('10 * 10') は、100と返す文字列を実行してその結果を返す意味eval()。
+        const buttons = document.querySelectorAll('button');
+        const result = document.querySelectorAll('result');
+
+        function buttonPressed(event) {
+            const text = event.target.textContent;
+            alert(text);
+        }
+        buttons.forEach(button => button.addEventListener('click',buttonPressed()));
+    </script>
+</body>
+</html>
