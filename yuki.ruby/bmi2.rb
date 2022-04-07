@@ -1,33 +1,34 @@
 # encording: utf-8
 
-puts "あなたの身長を教えてください(cmで入力)"
+p "あなたの身長を教えてください(cmで入力)"
 
-sintyou = gets.chomp.to_f
+height = gets.chomp.to_f
 
-puts "あなたの体重を教えてください(kgで入力)"
+p "あなたの体重を教えてください(kgで入力)"
 
-taizyu = gets.chomp.to_i
+weight = gets.chomp.to_i
 
 # 入力された身長をmに換算
-sintyoum = sintyou /100
+height_m = height /100
 
 # BMIの計算をして変数に入れる
-bmi = ( taizyu / ( sintyoum * sintyoum ) ).round(2)
+bmi = ( weight / ( height_m * height_m ) ).round(2)
 
 # BMIの数値に合った言葉を変数に入れる
+standard = 
 if bmi < 18.5
-  tekisei = "低体重"
-elsif bmi >= 18.5 && bmi < 25
-  tekisei = "普通体重"
-else bmi >= 25
-  tekisei = "肥満"
+  "低体重"
+elsif bmi >=18.5 && bmi <25
+  "普通体重"
+else
+  "肥満"
 end
 
 # 適正体重の計算
-tekisei2 = ((sintyoum * sintyoum) * 22).round(2)
+standard2 = ((height_m * height_m) * 22).round(2)
 
 # 出力
 puts "-------------------------------------"
 puts "あなたのBMIは、#{bmi}です。"
-puts "あなたは、#{tekisei}です。"
-puts "あなたの適正体重は、#{tekisei2}kgです。"
+puts "あなたは、#{standard}です。"
+puts "あなたの適正体重は、#{standard2}kgです。"
