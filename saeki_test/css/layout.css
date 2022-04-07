@@ -1,0 +1,444 @@
+@charset "utf-8";
+/* レイアウトのためのCSS */
+
+body {
+    font-family: 'Sawarabi Gothic', sans-serif;
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    word-wrap: break-word;
+}
+
+_:-ms-lang(x)::-ms-backdrop,
+body {
+    /*IE11用ハック*/
+    overflow-x: hidden;
+}
+
+@media screen and (max-width:768px) {
+    body {
+        font-size: 0.8rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    outline: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* splash */
+
+/* loading ※https://projects.lukehaas.me/css-loaders/参照*/
+.loader {
+    color: #000;
+    font-size: 40px;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    transform: translateZ(0);
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+
+@keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* font-family */
+
+h1,
+h2,
+#service h3,
+#header .scrolldown3,
+#contact .tel,
+#contact .mail,
+#footer,
+nav,
+#splash-logo {
+    font-family: 'Teko', sans-serif;
+}
+
+/* splash */
+
+#splash-logo {
+    color: #000;
+}
+
+/* header */
+
+#header .fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#header h1 {
+    position: fixed;
+    z-index: 9999;
+    top: 3vh;
+    left: 2vw;
+    font-size: 2.5rem;
+    font-weight: normal;
+    line-height: 1;
+}
+
+@media screen and (max-width:768px) {
+    #header h1 {
+        font-size: 2rem;
+        top: 4vh;
+        left: 4vw;
+    }
+}
+
+#header .scrolldown3 span {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* gnavi */
+
+.circle-bg {
+    border: 2px solid #000;
+}
+
+#g-nav ul {
+    font-size: 1.7rem;
+    letter-spacing: 0.2em;
+}
+
+
+@media screen and (max-width:768px) {
+    #g-nav ul {
+        font-size: 1rem;
+    }
+}
+
+/* heading */
+
+h2 {
+    font-size: 3rem;
+    letter-spacing: 0.2em;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 5vh 0;
+}
+
+_:-ms-lang(x)::-ms-backdrop,
+#service h2 {
+    /*IE11用ハック*/
+    padding: 20vh 0 0 0;
+}
+
+@media screen and (max-width:768px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* area */
+
+.fixed {
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 7vw;
+    animation: bgchange 40s ease infinite;
+}
+
+@media screen and (max-width:768px) {
+
+    #service.fixed,
+    #about.fixed {
+        height: auto;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .fixed {
+        padding: 0 60px;
+    }
+
+}
+
+/* concept */
+
+#concept {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#concept h3 {
+    font-size: 1.2rem;
+    margin: 0 0 5vh 0;
+}
+
+@media screen and (max-width:768px) {
+    #concept h3 {
+        font-size: 1rem;
+    }
+}
+
+#concept p {
+    line-height: 3;
+}
+
+@media screen and (max-width:540px) {
+
+    #concept h3,
+    #concept p {
+        text-align: left;
+        line-height: 2;
+    }
+
+    #concept p br {
+        display: none;
+    }
+
+}
+
+/* service */
+
+#service {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+_:-ms-lang(x)::-ms-backdrop,
+#service {
+    /*IE11用ハック*/
+    display: block;
+}
+
+#service .service-area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#service .service-area section {
+    width: 30%;
+}
+
+#service .service-area .service-img {
+    width: 20%;
+    margin: 0 auto 1vh auto;
+}
+
+#service h3 {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+#service .caption {
+    font-weight: bold;
+    margin: 0 0 3vh 0;
+}
+
+@media screen and (max-width:768px) {
+    #service {
+        padding: 0 0 18vh 0;
+    }
+
+    #service .service-area {
+        justify-content: space-around;
+    }
+
+    #service .service-area section {
+        width: 45%;
+        margin: 0 0 5vh 0;
+    }
+
+    #service h2 {
+        padding: 15vh 0 0 0;
+    }
+
+    #service h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    #service .service-area {
+        display: block;
+    }
+
+    #service .service-area section {
+        width: 100%;
+    }
+
+}
+
+/* about */
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .about-list {
+    width: 50vw;
+    margin: 0 auto;
+}
+
+#about .about-list li {
+    border-bottom: 2px solid #000;
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+}
+
+#about .about-list dl {
+    display: flex;
+    justify-content: space-between;
+}
+
+#about .about-list dt {
+    width: 30vw;
+    padding: 0 0 0 2vw;
+    white-space: nowrap;
+}
+
+#about .about-list dd {
+    width: 68vw;
+}
+
+
+@media screen and (max-width:768px) {
+    #about {
+        padding: 5vh 0 0 0;
+    }
+
+    #about h2 {
+        padding: 10vh 0 0 0;
+    }
+
+    #about .about-list {
+        width: 70vw;
+    }
+}
+
+/* contact */
+
+#contact {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact .tel,
+#contact .mail {
+    font-size: 2rem;
+    margin: 0 0 1vh 0;
+}
+
+#contact .mail {
+    margin: 0 0 6vh 0;
+}
+
+#contact .sns-link li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#contact .sns-link li img {
+    width: 30px;
+}
+
+@media screen and (max-width:768px) {
+
+    #contact .tel,
+    #contact .mail {
+        font-size: 1.3rem;
+    }
+}
+
+/* footer */
+
+#footer small {
+    position: fixed;
+    display: block;
+    left: 0;
+    top: 50%;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    z-index: 2;
+    line-height: 1;
+    letter-spacing: 0.1em;
+}
+
+#footer p {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 50%;
+    transform: rotate(90deg);
+    text-transform: uppercase;
+    z-index: 2;
+    line-height: 1;
+    letter-spacing: 0.1em;
+}

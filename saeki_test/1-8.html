@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>1-8 先進的な企業サイト</title>
+    <meta name="description" content="書籍「動くWebデザインアイディア帳」のサンプルサイトです">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--=============Google Font ===============-->
+    <link href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic%7CTeko&display=swap" rel="stylesheet">
+    <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
+    <!--自作のCSS-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/parts.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+</head>
+
+<body>
+
+    <div id="splash">
+        <div id="splash-logo">
+            <div class="loader"></div><br>Loading
+        </div>
+        <!--/splash-->
+    </div>
+    <div class="splashbg"></div>
+    <!---画面遷移用-->
+
+    <div id="container">
+
+        <header id="header">
+            <h1 id="identity"><a href="#"><span class="smoothText"><span
+                            class="smoothTextTrigger">Tom Saeki</span></span></a></h1>
+            <div class="fixed">
+                <canvas id="particle"></canvas>
+                <canvas id="waveCanvas"></canvas>
+                <div class="scrolldown3"><span>Scroll</span></div>
+                <!--/fixed-->
+            </div>
+        </header>
+
+        <div class="openbtn smoothTrigger">
+            <div class="openbtn-area"><span></span><span></span><span></span></div>
+        </div>
+        <nav id="g-nav">
+            <div id="g-nav-list">
+                <ul>
+                    <li><a href="#header">Top</a></li>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="circle-bg"></div>
+
+        <main id="main-area">
+
+            <section id="concept" class="fixed">
+                <div class="inner">
+                    <h2><span class="smoothText"><span class="smoothTextTrigger">Concept</span></span></h2>
+                    <h3><span class="smoothText"><span class="smoothTextTrigger">スタイリッシュをセレクトする</span></span></h3>
+                    <p><span class="smoothText"><span
+                                class="smoothTextTrigger">普段使いからちょっと背伸びをしたアイテムを探す<br>セレクトショップを運営する株式会社カラーは<br>あなたの&quot;これが欲しかった&quot;を叶えます</span></span>
+                    </p>
+                    <div class="smoothTrigger"><a href="#" class="btn02 rotatefront"><span>会社概要</span><span>Go to the
+                                page!</span></a></div>
+                    <!--/inner-->
+                </div>
+            </section>
+
+            <section id="service" class="fixed">
+                <div class="inner">
+                    <h2><span class="smoothText"><span class="smoothTextTrigger">Service</span></span></h2>
+                    <div class="service-area">
+                        <section>
+                            <div class="service-img">
+                                <svg version="1.1" class="svganime" id="logo" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <g>
+                                        <path class="st0"
+                                            d="M352.492,259.02v-17.184l24.626-75.309l42.295,32.584l58.845-71.225l-2.934-5.634c-19.281-36.973-46.864-66.192-69.62-86.335c-22.772-20.134-40.753-31.16-41.098-31.371L357.179,0l-5.243,6.956c-11.159,14.79-25.432,26.919-41.756,35.354c-16.331,8.413-34.696,13.147-54.189,13.147c-19.492,0-37.85-4.734-54.173-13.147c-16.331-8.435-30.604-20.564-41.771-35.354L154.813,0l-7.418,4.546c-0.344,0.211-18.334,11.237-41.106,31.371C83.542,56.06,55.958,85.279,36.677,122.252l-2.934,5.634l58.83,71.225l42.311-32.584l24.61,75.309v17.184L14.477,420.547l6.62,6.417c0.446,0.438,22.247,21.566,61.2,42.709c38.945,21.144,95.154,42.319,164.054,42.327c3.193-0.008,6.409-0.055,9.64-0.141c3.248,0.086,6.464,0.133,9.648,0.133c68.909,0,125.117-21.175,164.055-42.319c38.945-21.143,60.762-42.272,61.208-42.709l6.62-6.433L352.492,259.02z M144.679,134.78l-49.118,37.819l-38.868-47.045c17.528-31.442,41.872-57.226,62.304-75.278c10.798-9.554,20.494-16.965,27.435-21.934c1.471-1.057,2.786-1.988,3.999-2.81c11.902,13.874,26.324,25.416,42.592,33.812c18.937,9.774,40.363,15.29,62.969,15.29c22.615,0,44.048-5.516,62.985-15.29c16.269-8.396,30.69-19.939,42.584-33.812c7.011,4.836,18.648,13.389,31.943,25.19c20.322,18.029,44.415,43.656,61.81,74.832l-38.883,47.045l-49.103-37.819l-29.798,91.124H174.462L144.679,134.78z M419.679,453.288c-36.864,19.876-89.63,39.532-154.039,39.532c-3.09,0-6.22-0.039-9.366-0.141H256h-0.281c-3.154,0.102-6.268,0.141-9.367,0.141c-64.917,0-118.003-19.97-154.898-40.002c-18.436-10-32.812-20.016-42.499-27.474c-2.997-2.309-5.493-4.327-7.574-6.064l129.647-144.382h169.947L470.621,419.28C461.669,426.744,444.265,440.048,419.679,453.288z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <!--/service-img-->
+                            </div>
+
+                            <h3><span class="smoothText"><span class="smoothTextTrigger">Import</span></span></h3>
+                            <p class="caption"><span class="smoothText"><span
+                                        class="smoothTextTrigger">海外ブランド仕入・卸</span></span></p>
+                            <p><span class="smoothText"><span
+                                        class="smoothTextTrigger">おもにヨーロッパ地方の<br>海外ブランドの仕入れ・卸</span></span></p>
+                        </section>
+
+                        <section>
+                            <div class="service-img">
+                                <svg version="1.1" class="svganime" id="logo2" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <g>
+                                        <path class="st0"
+                                            d="M510.168,392.022l-45.594-57.326V93.611c0-11.662-9.458-21.12-21.12-21.12H68.546
+            c-11.662,0-21.115,9.458-21.115,21.12v241.085L1.837,392.022C0.648,393.517,0,395.367,0,397.287v25.373
+            c0,9.311,7.542,16.849,16.849,16.849h478.302c9.31,0,16.849-7.538,16.849-16.849v-25.373
+            C512,395.367,511.36,393.517,510.168,392.022z M77.226,102.291h357.548v202.606H77.226V102.291z M304.121,419.47h-96.242v-25.478h96.242V419.47z">
+                                        </path>
+                                        <path class="st0"
+                                            d="M204.404,167.431c-0.117,0-0.225,0.036-0.31,0.096l-57.525,39.266c-0.152,0.112-0.242,0.277-0.242,0.467v10.556c0,0.189,0.09,0.363,0.242,0.458l57.525,39.266c0.086,0.069,0.194,0.104,0.31,0.104c0.087,0,0.177-0.026,0.255-0.069c0.181-0.096,0.298-0.286,0.298-0.493v-16.824c0-0.172-0.09-0.354-0.242-0.458l-39.94-27.267l39.94-27.258c0.152-0.112,0.242-0.277,0.242-0.467v-16.815c0-0.207-0.117-0.406-0.298-0.492C204.581,167.449,204.49,167.431,204.404,167.431z">
+                                        </path>
+                                        <path class="st0"
+                                            d="M306.07,167.527c-0.091-0.06-0.195-0.096-0.312-0.096c-0.09,0-0.177,0.018-0.259,0.07c-0.177,0.086-0.294,0.285-0.294,0.492v16.824c0,0.182,0.091,0.355,0.242,0.458l39.94,27.258l-39.94,27.267c-0.151,0.104-0.242,0.285-0.242,0.466v16.815c0,0.207,0.117,0.397,0.294,0.493c0.082,0.043,0.169,0.069,0.259,0.069c0.117,0,0.22-0.034,0.312-0.104l57.52-39.266c0.164-0.095,0.25-0.268,0.25-0.458v-10.556c0-0.19-0.086-0.355-0.25-0.467L306.07,167.527z">
+                                        </path>
+                                        <path class="st0"
+                                            d="M281.375,158.224h-16.08c-0.237,0-0.449,0.147-0.522,0.372L228.26,264.473
+            c-0.056,0.164-0.026,0.354,0.074,0.492c0.109,0.147,0.277,0.242,0.454,0.242h16.08c0.238,0,0.45-0.156,0.523-0.38l36.508-105.859c0.061-0.172,0.03-0.363-0.069-0.51C281.721,158.311,281.553,158.224,281.375,158.224z">
+                                        </path>
+                                    </g>
+                                </svg>
+                                <!--/service-img-->
+                            </div>
+
+                            <h3><span class="smoothText"><span class="smoothTextTrigger">EC Store</span></span></h3>
+                            <p class="caption"><span class="smoothText"><span
+                                        class="smoothTextTrigger">ECサイトの運営</span></span></p>
+                            <p><span class="smoothText"><span
+                                        class="smoothTextTrigger">ファッションECサイト<br>「Corori」の運営</span></span></p>
+                        </section>
+
+                        <section>
+                            <div class="service-img">
+                                <svg version="1.1" class="svganime" id="logo3" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                                    style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                    <g>
+                                        <path class="st0"
+                                            d="M147.238,207.793c21.254,0,38.489-17.227,38.489-38.481l14.054-147.238h-61.579l-29.444,147.238C108.758,190.566,125.984,207.793,147.238,207.793z">
+                                        </path>
+                                        <path class="st0"
+                                            d="M256.005,207.793c21.245,0,38.48-17.227,38.48-38.481l-7.7-147.238h-61.571l-7.699,147.238C217.516,190.566,234.75,207.793,256.005,207.793z">
+                                        </path>
+                                        <path class="st0"
+                                            d="M364.762,207.793c21.245,0,38.48-17.227,38.48-38.481L373.79,22.075h-61.571l14.054,147.238C326.273,190.566,343.5,207.793,364.762,207.793z">
+                                        </path>
+                                        <path class="st0"
+                                            d="M460.794,22.075h-61.571l35.807,147.238c0,18.005,12.38,33.074,29.072,37.28v251.139h-57.991V311.838H276.564v145.893H47.898V206.592c16.694-4.205,29.064-19.282,29.064-37.28l35.815-147.238H51.198L0,169.312c0,12.717,6.194,23.954,15.695,30.959v289.654h480.61V200.272C505.807,193.266,512,182.03,512,169.312L460.794,22.075z">
+                                        </path>
+                                        <rect x="99.552" y="271.378" class="st0" width="100.39" height="100.381"></rect>
+                                    </g>
+                                </svg>
+                                <!--/service-img-->
+                            </div>
+
+                            <h3><span class="smoothText"><span class="smoothTextTrigger">Store</span></span></h3>
+                            <p class="caption"><span class="smoothText"><span
+                                        class="smoothTextTrigger">ショップ販売</span></span></p>
+                            <p><span class="smoothText"><span
+                                        class="smoothTextTrigger">都内23箇所に展開する店舗<br>「Corori」の運営・商品販売</span></span></p>
+                        </section>
+                        <!--/service-area-->
+                    </div>
+                    <div class="smoothTrigger"><a href="#" class="btn02 rotatefront"><span>サービス詳細</span><span>Go to the
+                                page!</span></a></div>
+                    <!--/inner-->
+                </div>
+            </section>
+
+            <section id="about" class="fixed">
+                <div class="inner">
+                    <h2><span class="smoothText"><span class="smoothTextTrigger">About</span></span></h2>
+                    <ul class="about-list smoothTrigger">
+                        <li>
+                            <dl>
+                                <dt>会社名</dt>
+                                <dd>株式会社Color</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>設立</dt>
+                                <dd>2020年7月</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>資本金</dt>
+                                <dd>2000万円</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>代表</dt>
+                                <dd>久保田涼子</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>所在地</dt>
+                                <dd>〒104-0000<br>東京都中央区1丁目1番1号</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>電話</dt>
+                                <dd>03-1234-5678</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <!--/inner-->
+                </div>
+            </section>
+
+            <section id="contact" class="fixed">
+                <div class="inner">
+                    <h2><span class="smoothText"><span class="smoothTextTrigger">Contact</span></span></h2>
+                    <p class="tel"><a href="tel:03-1234-5678"><span class="smoothText"><span
+                                    class="smoothTextTrigger">03-1234-5678</span></span></a></p>
+                    <p class="mail"><a href="mailto:info@corori.shop"><span class="smoothText"><span
+                                    class="smoothTextTrigger">info@corori.shop</span></span></a></p>
+                    <ul class="sns-link">
+                        <li><a href="#"><span class="smoothText"><span class="smoothTextTrigger"><img
+                                            src="img/ico_tw.svg" alt="Twitter"></span></span></a></li>
+                        <li><a href="#"><span class="smoothText"><span class="smoothTextTrigger"><img
+                                            src="img/ico_insta.svg" alt="Instagram"></span></span></a></li>
+                        <li><a href="#"><span class="smoothText"><span class="smoothTextTrigger"><img
+                                            src="img/ico_fb.svg" alt="Facebook"></span></span></a></li>
+                    </ul>
+                    <!--/inner-->
+                </div>
+            </section>
+
+        </main>
+
+        <footer id="footer">
+            <p><a href="#contact"><span class="smoothText"><span class="smoothTextTrigger">Contact</span></span></a></p>
+            <small><span class="smoothText"><span class="smoothTextTrigger">&copy; Corori.inc</span></span></small>
+        </footer>
+
+        <!--/container-->
+    </div>
+
+    <!--=============JS ===============-->
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--印象編　5-17　粒子が集まってタイポグラフィーを形成する-->
+    <script src="js/particleText.js"></script>
+    <!--印象編　9-4-1　SVG アニメーション-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
+    <!--自作のJS-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
