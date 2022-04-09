@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電卓自作</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #container {
+            display: inline-block;/*resultの幅が突き抜けていたため設定*/
+            background: rgb(14, 16, 16);
+            padding: 50px;/*色のついたところを広げる*/
+        }
+        #result {
+            height: 30px;
+            background: rgb(14, 16, 16);
+            margin-bottom: 5px;/*resultとキーを離す*/
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 5px;
+            color: white;
+            font-size: 40px;
+            margin-bottom: 13px;
+        }
+        table {
+            table-layout: fixed;/*tab幅の均一化*/
+        }
+        td {
+            width: 65px;/*縦横幅*/
+            height: 65px;
+        }
+        button {
+            width: 100%;/*電卓tabと数字の比率枠内に収めるため*/
+            height: 100%;
+            border:  solid 1px rgb(88,88,88);
+            background: #555555;
+            color: white;
+            cursor: pointer;/*カーソルを変更*/
+            border-radius: 50%;
+            font-size: 30px;
+        }
+        button.orange {
+            color: white;
+            background: orange;
+        }
+        button.gre {
+            background: #bbb3b3;
+            color: black;
+        }
+        button:active {/*:activeにすることでクリックしたら色が変わるように*/
+            background: #9e9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="result">0</div>
+        <table>
+            <tbody>
+                <tr>
+                    <td><button class="gre" id="ac">AC</button></td>
+                    <td><button class="gre">+/-</button></td>
+                    <td><button class="gre">%</button></td>
+                    <td><button class="orange">/</button></td>
+                </tr>
+                <tr>
+                    <td><button>7</button></td>
+                    <td><button>8</button></td>
+                    <td><button>9</button></td>
+                    <td><button class="orange">*</button></td>
+                </tr>
+                <tr>
+                    <td><button>4</button></td>
+                    <td><button>5</button></td>
+                    <td><button>6</button></td>
+                    <td><button class="orange">-</button></td>
+                </tr>
+                <tr>
+                    <td><button>1</button></td>
+                    <td><button>2</button></td>
+                    <td><button>3</button></td>
+                    <td><button class="orange">+</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button>0</button></td>
+                    <td><button>.</button></td>
+                    <td><button class="orange">=</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>//eval('10 * 10') は、100と返す文字列を実行してその結果を返す意味eval()。
+        const buttons = document.querySelectorAll('button');
+        const result = document.querySelector('#result');
+
+        let tabVal = "";
+        function buttonPressed(event) {
+
+            const text = event.target.textContent;
+
+            if(text === "=") {
+                tabVal = eval(tabVal);//=が押されたときには、eval(tabaval)で計算された文字列をtabValに代入
+            } else if(text === "AC") {
+                tabVal = "";//クリアボタン押された時は、クリアすればいいのでこう入力
+                } else {
+                tabVal += text;//=以外のキーを押されたときには、末尾に押されたキーが加わる。
+            }
+
+            result.textContent = tabVal;//resultにtextを文字列としてeval()で画面に表示させる。
+            
+        }
+        buttons.forEach(button => button.addEventListener('click',buttonPressed));
+    
+        document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("ac").addEventListener("click", function(){
+    window.location.reload();//ACボタン押すと0が表示される。
+    })
+    });
+    </script>
+</body>
+</html>
