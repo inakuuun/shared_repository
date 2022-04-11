@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストップウォッチ</title>
+</head>
+<body>
+    <h1>stopWatch!!!</h1>
+    <div id="timer">00:00:00.000</div>
+    <div>
+        <input id="start" type="button" value="start">
+        <input id="stop" type="button" value="stop">
+        <input id="reset" type="button" value="reset">
+    </div>
+    <script>
+        const timer = document.getElementById("timer");
+        const start = document.getElementById("start");
+        const stop = document.getElementById("stop");
+        const reset = document.getElementById("reset");
+
+        let startTime;//押した時の時刻を記録する変数
+        let elapsedTime = 0;//経過時間の変数
+        let intervalID;//タイマーの変数
+
+        
+        startTime = new Date()
+            intervalID = setInterval(function(){//setInterval…一定時間ごとに特定の処理を繰り返す
+                elapsedTime += Date.now() - startTime;//Date.now()メソッドとは、UTC（協定世界時）での1970年1月1日0時0分0秒から現在までの経過時間をミリ秒単位で返すメソッドです。
+                console.log(elapsedTime);
+            },10)//ボタン押すと起こる事象
+
+
+        function updateTimeText() {//取得した数字をわかる数字にして表示部分に表示
+            let m = Math.floor(elapsedTime / 60000);//m=分,
+            let s = Math.floor(elapsedTime % 60000 / 1000);//s=秒
+            let ms = elapsedTime % 1000;//ms=ミリ秒
+
+            m = ('0' + m).slice(-2);//slice()は、文字列や配列などからデータの一部分だけ取り出せるメソッドになります。
+            s = ('0' + s).slice(-2);
+            ms = ('0' +ms).slice(-3);
+
+            timer.textContent = m + ':' + s + ':' + ms;
+        }//取得した数字を画面に表示させる(id=timerに表示させる)
+
+
+        intervalID = setInterval(function() {
+            const nowDate = Date.now();
+            elapsedTime += nowDate - startTime;
+            startTime = nowDate;
+        },10);
+//数字は表示されますが何かおかしいです。数が大きくなってしまっています。setIntervalで次々更新され、elapsedTimeにどんどん追加され数が大きくなています。これを修正するために、以下のように
+
+        function countUp(){
+            timerId = setTimeout(function(){
+            elapsedTime = Date.now() - startTime ;
+            updateTimetText()
+
+        },10);
+        }
+
+        start.addEventListener("click",function(){
+            startTime = Date.now();
+            countUp();
+        })
+
+
+        stop.addEventListener("click",function(){
+            clearTimeout(timerId);//止める命令
+        })//clearTimeout() メソッドは、setTimeout()の呼び出しで確立されたタイムアウトを解除
+
+
+        reset.addEventListener("click",function(){//0に初期化して最初の数字を表示
+            elapsedTime = 0;
+            updateTimetText();
+        })
+    </script>
+</body>
+</html>
