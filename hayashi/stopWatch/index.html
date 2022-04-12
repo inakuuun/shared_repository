@@ -93,7 +93,7 @@
                 {id:"pause",listener:() => stopWatchObj.pause()},
                 {id:"wrap",listener:() => stopWatchObj.wrap()}
             ];
-            buttonDefine.forEach(e => document.getElementById(e.id).addEventListener("click",e.listener));
+            buttonDefine.forEach(e => document.getElementById(e.id).addEventListener("mousedown" ,e.listener));
         });
     </script>
 </body>
