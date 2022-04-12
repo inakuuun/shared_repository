@@ -7,74 +7,94 @@
     <title>ストップウォッチ</title>
 </head>
 <body>
-    <h1>stopWatch!!!</h1>
-    <div id="timer">00:00:00.000</div>
-    <div>
-        <input id="start" type="button" value="start">
-        <input id="stop" type="button" value="stop">
-        <input id="reset" type="button" value="reset">
-    </div>
+    <p>
+        <button id="start">開始/リセット</button>
+        <button id="pause">一時停止/再開</button>
+        <button id="wrap">ラップ</button>
+    </p>
+    <p id="watchArea"></p>
+    <textarea id="wrapArea"></textarea>
+
+
+
     <script>
-        const timer = document.getElementById("timer");
-        const start = document.getElementById("start");
-        const stop = document.getElementById("stop");
-        const reset = document.getElementById("reset");
+        window.addEventListener("DOMContentLoaded",() => {
+            //watchCallBack 経過時間報告用コールバック
+            //wrapCallBack ラップ報告用コールバック
+            const getStopWatch = function (watchCallBack , wrapCallBack) {
+            let accumulatedTime = 0,//精算時間
+                currentTime = null,//タイマー開示タイムスタンプ
+                timerId = null;//setInterval()の返り値
+            
+                
+                //リセット処理
+            const reset = () => {
+                timerOff();accumulatedTime = 0; currentTime = null;
+                //リセットされたことをnullで通知
+                watchCallBack(null);wrapCallBack(null);
+            };
+            //開始処理
+            const start = () => {currentTime = Date.now();timerOn();};
+            //一時停止処理
+            const pause = () => {
+                //これまでの経過時間を退避
+                accumulatedTime = getNowTime();
+                timerOff();
+                currentTime = null;
+            };
+            //再開処理
+            const resume = () => start();
+            //ラップ報告処理
+            const wrap = () => wrapCallBack(getNowTime());
+            //経過時間の算出
+            const getNowTime = () =>accumulatedTime + Date.now() - currentTime;
 
-        let startTime;//押した時の時刻を記録する変数
-        let elapsedTime = 0;//経過時間の変数
-        let intervalID;//タイマーの変数
+            //タイマーの停止処理
+            const timerOff = () => {
+                if(timerId === null)return;
+                clearInterval(timerId);
+                timerId = null;
+            };
+            //タイマー開始処理
+            const timerOn = () => {
+                if(timerId === null)clearInterval(timerId);
+                timerId = setInterval(() => watchCallBack(getNowTime()),10);
+            };
 
-        
-        startTime = new Date()
-            intervalID = setInterval(function(){//setInterval…一定時間ごとに特定の処理を繰り返す
-                elapsedTime += Date.now() - startTime;//Date.now()メソッドとは、UTC（協定世界時）での1970年1月1日0時0分0秒から現在までの経過時間をミリ秒単位で返すメソッドです。
-                console.log(elapsedTime);
-            },10)//ボタン押すと起こる事象
+                reset();
 
+                //必要な機能だけ返す
+            return Object.freeze({
+                start:() => currentTime === null && accumulatedTime === 0 ? start() : reset(),
+                pause:() => currentTime === null ? (accumulatedTime === 0 ? false:resume()) : pause(),
+                wrap:() => currentTime === null ? false : wrap(),
+                });
+            };
+                //ミリ秒を画面に表示する形式に変換
+            const timeString = time =>`${
+                    Math.floor(time / 60000).toString().padStart(2,"00")
+                }:${
+                    Math.floor(time % 60000 / 1000).toString().padStart(2,"00")
+                }.${
+                    Math.floor(time % 1000).toString().padStart(3,"000").slice(0,2)
+                }`;
 
-        function updateTimeText() {//取得した数字をわかる数字にして表示部分に表示
-            let m = Math.floor(elapsedTime / 60000);//m=分,
-            let s = Math.floor(elapsedTime % 60000 / 1000);//s=秒
-            let ms = elapsedTime % 1000;//ms=ミリ秒
-
-            m = ('0' + m).slice(-2);//slice()は、文字列や配列などからデータの一部分だけ取り出せるメソッドになります。
-            s = ('0' + s).slice(-2);
-            ms = ('0' +ms).slice(-3);
-
-            timer.textContent = m + ':' + s + ':' + ms;
-        }//取得した数字を画面に表示させる(id=timerに表示させる)
-
-
-        intervalID = setInterval(function() {
-            const nowDate = Date.now();
-            elapsedTime += nowDate - startTime;
-            startTime = nowDate;
-        },10);
-//数字は表示されますが何かおかしいです。数が大きくなってしまっています。setIntervalで次々更新され、elapsedTimeにどんどん追加され数が大きくなています。これを修正するために、以下のように
-
-        function countUp(){
-            timerId = setTimeout(function(){
-            elapsedTime = Date.now() - startTime ;
-            updateTimetText()
-
-        },10);
-        }
-
-        start.addEventListener("click",function(){
-            startTime = Date.now();
-            countUp();
-        })
+            const watchArea = document.getElementById("watchArea");
+            const wrapArea = document.getElementById("wrapArea");
 
 
-        stop.addEventListener("click",function(){
-            clearTimeout(timerId);//止める命令
-        })//clearTimeout() メソッドは、setTimeout()の呼び出しで確立されたタイムアウトを解除
+            const stopWatchObj = getStopWatch(
+                time => watchArea.textContent = time === null ? "00:00.00" : timeString(time),
+                time => wrapArea.value = time === null ? "" : wrapArea.value + "\n" + timeString(time)
+            );
 
-
-        reset.addEventListener("click",function(){//0に初期化して最初の数字を表示
-            elapsedTime = 0;
-            updateTimetText();
-        })
+            const buttonDefine = [
+                {id:"start",listener:() => stopWatchObj.start()},
+                {id:"pause",listener:() => stopWatchObj.pause()},
+                {id:"wrap",listener:() => stopWatchObj.wrap()}
+            ];
+            buttonDefine.forEach(e => document.getElementById(e.id).addEventListener("click",e.listener));
+        });
     </script>
 </body>
 </html>
