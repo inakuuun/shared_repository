@@ -1,0 +1,44 @@
+body {
+    width: 1665px;
+    font-family:  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "MS P ゴシック", "MS P Gothic", sans-Serif;;
+    background: #f2fcdc;
+}
+header {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.title-logo {
+    font-size: 10px;
+    padding: 20px;
+    color: #999999;
+    text-align: left;
+}
+
+.title-base {
+    font-size: 25px;
+    color: #555555;
+    float: left;
+}
+
+.form-title {
+    text-align: right;
+    line-height: 30px;
+    font-size: 19px;
+}
+
+.info {
+    font-size: 14px;
+    text-align: center;
+    float: right;
+    line-height: 15px;
+}
+
+.oto {
+    font-size: 13px;
+}
+
+.TEL {
+    font-weight: bold;
+    letter-spacing: 4px;
+}
