@@ -1,0 +1,332 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* -------------------------------------------------------------------------------- */
+
+
+
+
+/* ここから */
+body{
+    width: 100%;
+    height: 1000px;
+    font-family: "adobe-clean", sans-serif;
+}
+
+body:lang(ja) {
+    font-family: adobe-clean, 'adobe clean', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+
+.header{
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+
+.header-logo{
+    padding-top: 25px;
+}
+
+.header-nav{
+    padding: 20px 0 0 230px;
+    
+}
+
+table{
+    border-collapse: separate;
+    border-spacing:28px 0;
+}
+
+tr td a{
+    text-decoration: none;
+    color: #192F60;
+    opacity: 1;
+}
+
+tr td a:hover{
+    opacity: 0.5;
+}
+
+th{
+    font-weight: normal;
+    font-size: 13px;
+}
+
+td{
+    font-weight: 600;
+    color: #192F60;
+    padding-top: 10px;
+}
+
+.phone-contents{
+    width: 210px;
+    padding: 20px 35px 0 0;
+    color: #192F60;
+    padding-left: 40px;
+}
+
+.phone-contents span{
+    font-weight: normal;
+    font-size: 28px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.phone-contents p{
+    padding-left: 50px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.e-mail-contents{
+    background-color: #20868A;
+    width: 128px;
+    height: 85px;
+    margin: 0 0 0 auto;
+}
+
+.e-mail-contents img{
+    margin-top: 13px;
+    margin-right: 49px;
+    margin-left: 49px;
+}
+
+.e-mail-contents p{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 14px;
+    color: white;
+}
+
+.e-mail-contents a{
+    text-decoration: none;
+    color: white;
+    opacity: 1;
+}
+
+.e-mail-contents a:hover{
+    opacity: 0.5;
+}
+
+.main-container{
+    width: 95%;
+    margin: auto;
+}
+
+.main-img img{
+    width: 100%;
+    height: 670px;
+}
+
+.main-img{
+    position: relative;
+}
+
+.sentence{
+    position: absolute;
+    background-color: white;
+    font-size: 60px;
+    color: #192F60;
+    padding: 14px;
+    top: 180px;
+    left: 112px;
+}
+.sentence2{
+    position: absolute;
+    background-color: white;
+    font-size: 60px;
+    color: #192F60;
+    padding: 14px;
+    top: 275px;
+    left: 112px;
+}
+
+.sub-sentence{
+    position: absolute;
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+    color: #192F60;
+    padding: 14px;
+    top: 385px;
+    left: 112px;
+}
+
+.sub-sentence2{
+    position: absolute;
+    width: 240px;
+    height: 52px;
+    background-color: #192F60;
+    color: white;
+    padding: 5px 0;
+    top: 512px;
+    left: 112px;
+    text-align: center;
+
+}
+
+.phone-number{
+    font-weight: normal;
+    font-size: 24px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.business-hours{
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.inquiry{
+    position: absolute;
+    width: 240px;
+    height: 52px;
+    background-color: #20868A;
+    color: white;
+    padding: 5px 0;
+    top: 512px;
+    left: 435px;
+    text-align: center;
+}
+
+.inquiry a{
+    text-decoration: none;
+    margin-top: 20px;
+    opacity: 1;
+}
+
+.inquiry a:hover{
+    opacity: 0.5;
+}
+
+.inquiry span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: lighter;
+    color: white;
+}
+
+.inquiry img{
+    position: absolute;
+    top: 55%;
+    left: 85%;
+    transform: translate(-55% ,-85%);
+    width: 8px;
+    height: 8px;
+}
+
+.main-news{
+    display: flex;
+    width: 80%;
+    background-color: white;
+    opacity: 0.7;
+}
+
+.main-news h1{
+    border-right: 1px solid #192F60;
+}
