@@ -38,3 +38,22 @@ h1 {
 }
 
 #contents { padding: 0 20px; }
+
+.content {
+  width: 50%;
+  height: 25px;
+  background: #ccc;
+  padding: 10px;
+}
+
+.child-content {
+  width: 100px;
+  height: 25px;
+  background: red;
+  float: left;
+  margin-right: 10px;
+}
+
+.hoge-btn {
+  float:right;
+}
