@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="display: flex; justify-content: flex-end;">
+        <div class="tub" style="background: red; height: 20px; width: 32px;">田中</div>
+        <div class="tub" style="background: blue; height: 20px; width: 32px;">佐伯</div>
+        <div class="tub" style="color: aliceblue; background: black; height: 20px; width: 47px;">トマト</div>
+    </div>
+
+    <script>
+        //let moji = prompt('入力せよ');
+        //console.log(`入力したのは${moji}ですね？`);
+        //alert(`入力したのは${moji}ですね？`);
+
+        //let kakaku = prompt('定価を入力せよ(半角英)');
+        //console.log(parseInt(kakaku) + 80);
+
+        //let moji = prompt('入力せよ');
+        //console.log(isNaN(moji));
+
+        let moji = prompt('入力せよ');
+        if(! isNaN(moji)) {
+            console.log('数字ではない');
+        } else {
+            console.log('数字です' + moji);
+        }
+    </script>
+</body>
+</html>
