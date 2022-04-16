@@ -135,16 +135,69 @@
         //}
 
 
-        let dir = ["東","西","南","北"];
-        dir.forEach(event => console.log(event));//forEachアロー関数書き方
+        //let dir = ["東","西","南","北"];
+        //dir.forEach(event => console.log(event));//forEachアロー関数書き方
+        //dir.forEach(function(event) {
+        //    console.log(event);
+        //});
+
+
+        //let wdays = ["月","火","水","木","金"];
+        //let len = wdays.length;
+        //for(let i = len - 1;i >= 0;i--) {
+        //    console.log(wdays[i] + '曜日');
+        //}
         
 
+        //let createMail = () => {
+        //    console.log('PT企画の斉藤です。');
+        //        console.log('請求書を送ります。');
+        //};
+        //createMail();
 
-        let wdays = ["月","火","水","木","金"];
-        let cnt = wdays.length;
-        for(let i = cnt-1;i >= 0;i--){//配列逆から呼び出すにはi--とする。cnt-1は一つずつとる？
-            console.log(wdays[i] + "曜日");
-        }
+
+        //function createMail (recy) {
+        //    console.log(recy + '様');
+        //    console.log('PT企画の斉藤です。');
+        //    console.log('請求書を送ります。');
+        //};
+        //createMail('山本');
+        //createMail('吉田');
+
+
+//let createMail = (recv,bill) => {
+//let msg = `${recv}様PT企画の斉藤です。
+//今月の請求額は${bill}円です`;
+//console.log(msg);
+//}//インデントしてると字下げされる為インデントはしない。\nで改行( \ は、option+¥)
+//createMail('山本',40000);
+
+
+        //let addCharge = (bill) => {
+        //    return bill *1.07;
+        //}
+        //console.log(addCharge(40000));
+
+        //let data = {
+        //    name : '山本',
+        //    bill : 40000,
+        //    crg : true
+        //}
+        //console.log(data.name);
+        //console.log(data.bill);
+
+
+        let data = [
+            {name : '山本',
+            bill : 40000,
+            crg : true},
+            {name : '吉田',
+            bill : 25000,
+            crg : false}
+        ]
+        console.log(data[1].name);
+        console.log(data[1].bill);
+
     </script>
 </body>
 </html>
