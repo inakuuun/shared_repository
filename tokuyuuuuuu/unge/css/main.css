@@ -74,16 +74,12 @@ h1 {
 
 .left {
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row-reverse;
+  justify-content: flex-start;
 }
 
-/* .content2 {
+.content2 {
   display: flex;
   justify-content: space-between;
-<<<<<<< HEAD
-} */
-=======
 }
 
 .content3 {
@@ -106,4 +102,3 @@ h1 {
   background: red;
   margin-right: 10px;
 }
->>>>>>> 7dff810f7f7d05da051fe13cec8c1007fa93a530
