@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="display: flex; justify-content: flex-end;">
+        <div class="tub" style="background: red; height: 20px; width: 32px;">田中</div>
+        <div class="tub" style="background: blue; height: 20px; width: 32px;">佐伯</div>
+        <div class="tub" style="color: aliceblue; background: black; height: 20px; width: 47px;">トマト</div>
+    </div>
+
+    <script>
+        //prompt＆もし文
+
+        //let moji = prompt('入力せよ');
+        //console.log(`入力したのは${moji}ですね？`);
+        //alert(`入力したのは${moji}ですね？`);
+
+
+        //let kakaku = prompt('定価を入力せよ(半角英)');
+        //console.log(parseInt(kakaku) + 80);
+
+
+        //let moji = prompt('入力せよ');
+        //console.log(isNaN(moji));
+
+
+        //let moji = prompt('入力せよ');//prompt === alertみたいに入力しろの画面でる
+        //if(! isNaN(moji)) {//変数moji数値に変換不可ではない場合数字に変換
+        //    console.log(parseInt(moji) + 80);//整数化
+        //    console.log('まだブロック内');
+        //}
+        //console.log('ブロック外だよ');//数字以外が入力されるとここだけ出る
+    
+    
+        //let moji = prompt('入力せよ');
+        //if (! isNaN(moji)) {
+        //    console.log(parseInt(moji) + 80);
+        //} else {
+        //    console.log('数字ではありません');
+        //}
+        
+        
+        //let moji = prompt('年齢は？');
+        //let age = parseInt(moji);
+        //if(age < 20) {
+        //    console.log('未成年ですね');
+        //} else if(age < 65) {
+        //    console.log('成人ですねお酒飲みますかー？？？');
+        //} else {
+        //    console.log('高齢者ですね？それか半角以外で入力してないですかー？？');
+        //}
+
+
+        //let moji = prompt('年齢は？');
+        //if(! isNaN(moji)) {//入力されたものが数字なら実行
+        //    let age = parseInt(moji);
+        //    if(age < 20) {
+        //        console.log('未成年ですね？');
+        //    }
+        //}
+
+
+        //let moji = prompt('年齢は？');
+        //if(! isNaN(moji)) {
+        //    let age = parseInt(moji);
+        //    if(age < 20) {
+        //        console.log('未成年');
+        //    if(age >= 6 && age <= 15) {
+        //        console.log('義務教育が必要です');
+        //    }//ifブロック終了
+        //    } else if(age < 65) {
+        //        console.log('成人');
+        //    } else {
+        //        console.log('高齢者');
+        //    }
+        //}
+
+
+        //繰り返し文
+
+        //let sinkin = 50000;
+        //while(sinkin > 0) {
+        //    console.log(sinkin);
+        //    sinkin -= 5080;
+        //}
+
+
+        //for(let cnt = 20;cnt > 0;cnt--){
+        //    console.log(`${cnt}回目のハロー！`);
+        //}
+
+
+        //for(let x = 1;x < 10;x++) {
+        //for(let y = 1;y < 10;y++) {
+        //    console.log(x + '×' + y + '=' + x * y);
+        //}
+        //}//掛け算　1*1~9*9　まで実行
+
+
+        //let wdays = ["月","火","水","木","金"];
+        //for(let day of wdays) {//for~of文 of=所属する意味
+        //    console.log(day + "曜日");
+        //}
+
+
+        //let wdays = ["月","火","水","木","金"];
+        //for(let cnt = 0;cnt < wdays.length;cnt++) {
+        //    console.log(wdays[cnt] + "曜日");
+        //}
+
+
+        //let team = ["A","B","C","D","E"];
+        //for(let t1 of team) {
+        //    for(let t2 of team) {
+        //        if(t1 !== t2) {
+        //            console.log(`${t1} VS ${t2}`);
+        //        }
+        //    }
+        //}
+
+
+        //let team = ["A","B","C","D","E"];
+        //let opps = ["A","B","C","D","E"];
+        //for(let t1 of team) {
+        //    opps.shift();
+        //    for(let t2 of opps) {
+        //        console.log(`${t1} VS ${t2}`);
+        //    }
+        //}
+
+
+        //let dir = ["東","西","南","北"];
+        //dir.forEach(event => console.log(event));//forEachアロー関数書き方
+        //dir.forEach(function(event) {
+        //    console.log(event);
+        //});
+
+
+        //let wdays = ["月","火","水","木","金"];
+        //let len = wdays.length;
+        //for(let i = len - 1;i >= 0;i--) {
+        //    console.log(wdays[i] + '曜日');
+        //}
+        
+
+        //let createMail = () => {
+        //    console.log('PT企画の斉藤です。');
+        //        console.log('請求書を送ります。');
+        //};
+        //createMail();
+
+
+        //function createMail (recy) {
+        //    console.log(recy + '様');
+        //    console.log('PT企画の斉藤です。');
+        //    console.log('請求書を送ります。');
+        //};
+        //createMail('山本');
+        //createMail('吉田');
+
+
+//let createMail = (recv,bill) => {
+//let msg = `${recv}様PT企画の斉藤です。
+//今月の請求額は${bill}円です`;
+//console.log(msg);
+//}//インデントしてると字下げされる為インデントはしない。\nで改行( \ は、option+¥)
+//createMail('山本',40000);
+
+
+        //let addCharge = (bill) => {
+        //    return bill *1.07;
+        //}
+        //console.log(addCharge(40000));
+
+        //let data = {
+        //    name : '山本',
+        //    bill : 40000,
+        //    crg : true
+        //}
+        //console.log(data.name);
+        //console.log(data.bill);
+
+
+        let data = [
+            {name : '山本',
+            bill : 40000,
+            crg : true},
+            {name : '吉田',
+            bill : 25000,
+            crg : false}
+        ]
+        console.log(data[1].name);
+        console.log(data[1].bill);
+
+    </script>
+</body>
+</html>

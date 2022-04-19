@@ -1,4 +1,4 @@
-/* body {
+body {
   padding: 10px 100px;
 }
 
@@ -39,7 +39,7 @@ h1 {
 
 #contents { padding: 0 20px; } */
 
-/* .content {
+.content {
   width: 50%;
   height: 25px;
   background: #ccc;
@@ -56,7 +56,7 @@ h1 {
 
 .hoge-btn {
   float:right;
-} */
+}
 
 .content2 {
   width: 100%;
@@ -81,4 +81,29 @@ h1 {
 /* .content2 {
   display: flex;
   justify-content: space-between;
+<<<<<<< HEAD
 } */
+=======
+}
+
+.content3 {
+  width: 100%;
+  height: 25px;
+  background: #ccc;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content-box {
+  width: 100px;
+  height: 25px;
+  background: red;
+  margin-right: 10px;
+}
+>>>>>>> 7dff810f7f7d05da051fe13cec8c1007fa93a530
