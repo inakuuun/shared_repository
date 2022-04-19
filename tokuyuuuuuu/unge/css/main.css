@@ -74,10 +74,11 @@ h1 {
 
 .left {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
 }
 
-.content2 {
+/* .content2 {
   display: flex;
   justify-content: space-between;
-}
+} */
