@@ -1,0 +1,8 @@
+{
+    "cordova_version": "11.0",
+    "framework_version": "3.5",
+    "xcode_version": "13",
+    "cordova_ios_platform": "6.2.0",
+    "cordova_android_platform": "10.1.1",
+    "cordova_android_publishing_format": "app-bundle"
+}
