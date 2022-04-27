@@ -1,0 +1,8 @@
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+/Applications/MAMP/Library/bin/ruby -I /Applications/MAMP/Library/lib/ruby/2.6.0 -r ./siteconf20210930-38720-12g2cvn.rb extconf.rb --prefix\=/Applications/MAMP/Library --with-iconv-dir\=/Applications/MAMP/Library --with-mysql-config\=/Applications/MAMP/Library/bin/mysql_config --with-mysql-lib\=/Applications/MAMP/Library/lib
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" clean
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR="
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/nio4r-2.5.8/ext/nio4r
+make "DESTDIR=" install

@@ -1,0 +1,8 @@
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/memcached-1.8.0/ext
+/Applications/MAMP/Library/bin/ruby -I /Applications/MAMP/Library/lib/ruby/2.6.0 -r ./siteconf20210930-22961-1gn21dm.rb extconf.rb --prefix\=/Applications/MAMP/Library --with-iconv-dir\=/Applications/MAMP/Library --with-libmemcached-dir\=/Applications/MAMP/Library --with-memcached
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/memcached-1.8.0/ext
+make "DESTDIR=" clean
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/memcached-1.8.0/ext
+make "DESTDIR="
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/memcached-1.8.0/ext
+make "DESTDIR=" install

@@ -1,0 +1,3 @@
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/mimemagic-0.3.10/ext/mimemagic
+/Applications/MAMP/Library/bin/ruby -rrubygems /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/rake-12.3.2/exe/rake RUBYARCHDIR\=/Applications/MAMP/Library/lib/ruby/gems/2.6.0/extensions/x86_64-darwin-16/2.6.0-static/mimemagic-0.3.10 RUBYLIBDIR\=/Applications/MAMP/Library/lib/ruby/gems/2.6.0/extensions/x86_64-darwin-16/2.6.0-static/mimemagic-0.3.10
+mkdir -p /Applications/MAMP/Library/lib/ruby/gems/2.6.0/extensions/x86_64-darwin-16/2.6.0-static/mimemagic-0.3.10/mimemagic

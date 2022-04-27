@@ -1,0 +1,523 @@
+
+/* Class = "NSMenu"; title = "MainMenu"; ObjectID = "29"; */
+"29.title" = "MainMenu";
+
+/* Class = "NSMenuItem"; title = "MAMP"; ObjectID = "56"; */
+"56.title" = "MAMP";
+
+/* Class = "NSMenu"; title = "MAMP"; ObjectID = "57"; */
+"57.title" = "MAMP";
+
+/* Class = "NSMenuItem"; title = "Über MAMP…"; ObjectID = "58"; */
+"58.title" = "Über MAMP";
+
+/* Class = "NSMenuItem"; title = "Hilfe"; ObjectID = "103"; */
+"103.title" = "Hilfe";
+
+/* Class = "NSMenu"; title = "Hilfe"; ObjectID = "106"; */
+"106.title" = "Hilfe";
+
+/* Class = "NSMenuItem"; title = "Dokumentation"; ObjectID = "111"; */
+"111.title" = "Dokumentation";
+
+/* Class = "NSMenuItem"; title = "Einstellungen…"; ObjectID = "129"; */
+"129.title" = "Einstellungen …";
+
+/* Class = "NSMenu"; title = "Dienste"; ObjectID = "130"; */
+"130.title" = "Dienste";
+
+/* Class = "NSMenuItem"; title = "Dienste"; ObjectID = "131"; */
+"131.title" = "Dienste";
+
+/* Class = "NSMenuItem"; title = "MAMP ausblenden"; ObjectID = "134"; */
+"134.title" = "MAMP ausblenden";
+
+/* Class = "NSMenuItem"; title = "MAMP beenden"; ObjectID = "136"; */
+"136.title" = "MAMP beenden";
+
+/* Class = "NSMenuItem"; title = "Andere ausblenden"; ObjectID = "145"; */
+"145.title" = "Andere ausblenden";
+
+/* Class = "NSMenuItem"; title = "Alle einblenden"; ObjectID = "150"; */
+"150.title" = "Alle einblenden";
+
+/* Class = "NSMenu"; title = "Server"; ObjectID = "230"; */
+"230.title" = "Server";
+
+/* Class = "NSMenuItem"; title = "Server"; ObjectID = "232"; */
+"232.title" = "Server";
+
+/* Class = "NSMenuItem"; title = "Starten"; ObjectID = "244"; */
+"244.title" = "Start";
+
+/* Class = "NSMenuItem"; title = "Beenden"; ObjectID = "245"; */
+"245.title" = "Stopp";
+
+/* Class = "NSMenuItem"; title = "Werkzeuge"; ObjectID = "522"; */
+"522.title" = "Werkzeuge";
+
+/* Class = "NSMenu"; title = "Werkzeuge"; ObjectID = "524"; */
+"524.title" = "Werkzeuge";
+
+/* Class = "NSMenuItem"; title = "MySQL-Datenbanken aktualisieren"; ObjectID = "525"; */
+"525.title" = "MySQL-Datenbanken aktualisieren …";
+
+/* Class = "NSMenuItem"; title = "MySQL-Datenbanken reparieren"; ObjectID = "528"; */
+"528.title" = "MySQL-Datenbanken reparieren …";
+
+/* Class = "NSMenuItem"; title = "MySQL-Datenbanken überprüfen"; ObjectID = "529"; */
+"529.title" = "MySQL-Datenbanken überprüfen …";
+
+/* Class = "NSWindow"; title = "Fenster"; ObjectID = "571"; */
+"571.title" = "Fenster";
+
+/* Class = "NSMenuItem"; title = "Bearbeiten"; ObjectID = "697"; */
+"697.title" = "Bearbeiten";
+
+/* Class = "NSMenu"; title = "Bearbeiten"; ObjectID = "698"; */
+"698.title" = "Bearbeiten";
+
+/* Class = "NSMenuItem"; title = "Ausschneiden"; ObjectID = "702"; */
+"702.title" = "Ausschneiden";
+
+/* Class = "NSMenuItem"; title = "Kopieren"; ObjectID = "703"; */
+"703.title" = "Kopieren";
+
+/* Class = "NSMenuItem"; title = "Einsetzen"; ObjectID = "704"; */
+"704.title" = "Einsetzen";
+
+/* Class = "NSMenuItem"; title = "Löschen"; ObjectID = "706"; */
+"706.title" = "Löschen";
+
+/* Class = "NSMenuItem"; title = "Alles auswählen"; ObjectID = "707"; */
+"707.title" = "Alles auswählen";
+
+/* Class = "NSMenuItem"; title = "Suchen"; ObjectID = "709"; */
+"709.title" = "Suchen";
+
+/* Class = "NSMenuItem"; title = "Sprachausgabe"; ObjectID = "711"; */
+"711.title" = "Sprachausgabe";
+
+/* Class = "NSMenu"; title = "Sprachausgabe"; ObjectID = "712"; */
+"712.title" = "Sprachausgabe";
+
+/* Class = "NSMenuItem"; title = "Sprachausgabe starten"; ObjectID = "713"; */
+"713.title" = "Sprachausgabe starten";
+
+/* Class = "NSMenuItem"; title = "Sprachausgabe stoppen"; ObjectID = "714"; */
+"714.title" = "Sprachausgabe stoppen";
+
+/* Class = "NSMenu"; title = "Suchen"; ObjectID = "719"; */
+"719.title" = "Suchen";
+
+/* Class = "NSMenuItem"; title = "Suchen…"; ObjectID = "720"; */
+"720.title" = "Suchen…";
+
+/* Class = "NSMenuItem"; title = "Weitersuchen (vorwärts)"; ObjectID = "721"; */
+"721.title" = "Weitersuchen (vorwärts)";
+
+/* Class = "NSMenuItem"; title = "Weitersuchen (rückwärts)"; ObjectID = "722"; */
+"722.title" = "Weitersuchen (rückwärts)";
+
+/* Class = "NSMenuItem"; title = "Auswahl für Suche übernehmen"; ObjectID = "723"; */
+"723.title" = "Auswahl für Suche übernehmen";
+
+/* Class = "NSMenuItem"; title = "Auswahl anzeigen"; ObjectID = "724"; */
+"724.title" = "Auswahl anzeigen";
+
+/* Class = "NSButtonCell"; title = "Schließen"; ObjectID = "838"; */
+"838.title" = "Schließen";
+
+/* Class = "NSButtonCell"; title = "Ausführen"; ObjectID = "839"; */
+"839.title" = "Ausführen";
+
+/* Class = "NSTextFieldCell"; title = "Title"; ObjectID = "840"; */
+"840.title" = "Title";
+
+/* Class = "NSTextFieldCell"; title = "message"; ObjectID = "841"; */
+"841.title" = "message";
+
+/* Class = "NSWindow"; title = "MAMP"; ObjectID = "846"; */
+"846.title" = "MAMP";
+
+/* Class = "NSButtonCell"; title = "Server starten"; ObjectID = "858"; */
+"858.title" = "Server starten";
+
+/* Class = "NSTextFieldCell"; title = "Apache-Server"; ObjectID = "871"; */
+"871.title" = "Apache-Server";
+
+/* Class = "NSTextFieldCell"; title = "MySQL-Server"; ObjectID = "872"; */
+"872.title" = "MySQL-Server";
+
+/* Class = "NSButtonCell"; title = "WebStart öffnen"; ObjectID = "873"; */
+"873.title" = "WebStart öffnen";
+
+/* Class = "NSWindow"; title = "Einstellungen"; ObjectID = "876"; */
+"876.title" = "Einstellungen";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "881"; */
+"881.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Abbrechen"; ObjectID = "882"; */
+"882.title" = "Abbrechen";
+
+/* Class = "NSTabViewItem"; label = "Apache"; ObjectID = "883"; */
+"883.label" = "Apache";
+
+/* Class = "NSTabViewItem"; label = "PHP"; ObjectID = "884"; */
+"884.label" = "PHP";
+
+/* Class = "NSTabViewItem"; label = "Ports"; ObjectID = "885"; */
+"885.label" = "Ports";
+
+/* Class = "NSTabViewItem"; label = "Start/Stopp"; ObjectID = "886"; */
+"886.label" = "Start/Stopp";
+
+/* Class = "NSButtonCell"; title = "WebStart-Seite öffnen"; ObjectID = "895"; */
+"895.title" = "WebStart-Seite öffnen";
+
+/* Class = "NSButtonCell"; title = "Server stoppen"; ObjectID = "896"; */
+"896.title" = "Server stoppen";
+
+/* Class = "NSButtonCell"; title = "Server starten"; ObjectID = "897"; */
+"897.title" = "Server starten";
+
+/* Class = "NSTextFieldCell"; title = "Apache-Port:"; ObjectID = "909"; */
+"909.title" = "Apache-Port:";
+
+/* Class = "NSTextFieldCell"; title = "MySQL-Port:"; ObjectID = "910"; */
+"910.title" = "MySQL-Port:";
+
+/* Class = "NSTextFieldCell"; title = "(1024 - 65535)"; ObjectID = "911"; */
+"911.title" = "(1024 - 65535)";
+
+
+/* Class = "NSTextFieldCell"; title = "8888"; ObjectID = "913"; */
+"913.title" = "8888";
+
+/* Class = "NSTextFieldCell"; title = "8889"; ObjectID = "914"; */
+"914.title" = "8889";
+
+/* Class = "NSButtonCell"; title = "Web- & MySQL-Ports auf 80 & 3306 setzen"; ObjectID = "915"; */
+"915.title" = "80 & 3306";
+
+/* Class = "NSButtonCell"; title = "Standard-MAMP-Ports verwenden"; ObjectID = "916"; */
+"916.title" = "MAMP-Standard";
+
+/* Class = "NSMenuItem"; title = "APC"; ObjectID = "924"; */
+"924.title" = "APC";
+
+/* Class = "NSMenuItem"; title = "XCache"; ObjectID = "926"; */
+"926.title" = "XCache";
+
+/* Class = "NSMenuItem"; ibShadowedToolTip = "eAccelerator ist für PHP-Versionen ab 5.5 NICHT verfügbar."; ObjectID = "927"; */
+"927.ibShadowedToolTip" = "eAccelerator ist für PHP-Versionen ab 5.5 NICHT verfügbar.";
+
+/* Class = "NSMenuItem"; title = "eAccelerator"; ObjectID = "927"; */
+"927.title" = "eAccelerator";
+
+/* Class = "NSMenuItem"; title = "aus"; ObjectID = "928"; */
+"928.title" = "aus";
+
+/* Class = "NSTextFieldCell"; title = "Cache:"; ObjectID = "929"; */
+"929.title" = "Cache:";
+
+/* Class = "NSButtonCell"; title = "PHP 5.3.5"; ObjectID = "931"; */
+"931.title" = "PHP 5.3.5";
+
+/* Class = "NSButtonCell"; title = "PHP 5.2.17"; ObjectID = "932"; */
+"932.title" = "PHP 5.2.17";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "933"; */
+"933.title" = "Radio";
+
+/* Class = "NSTextFieldCell"; title = "Stammverzeichnis:"; ObjectID = "939"; */
+"939.title" = "Stammverzeichnis:";
+
+"85d-uw-4lX.title" = "Stammverzeichnis:";
+
+"LCr-sT-qPq.title" = "Webserver:";
+
+"WNF-gJ-4lT.title" = "PHP-Version:";
+
+"fl2-gm-Znn.label" = "Einstellungen";
+
+/* Class = "NSTextFieldCell"; title = "Standardversion:"; ObjectID = "942"; */
+"942.title" = "Standardversion:";
+
+/* Class = "NSMenuItem"; title = "OPcache"; ObjectID = "1004"; */
+"1004.title" = "OPcache";
+
+/* Class = "NSTextFieldCell"; title = "8888"; ObjectID = "1020"; */
+"1020.title" = "8888";
+
+/* Class = "NSTextFieldCell"; title = "Nginx-Port:"; ObjectID = "1021"; */
+"1021.title" = "Nginx-Port:";
+
+/* Class = "NSButtonCell"; title = "Apache"; ObjectID = "1028"; */
+"1028.title" = "Apache";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "1029"; */
+"1029.title" = "Radio";
+
+/* Class = "NSTextFieldCell"; title = "Web-Server:"; ObjectID = "1030"; */
+"1030.title" = "Web-Server:";
+
+/* Class = "NSButtonCell"; title = "Nginx"; ObjectID = "1032"; */
+"1032.title" = "Nginx";
+
+/* Class = "NSTextFieldCell"; title = "Cloud"; ObjectID = "1Nh-Rw-h0C"; */
+"1Nh-Rw-h0C.title" = "Cloud";
+
+/* Class = "NSButtonCell"; title = "Auswählen"; ObjectID = "1O3-Bl-lGA"; */
+"1O3-Bl-lGA.title" = "Auswählen";
+
+/* Class = "NSMenuItem"; title = "Schließen"; ObjectID = "1UN-Xw-ubr"; */
+"1UN-Xw-ubr.title" = "Schließen";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Löscht die Daten in der Cloud, lokale Daten werden NICHT entfernt."; ObjectID = "21V-6t-Nzs"; */
+"21V-6t-Nzs.ibShadowedToolTip" = "Löscht die Daten in der Cloud, lokale Daten werden NICHT entfernt.";
+
+"d8l-Yg-seN.ibShadowedToolTip" = "MAMP zeigt wieder alle Dialoge an - auch die, bei denen Sie \"Nicht mehr anzeigen\" gewählt haben.";
+"JhG-Zo-TfI.toolTip" = "Öffnet die WebStart-Seite";
+"UWw-ZH-emo.toolTip" = "Zeigt die Cloud-Übersicht";
+"fl2-gm-Znn.toolTip" = "Öffnet das Einstellungen-Fenster";
+"roe-tV-m5a.toolTip" = "Startet/stoppt die Server";
+
+/* Class = "NSButtonCell"; title = "Jetzt löschen"; ObjectID = "340-SW-5RC"; */
+"340-SW-5RC.title" = "Jetzt löschen";
+
+/* Class = "NSButtonCell"; title = "Cloud"; ObjectID = "4Uh-SB-P7F"; */
+"4Uh-SB-P7F.title" = "Cloud";
+
+/* Class = "NSButtonCell"; title = "Ports"; ObjectID = "7Sj-jc-Crh"; */
+"7Sj-jc-Crh.title" = "Ports";
+
+/* Class = "NSMenuItem"; title = "Screencasts"; ObjectID = "7hw-Ux-hyd"; */
+"7hw-Ux-hyd.title" = "Screencasts";
+
+/* Class = "NSTextFieldCell"; title = "Verschlüsselung:"; ObjectID = "7s8-nO-SuA"; */
+"7s8-nO-SuA.title" = "Verschlüsselung:";
+
+/* Class = "NSTextFieldCell"; title = "Datenbank:"; ObjectID = "8ID-cA-ZXB"; */
+"8ID-cA-ZXB.title" = "Datenbank:";
+
+/* Class = "NSButtonCell"; title = "Im Finder zeigen"; ObjectID = "AKR-AJ-PQT"; */
+"AKR-AJ-PQT.title" = "Im Finder zeigen";
+
+/* Class = "NSTextFieldCell"; title = "Stammverzeichnis:"; ObjectID = "BIT-me-zl2"; */
+"BIT-me-zl2.title" = "Stammverzeichnis:";
+
+/* Class = "NSTextFieldCell"; title = "5.6"; ObjectID = "CMh-fp-JIr"; */
+"CMh-fp-JIr.title" = "5.6";
+
+/* Class = "NSMenuItem"; title = "How to upgrade from MAMP TO MAMP PRO"; ObjectID = "eFu-A2-wAY"; */
+"eFu-A2-wAY.title" = "Von MAMP zu MAMP PRO wechseln – eine Anleitung";
+
+/* Class = "NSMenuItem"; title = "MAMP Help"; ObjectID = "FCa-Sa-coE"; */
+"FCa-Sa-coE.title" = "MAMP-Hilfe";
+
+/* Class = "NSMenuItem"; title = "MAMP PRO entdecken"; ObjectID = "CUe-qZ-UVS"; */
+"CUe-qZ-UVS.title" = "MAMP PRO entdecken";
+
+/* Class = "NSButtonCell"; title = "Schlüssel ändern"; ObjectID = "Ckh-KJ-gAg"; */
+"Ckh-KJ-gAg.title" = "Schlüssel ändern";
+
+/* Class = "NSTabViewItem"; label = "MySQL"; ObjectID = "Ctd-UK-EO9"; */
+"Ctd-UK-EO9.label" = "MySQL";
+
+/* Class = "NSButtonCell"; title = "Jetzt kaufen"; ObjectID = "DK0-2j-i09"; */
+"DK0-2j-i09.title" = "Jetzt kaufen";
+
+/* Class = "NSButtonCell"; title = "MySQL"; ObjectID = "Dgl-Ed-3eF"; */
+"Dgl-Ed-3eF.title" = "MySQL";
+
+/* Class = "NSButtonCell"; title = "Wieder alle Dialoge zeigen"; ObjectID = "DwZ-C9-RfU"; */
+"DwZ-C9-RfU.title" = "Wieder alle Dialoge zeigen";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Der Schlüssel schützt Ihre Daten vor neugierigen Zeitgenossen. Er wird auf allen Rechnern benötigt, auf denen Sie die Daten benutzen wollen."; ObjectID = "JGA-Y4-tXs"; */
+"JGA-Y4-tXs.ibShadowedToolTip" = "Der Schlüssel schützt Ihre Daten vor neugierigen Zeitgenossen. Er wird auf allen Rechnern benötigt, auf denen Sie die Daten benutzen wollen.";
+
+/* Class = "NSMenu"; title = "Cloud"; ObjectID = "JXF-b6-AXW"; */
+"JXF-b6-AXW.title" = "Cloud";
+
+/* Class = "NSTabViewItem"; label = "Cloud"; ObjectID = "MTJ-Gz-tgK"; */
+"MTJ-Gz-tgK.label" = "Cloud";
+
+/* Class = "NSButtonCell"; title = "PHP"; ObjectID = "MTy-d9-eE5"; */
+"MTy-d9-eE5.title" = "PHP";
+
+/* Class = "NSMenuItem"; title = "Ablage"; ObjectID = "N9j-qW-TpW"; */
+"N9j-qW-TpW.title" = "Ablage";
+
+/* Class = "NSTextFieldCell"; title = "An / Aus"; ObjectID = "Nme-xy-D7y"; */
+"Nme-xy-D7y.title" = "An / Aus";
+
+/* Class = "NSTextFieldCell"; title = "Mein Lieblings-Link:"; ObjectID = "Oyb-Ln-qBq"; */
+"Oyb-Ln-qBq.title" = "Mein Lieblings-Link:";
+
+/* Class = "NSMenuItem"; title = "Aus der Cloud laden"; ObjectID = "SCs-sr-bPs"; */
+"SCs-sr-bPs.title" = "Aus der Cloud laden";
+
+"zHI-XI-79t.title" = "Cloud registrieren …";
+
+/* Class = "NSTextFieldCell"; title = "Cloud-Funktionen registrieren"; ObjectID = "Vls-mG-qlY"; */
+"Vls-mG-qlY.title" = "Cloud-Funktionen registrieren";
+
+/* Class = "NSToolbarItem"; label = "Prefs"; ObjectID = "WWs-dS-Len"; */
+"WWs-dS-Len.label" = "Prefs";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Prefs"; ObjectID = "WWs-dS-Len"; */
+"WWs-dS-Len.paletteLabel" = "Prefs";
+
+/* Class = "NSToolbarItem"; toolTip = "Open preferences window"; ObjectID = "WWs-dS-Len"; */
+
+/* Class = "NSMenu"; title = "Ablage"; ObjectID = "XGA-0B-xC0"; */
+"XGA-0B-xC0.title" = "Ablage";
+
+/* Class = "NSButtonCell"; title = "Jetzt kaufen"; ObjectID = "Y6q-Eu-sJ3"; */
+"Y6q-Eu-sJ3.title" = "Jetzt kaufen";
+
+/* Class = "NSTextFieldCell"; title = "Archiviertes Stammverzeichnis und Datenbank aus der Cloud laden"; ObjectID = "Y7d-kY-6dd"; */
+"Y7d-kY-6dd.title" = "Archiviertes Stammverzeichnis und Datenbank aus der Cloud laden";
+
+/* Class = "NSMenuItem"; title = "In der Cloud sichern"; ObjectID = "YPJ-Oa-Vjr"; */
+"YPJ-Oa-Vjr.title" = "In der Cloud sichern";
+
+/* Class = "NSButtonCell"; title = "Start/Stopp"; ObjectID = "aEa-ux-eb3"; */
+"aEa-ux-eb3.title" = "Start/Stopp";
+
+/* Class = "NSButtonCell"; title = "Nach Updates suchen"; ObjectID = "aJo-mT-yAQ"; */
+"aJo-mT-yAQ.title" = "Nach Updates suchen";
+
+/* Class = "NSTextFieldCell"; title = "Daten in der Cloud:"; ObjectID = "aMm-49-qZh"; */
+"aMm-49-qZh.title" = "Daten in der Cloud:";
+
+/* Class = "NSTextFieldCell"; title = "Cloud-Lizenz kaufen"; ObjectID = "b6a-1A-lPz"; */
+"b6a-1A-lPz.title" = "Cloud-Lizenz kaufen";
+
+/* Class = "NSButtonCell"; title = "Web-Server"; ObjectID = "bDD-XA-Mrb"; */
+"bDD-XA-Mrb.title" = "Web-Server";
+
+/* Class = "NSTextFieldCell"; title = "-"; ObjectID = "bDc-0E-2Se"; */
+"bDc-0E-2Se.title" = "-";
+
+/* Class = "NSMenuItem"; title = "Cloud"; ObjectID = "cDP-ts-cDX"; */
+"cDP-ts-cDX.title" = "Cloud";
+
+/* Class = "NSButtonCell"; title = "Registrieren"; ObjectID = "dQQ-Bc-Gcn"; */
+"dQQ-Bc-Gcn.title" = "Registrieren";
+
+/* Class = "NSButton"; ibShadowedToolTip = "Zukünftig zeigt MAMP wieder alle Dialoge und Nachfragen an."; ObjectID = "e7d-1N-je8"; */
+"e7d-1N-je8.ibShadowedToolTip" = "Zukünftig zeigt MAMP wieder alle Dialoge und Nachfragen an.";
+
+/* Class = "NSMenuItem"; title = "Cloud benutzen"; ObjectID = "eUA-SA-g0A"; */
+"eUA-SA-g0A.title" = "Cloud benutzen";
+
+/* Class = "NSMenuItem"; title = "Cloud registrieren"; ObjectID = "evl-h0-OOz"; */
+"evl-h0-OOz.title" = "Cloud registrieren";
+
+/* Class = "NSTextFieldCell"; title = "Wordpress"; ObjectID = "f7c-xA-gA4"; */
+"f7c-xA-gA4.title" = "Wordpress";
+
+/* Class = "NSTextField"; ibShadowedToolTip = "Erscheint oben auf der WebStart-Seite"; ObjectID = "fIE-or-6nZ"; */
+"fIE-or-6nZ.ibShadowedToolTip" = "Erscheint oben auf der WebStart-Seite";
+
+/* Class = "NSTextFieldCell"; title = "Beim Beenden von MAMP:"; ObjectID = "fed-uL-zTo"; */
+"fed-uL-zTo.title" = "Beim Beenden von MAMP:";
+
+/* Class = "NSTextFieldCell"; title = "Nach der Eingabe der Cloud-Seriennummer können Sie die Funktion sofort nutzen."; ObjectID = "gvG-Rw-mh6"; */
+"gvG-Rw-mh6.title" = "Nach der Eingabe der Cloud-Seriennummer können Sie die Funktion sofort nutzen.";
+
+/* Class = "NSMenuItem"; title = "Mehr erfahren"; ObjectID = "iaP-vv-Rb0"; */
+"iaP-vv-Rb0.title" = "Mehr erfahren";
+
+/* Class = "NSToolbarItem"; label = "Servers"; ObjectID = "kME-5x-0Qi"; */
+"kME-5x-0Qi.label" = "Servers";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Start/Stop Servers"; ObjectID = "kME-5x-0Qi"; */
+"kME-5x-0Qi.paletteLabel" = "Start/Stop Servers";
+
+/* Class = "NSButtonCell"; title = "Mehr erfahren"; ObjectID = "kYF-Pb-hPy"; */
+"kYF-Pb-hPy.title" = "Mehr erfahren";
+
+/* Class = "NSMenuItem"; title = "MAMP PRO ausprobieren"; ObjectID = "mSK-TV-3YT"; */
+"mSK-TV-3YT.title" = "MAMP PRO ausprobieren";
+
+/* Class = "NSToolbarItem"; label = "Cloud"; ObjectID = "nLA-Ci-sUs"; */
+"nLA-Ci-sUs.label" = "Cloud";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Cloud Overview"; ObjectID = "nLA-Ci-sUs"; */
+"nLA-Ci-sUs.paletteLabel" = "Cloud Overview";
+
+
+/* Class = "NSButtonCell"; title = "Demo starten"; ObjectID = "nsL-Oa-kNJ"; */
+"nsL-Oa-kNJ.title" = "Demo starten";
+
+/* Class = "NSButtonCell"; title = "Cloud benutzen"; ObjectID = "nzr-FJ-qgZ"; */
+"nzr-FJ-qgZ.title" = "Cloud benutzen";
+
+/* Class = "NSMenuItem"; title = "Datei aus der Cloud löschen"; ObjectID = "oWd-Om-CPV"; */
+"oWd-Om-CPV.title" = "Daten aus der Cloud löschen";
+
+/* Class = "NSTextFieldCell"; title = "Aktuelles Stammverzeichnis und ausgewählte Datenbank in der Cloud sichern"; ObjectID = "peI-hE-LbL"; */
+"peI-hE-LbL.title" = "Aktuelles Stammverzeichnis und ausgewählte Datenbank in der Cloud sichern";
+
+/* Class = "NSButtonCell"; title = "Daten vor dem Sichern in der Cloud verschlüsseln"; ObjectID = "ptE-pC-reP"; */
+"ptE-pC-reP.title" = "Daten vor dem Sichern verschlüsseln";
+
+/* Class = "NSPopUpButton"; ibShadowedToolTip = "Diese Datenbank wird zusammen mit dem aktuellen Stammverzeichnis in der Cloud gesichert."; ObjectID = "qJb-i4-Qua"; */
+"qJb-i4-Qua.ibShadowedToolTip" = "Diese Datenbank wird zusammen mit dem aktuellen Stammverzeichnis in der Cloud gesichert.";
+
+/* Class = "NSToolbarItem"; label = "WebStart"; ObjectID = "qeT-CI-SxK"; */
+"qeT-CI-SxK.label" = "WebStart";
+
+/* Class = "NSToolbarItem"; paletteLabel = "WebStart"; ObjectID = "qeT-CI-SxK"; */
+"qeT-CI-SxK.paletteLabel" = "WebStart";
+
+
+/* Class = "NSTextFieldCell"; title = "Cloud Serial:"; ObjectID = "qgs-Ht-4l1"; */
+"qgs-Ht-4l1.title" = "Cloud Serial:";
+
+/* Class = "NSTextFieldCell"; title = "Cloud-Status:"; ObjectID = "rBw-b7-d51"; */
+"rBw-b7-d51.title" = "Cloud-Status:";
+
+/* Class = "NSMenuItem"; title = "Cloud-Lizenz kaufen"; ObjectID = "rK8-fq-Kah"; */
+"rK8-fq-Kah.title" = "Cloud-Lizenz kaufen";
+
+/* Class = "NSTextFieldCell"; title = "Nach dem Starten von MAMP:"; ObjectID = "rci-zZ-dzk"; */
+"rci-zZ-dzk.title" = "Nach dem Starten von MAMP:";
+
+/* Class = "NSTextFieldCell"; title = "Version:"; ObjectID = "re2-jK-f7P"; */
+"re2-jK-f7P.title" = "Datenbankserver:";
+
+/* Class = "NSTextFieldCell"; title = "Datenbank: "; ObjectID = "tef-Tb-Heh"; */
+"tef-Tb-Heh.title" = "Datenbank: ";
+
+/* Class = "NSTextFieldCell"; title = "Sie können eine Lizenz für die Cloud-Funktionen in unserem Shop kaufen."; ObjectID = "uEl-vt-nf6"; */
+"uEl-vt-nf6.title" = "Sie können eine Lizenz für die Cloud-Funktionen in unserem Shop kaufen.";
+
+/* Class = "NSTextFieldCell"; title = "In der Cloud sichern"; ObjectID = "wBb-2p-03a"; */
+"wBb-2p-03a.title" = "In der Cloud sichern";
+
+/* Class = "NSTextFieldCell"; title = "Aus der Cloud laden"; ObjectID = "wct-r4-VH6"; */
+"wct-r4-VH6.title" = "Aus der Cloud laden";
+
+/* Class = "NSButtonCell"; title = "Cloud"; ObjectID = "ytY-1j-YX0"; */
+"ytY-1j-YX0.title" = "Cloud";
+
+"PNy-U5-5oD.title" = "Ports zurücksetzen auf:";
+
+"upt-Tp-Wgz.ibShadowedLabels[0]" = "Allgemein";
+
+"HXr-EF-8TP.title" = "Alle Dialoge wieder anzeigen";
+
+"lrG-oB-xMi.title" = "Cloud-Daten:";
+
+"Ubr-2P-jCk.title" = "Cloud-Provider:";
+"a1V-S6-VrS.title" = "Cloud-Provider:";
+
+"QSA-Gs-zOU.title" = "Im Finder öffnen";
+"kJy-ug-ye0.title" = "Auswählen …";
+"D1o-Mx-wjV.title" = "An";
+"FyF-J2-U8R.title" = "Aus";

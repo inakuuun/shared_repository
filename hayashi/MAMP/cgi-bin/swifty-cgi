@@ -1,0 +1,58 @@
+#!/usr/bin/swift
+
+import Foundation
+
+print("Content-Type: text/html")
+print("Content:")
+print("")
+
+print("<html xmlns=\"http://www.w3.org/1999/xhtml\">")
+print("<head>")
+print("<title>swifty-cgi</title>")
+
+print("<style type=\"text/css\">")
+print("body {background-color: #fff; color: #222; font-family: sans-serif;}")
+print("pre {margin: 0; font-family: monospace;}")
+print("table {border-collapse: collapse; border: 0; width: 934px; box-shadow: 1px 2px 3px #ccc;}")
+print(".center {text-align: center;}")
+print(".center table {margin: 1em auto; text-align: left;}")
+print(".center th {text-align: center !important;}")
+print("td, th {border: 1px solid #666; font-size: 75%; vertical-align: baseline; padding: 4px 5px;}")
+print(".e {background-color: #ccf; width: 300px; font-weight: bold;}")
+print(".v {background-color: #ddd; max-width: px; overflow-x: auto;}")
+print(".v i {color: #999;}")
+print("</style>")
+
+print("</head>")
+
+print("<body>")
+print("<div class=\"center\">")
+
+print("<b>1. Process.argument(s):</b><br />")
+for s in Process.arguments {
+    print(s + "<br />")
+}
+print("<br />")
+
+let env: Dictionary = NSProcessInfo().environment
+
+if let requestMethod = env["REQUEST_METHOD"] {
+    print("<b>2. Request method is: </b>\(requestMethod)<br /><br />")
+}
+
+print("<b>3. Number of environment variables: </b>\(env.count)<br /><br />")
+
+print("<b>4. Environment:</b><br />")
+
+print("<table border=\"1\">")
+for key in env.keys {
+    print("<tr>")
+    print("<td class=\"e\">\(key)</td> <td class=\"v\">\(env[key]!)</td>")
+    print("</tr>")
+}
+print("</table>")
+
+print("</div>")
+print("</body>")
+print("</html>")
+

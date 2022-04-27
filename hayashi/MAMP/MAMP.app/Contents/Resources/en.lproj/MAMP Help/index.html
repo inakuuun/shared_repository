@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="AppleTitle" content="MAMP Help">
+        <title>MAMP Help</title>
+        <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <main>
+            <h1>FAQ</h1>
+            
+            <h2>Where can I change the ports for Apache, Nginx and MySQL?</h2>
+            <p>You can change them in the Ports section of the Preferences dialog:<br><img src="images/ports.png" alt="Ports" width="648" height="551"></p>
+                
+            <h2>Where should I put my HTML and PHP pages?</h2>
+            <p>After installting MAMP the web server uses &quot;/Applications/MAMP/htdocs&quot; as its so-called &quot;document root&quot;. You can use every folder as long as you can read from and write to it. You can change the path of the document root in the "Server" section of the Preferences dialog:<br><br><img src="images/documentRoot.png" alt="Document Root" width="648" height="551"></p>
+            
+            <h2>What is MAMP Cloud?</h2>
+            <p>The very popular cloud function of MAMP PRO is also available in MAMP. MAMP Cloud allows you to save and load your host and your data of one database using Dropbox. You can easily save your host and database data in the cloud and later retrieve it on another Mac, or on the same Mac, when backing up data before making changes on your host.<br><br><img src="images/cloud.png" alt="Cloud" width="648" height="551"></p>
+            
+            <h2>How can I change the password of the user root of MySQL?</h2>
+            <p>Open the Terminal and type the following:<br><br><code>/Applications/MAMP/Library/bin/mysqladmin -u root -p password &lt;NEWPASSWORD&gt;</code><br><br>Instead of <code>&lt;NEWPASSWORD&gt;</code> use the new password you want. If it contains spaces you have to enclose it in double quotes. Before the command sets the new password it asks for the current one.</p>
+		    <p>Afterwards, you also need to change the password for phpMyAdmin and other scripts which are run by MAMP. You can change the password for phpMyAdmin in the file "/Applications/MAMP/bin/phpMyAdmin/config.inc.php".</p>
+            
+            <h2>Why does MAMP ask for a password when starting and stopping servers?</h2>
+            <p>You probably have set the Apache port to a value smaller than 1024 (see the Ports section of the Preferences dialog). On a Unix system like macOS you must have root permissions to start IP services with ports smaller than 1024.</p>
+            
+            <h2>Which programs are installed?</h2>
+			<ul>
+				<div class="arow">
+					<div class="acolumn">
+						<li>Apache 2.4.46</li>
+						<li>Nginx 1.19.2</li>
+						<li>MySQL 5.7.34</li>
+						<li>PHP 5.4.45, 5.6.40, 7.1.33, 7.2.34, 7.3.29, 7.4.21 &amp; 8.0.8</li>
+						<li>APC 3.1.13/APCu 4.0.11 &amp; 5.1.19 (5.1.20)<sup>1</sup></li>
+						<li>eAccelerator<sup>2</sup> 0.9.6.1</li>
+						<li>XCache<sup>2</sup> 1.2.2 &amp; 3.2.0</li>
+						<li>Xdebug 2.2.7, 2.4.1, 2.5.5, 2.9.8 &amp; 3.0.3 (3.0.4)<sup>1</sup></li>
+						<li>Perl 5.30.1</li>
+						<li>mod_perl 2.0.11</li>
+						<li>Python 2.7.13 (2.7.18)<sup>1</sup></li>
+						<li>mod_wsgi 3.5</li>
+						<li>mod_python 3.5.0</li>
+						<li>Ruby (with Rails) 2.6.5 (5.2.3)</li>
+						<li>phpMyAdmin 4.9.7 &amp; 5.1.1</li>
+						<li>phpLiteAdmin 1.9.8-2</li>
+						<li>Freetype 2.6.5</li>
+						<li>OpenSSL 1.0.2u</li>
+					</div>
+					<div class="acolumn">
+						<li>curl 7.68.0</li>
+						<li>jpeg 9c</li>
+						<li>libpng 1.6.37</li>
+						<li>tiff 4.1.0</li>
+						<li>Ghostscript 9.20</li>
+						<li>ImageMagick 6.9.6-2</li>
+						<li>Imagick 3.1.2 &amp; 3.4.4</li>
+						<li>gd 2.2.3</li>
+						<li>zlib 1.2.11</li>
+						<li>ICU 56.1 (Unicode 8.0)</li>
+						<li>libxml2 2.9.4</li>
+						<li>libxslt 1.1.28</li>
+						<li>gettext 0.20.1</li>
+						<li>libidn 1.17 (1.28)<sup>1</sup></li>
+						<li>iconv 1.16</li>
+						<li>mcrypt 2.5.8</li>
+						<li>OAuth 1.2.3 &amp; 2.0.7</li>
+						<li>YAZ 5.16.0 &amp; PHP/YAZ 1.2.3</li>
+						<li>t1lib 5.1.2</li>
+					</div>
+				</div>
+			</ul>
+            <p>
+            <sup>1</sup> Version in bracket is M1 version.<br>
+            <sup>2</sup> Not available for M1 processor<br>
+            </p>
+        </main>
+    </body>
+</html>

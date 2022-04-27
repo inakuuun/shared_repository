@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta name="AppleTitle" content="MAMP-Hilfe">
+        <title>MAMP-Hilfe</title>
+        <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <main>
+            <h1>FAQ</h1>
+            
+            <h2>Wo kann ich die Ports für Apache, Nginx und MySQL ändern?</h2>
+            <p>Sie können sie im Bereich &quot;Ports&quot; des Einstellungsdialogs ändern:<br><img src="images/ports.png" alt="Ports" width="648" height="551"></p>
+                
+            <h2>Wo soll ich meine PHP- und HTML-Seiten abspeichern?</h2>
+            <p>Nach der Installation von MAMP ist das Stammverzeichnis des Webservers, auch &quot;Document Root&quot; genannt, auf den Ordner &quot;/Programme/MAMP/htdocs&quot; eingestellt. Sie können jeden anderen Ordner verwenden, Sie müssen nur Schreib- und Leserechte für ihn besitzen. Den Pfad für das Stammvereichnis können Sie jederzeit in den Einstellungen ändern:<br/><br/><img src="images/documentRoot.png" alt="Document Root" width="648" height="551"></p>
+
+            <h2>Was ist MAMP Cloud?</h2>
+            <p>Die beliebte Cloud-Funktion aus MAMP PRO ist auch in MAMP verfügbar. MAMP Cloud ermöglich es Ihnen, Ihre Host- und Datenbankdaten zu Dropbox zu sichern. Mit nur einem Klick können Sie ganz einfach Ihre Projekte in der Cloud sichern und jederzeit auf einem anderen (oder dem selben) Computer wieder laden.<br/><br/><img src="images/cloud.png" alt="Cloud" width="648" height="551"></p>
+            
+            <h2>Wie kann ich das Kennwort für den Benutzer "root" des MySQL-Server ändern?</h2>
+            <p>Öffnen Sie das Terminal und schreiben folgenden Befehl:<br><br><code>/Applications/MAMP/Library/bin/mysqladmin -u root -p password &lt;NEUESKENNWORT&gt;</code><br><br>Anstelle von <code style="left: 0pt;">&lt;NEUESKENNWORT&gt;</code> müssen Sie das gewünschte Kennwort eingeben. Wenn es Leerzeichen enthält, setzen Sie es bitte in doppelte Anführungszeichen. Ehe der Befehl das neue Kennwort setzt, frägt er Sie noch nach dem aktuellen.</p>
+			<p>Bedenken Sie, dass dannach auch das Kennwort für phpMyAdmin und andere Skripte, welche unter MAMP laufen, geändert werden muss. Das Kennwort für phpMyAdmin können Sie in der Datei "/Applications/MAMP/bin/phpMyAdmin/config.inc.php" ändern.</p>
+            
+            <h2>Warum werde ich nach meinem Kennwort gefragt, wenn MAMP die Server startet oder beendet?</h2>
+            <p>Sie haben wahrscheinlich den Apache-Port kleiner als 1024 eingestellt. Bei einem Unix-System, wie macOS, benötigen Sie Root-Rechte um IP-Dienste mit Ports kleiner als 1024 zu starten.</p>
+            
+            <h2>Welche Versionen der enthaltenen Programme sind installiert?</h2>
+			<ul>
+				<div class="arow">
+					<div class="acolumn">
+						<li>Apache 2.4.46</li>
+						<li>Nginx 1.19.2</li>
+						<li>MySQL 5.7.34</li>
+						<li>PHP 5.4.45, 5.6.40, 7.1.33, 7.2.34, 7.3.29, 7.4.21 &amp; 8.0.8</li>
+						<li>APC 3.1.13/APCu 4.0.11 &amp; 5.1.19 (5.1.20)<sup>1</sup></li>
+						<li>eAccelerator<sup>2</sup> 0.9.6.1</li>
+						<li>XCache<sup>2</sup> 1.2.2 &amp; 3.2.0</li>
+						<li>Xdebug 2.2.7, 2.4.1, 2.5.5, 2.9.8 &amp; 3.0.3 (3.0.4)<sup>1</sup></li>
+						<li>Perl 5.30.1</li>
+						<li>mod_perl 2.0.11</li>
+						<li>Python 2.7.13 (2.7.18)<sup>1</sup></li>
+						<li>mod_wsgi 3.5</li>
+						<li>mod_python 3.5.0</li>
+						<li>Ruby (with Rails) 2.6.5 (5.2.3)</li>
+						<li>phpMyAdmin 4.9.7 &amp; 5.1.1</li>
+						<li>phpLiteAdmin 1.9.8-2</li>
+						<li>Freetype 2.6.5</li>
+						<li>OpenSSL 1.0.2u</li>
+					</div>
+					<div class="acolumn">
+						<li>curl 7.68.0</li>
+						<li>jpeg 9c</li>
+						<li>libpng 1.6.37</li>
+						<li>tiff 4.1.0</li>
+						<li>Ghostscript 9.20</li>
+						<li>ImageMagick 6.9.6-2</li>
+						<li>Imagick 3.1.2 &amp; 3.4.4</li>
+						<li>gd 2.2.3</li>
+						<li>zlib 1.2.11</li>
+						<li>ICU 56.1 (Unicode 8.0)</li>
+						<li>libxml2 2.9.4</li>
+						<li>libxslt 1.1.28</li>
+						<li>gettext 0.20.1</li>
+						<li>libidn 1.17 (1.28)<sup>1</sup></li>
+						<li>iconv 1.16</li>
+						<li>mcrypt 2.5.8</li>
+						<li>OAuth 1.2.3 &amp; 2.0.7</li>
+						<li>YAZ 5.16.0 &amp; PHP/YAZ 1.2.3</li>
+						<li>t1lib 5.1.2</li>
+					</div>
+				</div>
+			</ul>
+            <p>
+            <sup>1</sup> Version in Klammern ist M1-Version.<br>
+            <sup>2</sup> Für M1-Prozessor nicht verfügbar<br>
+            </p>
+        </main>
+    </body>
+</html>

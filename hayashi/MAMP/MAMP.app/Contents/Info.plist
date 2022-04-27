@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>20D91</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>MAMP</string>
+	<key>CFBundleExecutable</key>
+	<string>MAMP</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>MAMP Help</string>
+	<key>CFBundleIconFile</key>
+	<string>mamp.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>de.appsolute.MAMP</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>de</string>
+	</array>
+	<key>CFBundleName</key>
+	<string>MAMP</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>6.6</string>
+	<key>CFBundleSignature</key>
+	<string>MAMP</string>
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>db-uvvzz6orqwkxki2</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1211</string>
+	<key>DTCompiler</key>
+	<string>com.apple.compilers.llvm.clang.1_0</string>
+	<key>DTPlatformBuild</key>
+	<string>12D4e</string>
+	<key>DTPlatformName</key>
+	<string>macosx</string>
+	<key>DTPlatformVersion</key>
+	<string>11.1</string>
+	<key>DTSDKBuild</key>
+	<string>20C63</string>
+	<key>DTSDKName</key>
+	<string>macosx11.1</string>
+	<key>DTXcode</key>
+	<string>1240</string>
+	<key>DTXcodeBuild</key>
+	<string>12D4e</string>
+	<key>LEReqMAMPPROBundleVersion</key>
+	<string>6.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.developer-tools</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.12</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2006-2021 MAMP GmbH.
+All rights reserved.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>MampApplication</string>
+</dict>
+</plist>
