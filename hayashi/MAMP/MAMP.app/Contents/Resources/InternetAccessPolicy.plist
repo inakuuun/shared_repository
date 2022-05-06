@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationDescription</key>
+	<string>MAMP is a free, local server environment that can be installed with just a few clicks.</string>
+	<key>Connections</key>
+	<array>
+		<dict>
+			<key>Relevance</key>
+			<string>Default</string>
+			<key>Host</key>
+			<string>documentation.mamp.info, apps.mamp.info</string>
+			<key>IsIncoming</key>
+			<false/>
+			<key>NetworkProtocol</key>
+			<string>TCP</string>
+			<key>Port</key>
+			<string>443</string>
+			<key>Purpose</key>
+			<string>MAMP communicates with this server to access its documentation.</string>
+			<key>DenyConsequences</key>
+			<string>If you deny this connection, you may not be able to access the in-app documentation in full or view the introductory tour.</string>
+		</dict>
+		<dict>
+			<key>Relevance</key>
+			<string>Essential</string>
+			<key>Host</key>
+			<string>www.mamp.info, *.cloudflaressl.com</string>
+			<key>IsIncoming</key>
+			<false/>
+			<key>NetworkProtocol</key>
+			<string>TCP</string>
+			<key>Port</key>
+			<string>443</string>
+			<key>Purpose</key>
+			<string>MAMP communicates with hosts on this domain to validate ssl certificates.</string>
+			<key>DenyConsequences</key>
+			<string>If you deny this connection, you may not be able to establish a secured connection to our servers.</string>
+		</dict>
+		<dict>
+			<key>Relevance</key>
+			<string>Default</string>
+			<key>Host</key>
+			<string>*.appcenter.ms, appcenter.ms</string>
+			<key>IsIncoming</key>
+			<false/>
+			<key>NetworkProtocol</key>
+			<string>TCP</string>
+			<key>Port</key>
+			<string>443</string>
+			<key>Purpose</key>
+			<string>MAMP communicates with this server to help us improving your user experience and to offer a comfortable way to upload crash reports.</string>
+			<key>DenyConsequences</key>
+			<string>If you deny this connection, we won&apos;t be notified automatically about potential issues or crashes of MAMP, and thus won&apos;t be able to fix them asap.</string>
+		</dict>
+	</array>
+</dict>
+</plist>

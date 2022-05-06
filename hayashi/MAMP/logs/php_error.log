@@ -1,0 +1,20 @@
+[25-Apr-2022 13:01:57 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "name" in /Applications/MAMP/htdocs/site01/otamesi.php:13
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/site01/otamesi.php on line 13
+[25-Apr-2022 13:03:07 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/MAMP/htdocs/site01/otamesi.php:15
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/site01/otamesi.php on line 15
+[25-Apr-2022 13:03:08 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/MAMP/htdocs/site01/otamesi.php:15
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/site01/otamesi.php on line 15
+[25-Apr-2022 13:04:35 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/MAMP/htdocs/site01/otamesi.php:15
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/site01/otamesi.php on line 15
+[25-Apr-2022 13:06:31 UTC] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in /Applications/MAMP/htdocs/site01/otamesi.php:16
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/site01/otamesi.php on line 16

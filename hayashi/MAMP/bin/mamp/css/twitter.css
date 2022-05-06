@@ -1,0 +1,44 @@
+* {
+  font-family: 'Raleway' !important;
+}
+
+.timeline-Header {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.timeline-Header-byline {
+  font-size: 21px !important;
+  font-weight: 300 !important;
+  line-height: 24px !important;
+  color: #292F33 !important;
+}
+
+.timeline-InformationCircle {
+  top: 5px !important;
+  right: 0 !important;
+}
+
+.timeline-Tweet {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: #212529 !important;
+}
+
+.timeline-Tweet:hover {
+  background-color: white !important;
+}
+
+.timeline-Tweet-text {
+  margin-bottom: 0 !important;
+}
+
+.timeline-Footer {
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

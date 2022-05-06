@@ -1,0 +1,4 @@
+--prefix=/Applications/MAMP/Library
+--with-iconv-dir=/Applications/MAMP/Library
+--with-mysql-config=/Applications/MAMP/Library/bin/mysql_config
+--with-mysql-lib=/Applications/MAMP/Library/lib

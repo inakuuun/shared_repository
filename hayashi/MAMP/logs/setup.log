@@ -1,0 +1,9 @@
+2022-04-23 21:34:21 +0900 - Completing MAMP PRO installation - BEGIN
+2022-04-23 21:34:21 +0900 - Copying MAMP databases - STARTED
+2022-04-23 21:34:21 +0900 - Creating copies of the MAMP databases located in '/Applications/MAMP/db/mysql57' at '/Applications/MAMP/db/mysql57' (Modifications you make using MAMP PRO will go to these copies and will not be available in MAMP (which will continue to use the original databases).
+2022-04-23 21:34:22 +0900 - Copying MAMP databases - ENDED
+2022-04-23 21:34:23 +0900 - Setting localhost to '~/Sites/localhost' - STARTED
+2022-04-23 21:34:23 +0900 - The document root of localhost will be moved to '~/Sites/localhost'. It is no longer recommended to use '/Applications/MAMP/htdocs'.
+2022-04-23 21:34:24 +0900 - Setting localhost to '~/Sites/localhost' - ENDED
+2022-04-23 21:34:27 +0900 - Completing MAMP PRO installation - END
+

@@ -1,0 +1,90 @@
+#! /bin/sh
+
+SED="/usr/bin/sed"
+prefix="/Applications/MAMP/bin/php/php7.1.33"
+datarootdir="/Applications/MAMP/bin/php/php7.1.33/php"
+exec_prefix="/Applications/MAMP/bin/php/php7.1.33"
+version="7.1.33"
+vernum="70133"
+include_dir="${prefix}/include/php"
+includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
+ldflags=" -L/Applications/MAMP/Library/lib"
+libs="  -lcrypto -lssl -lcrypto -lz -lexslt -lexpat -lexpat -lexpat -lreadline -lncurses -lldap -llber -lstdc++ -liconv -liconv -lpng -lz -ljpeg -lwebp -lcrypto -lssl -lcrypto -lcurl -lbz2 -lz -lcrypto -lssl -lcrypto -lm -lresolv -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm -lkrb5 -lcurl -lnghttp2 -lssl -lcrypto -lssl -lcrypto -lldap -lz -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm -lfreetype -licui18n -licuuc -licudata -licuio -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm -lxslt -lxml2 -lz -llzma -liconv -licui18n -licuuc -licudata -lm "
+extension_dir='/Applications/MAMP/bin/php/php7.1.33/lib/php/extensions/no-debug-non-zts-20160303'
+man_dir=`eval echo ${datarootdir}/man`
+program_prefix=""
+program_suffix=""
+exe_extension=""
+php_cli_binary=NONE
+php_cgi_binary=NONE
+configure_options=" '--with-gd' '--with-webp-dir=/Applications/MAMP/Library' '--with-jpeg-dir=/Applications/MAMP/Library' '--with-png-dir=/Applications/MAMP/Library' '--with-zlib' '--with-zlib-dir=/Applications/MAMP/Library' '--with-freetype-dir=/Applications/MAMP/Library' '--prefix=/Applications/MAMP/bin/php/php7.1.33' '--exec-prefix=/Applications/MAMP/bin/php/php7.1.33' '--sysconfdir=/Applications/MAMP/bin/php/php7.1.33/conf' '--with-config-file-path=/Applications/MAMP/bin/php/php7.1.33/conf' '--enable-ftp' '--enable-gd-native-ttf' '--with-bz2=/Applications/MAMP/Library' '--with-mysqli=mysqlnd' '--enable-mbstring=all' '--with-curl=/Applications/MAMP/Library' '--enable-sockets' '--enable-bcmath' '--with-imap=shared,/Applications/MAMP/Library/lib/imap-2007f' '--with-imap-ssl=/Applications/MAMP/Library' '--enable-soap' '--with-kerberos' '--enable-calendar' '--with-pgsql=shared,/Applications/MAMP/Library/pg' '--enable-exif' '--with-libxml-dir=/Applications/MAMP/Library' '--with-gettext=shared,/Applications/MAMP/Library' '--with-xsl=/Applications/MAMP/Library' '--with-pdo-mysql=mysqlnd' '--with-pdo-pgsql=shared,/Applications/MAMP/Library/pg' '--with-mcrypt=shared,/Applications/MAMP/Library' '--with-openssl=/Applications/MAMP/Library' '--enable-zip' '--with-iconv=/Applications/MAMP/Library' '--enable-opcache' '--enable-cgi' '--enable-intl' '--with-tidy=shared,/Applications/MAMP/Library' '--with-icu-dir=/Applications/MAMP/Library' '--enable-wddx' '--with-libexpat-dir=/Applications/MAMP/Library' '--with-readline' '--with-mhash' '--with-iconv-dir=/Applications/MAMP/Library' '--disable-phpdbg' '--with-xmlrpc' '--with-ldap' '--enable-pcntl' 'YACC=/Applications/MAMP/Library/bin/bison'"
+php_sapis=" cli cgi"
+
+# Set php_cli_binary and php_cgi_binary if available
+for sapi in $php_sapis; do
+  case $sapi in
+  cli)
+    php_cli_binary="${exec_prefix}/bin/${program_prefix}php${program_suffix}${exe_extension}"
+    ;;
+  cgi)
+    php_cgi_binary="${exec_prefix}/bin/${program_prefix}php-cgi${program_suffix}${exe_extension}"
+    ;;
+  esac
+done
+
+# Determine which (if any) php binary is available
+if test "$php_cli_binary" != "NONE"; then
+  php_binary="$php_cli_binary"
+else
+  php_binary="$php_cgi_binary"
+fi
+
+# Remove quotes
+configure_options=`echo $configure_options | $SED -e "s#'##g"`
+
+case "$1" in
+--prefix)
+  echo $prefix;;
+--includes)
+  echo $includes;;
+--ldflags)
+  echo $ldflags;;
+--libs)
+  echo $libs;;
+--extension-dir)
+  echo $extension_dir;;
+--include-dir)
+  echo $include_dir;;
+--php-binary)
+  echo $php_binary;;
+--php-sapis)
+  echo $php_sapis;;
+--configure-options)
+  echo $configure_options;;
+--man-dir)
+  echo $man_dir;;
+--version)
+  echo $version;;
+--vernum)
+  echo $vernum;;
+*)
+  cat << EOF
+Usage: $0 [OPTION]
+Options:
+  --prefix            [$prefix]
+  --includes          [$includes]
+  --ldflags           [$ldflags]
+  --libs              [$libs]
+  --extension-dir     [$extension_dir]
+  --include-dir       [$include_dir]
+  --man-dir           [$man_dir]
+  --php-binary        [$php_binary]
+  --php-sapis         [$php_sapis]
+  --configure-options [$configure_options]
+  --version           [$version]
+  --vernum            [$vernum]
+EOF
+  exit 1;;
+esac
+
+exit 0

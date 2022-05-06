@@ -1,0 +1,9 @@
+Name: libecpg
+Description: PostgreSQL libecpg library
+Url: http://www.postgresql.org/
+Version: 9.4.24
+Requires: 
+Requires.private: libpq libpgtypes
+Cflags: -I/Applications/MAMP/Library/pg/include
+Libs: -L/Applications/MAMP/Library/pg/lib -lecpg
+Libs.private: -L/Applications/MAMP/Library/lib -lm

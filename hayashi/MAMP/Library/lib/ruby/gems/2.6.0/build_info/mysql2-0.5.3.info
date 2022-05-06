@@ -1,0 +1,2 @@
+--with-mysql-config=/Applications/MAMP/Library/bin/mysql_config
+--with-mysql-lib=/Applications/MAMP/Library/lib

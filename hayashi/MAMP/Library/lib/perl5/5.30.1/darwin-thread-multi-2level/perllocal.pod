@@ -1,0 +1,528 @@
+=head2 Thu Sep 30 09:18:06 2021: C<Module> L<File::Which|File::Which>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.27>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:18:11 2021: C<Module> L<Mac::SystemDirectory|Mac::SystemDirectory>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.13>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:18:13 2021: C<Module> L<File::HomeDir|File::HomeDir>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.006>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:18:30 2021: C<Module> L<CPAN|CPAN>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.28>
+
+=item *
+
+C<EXE_FILES: scripts/cpan scripts/cpan-mirrors>
+
+=back
+
+=head2 Thu Sep 30 09:18:40 2021: C<Module> L<Cache::Memcached::Fast|Cache::Memcached::Fast>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.27>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:18:54 2021: C<Module> L<ExtUtils::Config|ExtUtils::Config>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.008>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:18:58 2021: C<Module> L<ExtUtils::Helpers|ExtUtils::Helpers>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.026>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:19:02 2021: C<Module> L<ExtUtils::InstallPaths|ExtUtils::InstallPaths>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.012>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:20:24 2021: C<Module> L<Test::Requires|Test::Requires>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.11>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:21:10 2021: C<Module> L<Test::SharedFork|Test::SharedFork>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.35>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:21:42 2021: C<Module> L<Test::TCP|Test::TCP>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.22>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:21:58 2021: C<Module> L<IO::String|IO::String>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:22:06 2021: C<Module> L<Test::Deep|Test::Deep>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.130>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:22:12 2021: C<Module> L<Try::Tiny|Try::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.30>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:22:15 2021: C<Module> L<Test::Fatal|Test::Fatal>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.016>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:26:01 2021: C<Module> L<nginx|nginx>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.19.2>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:28:02 2021: C<Module> L<CPAN::DistnameInfo|CPAN::DistnameInfo>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.12>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:29:06 2021: C<Module> L<Capture::Tiny|Capture::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.48>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:29:09 2021: C<Module> L<Mock::Config|Mock::Config>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:29:16 2021: C<Module> L<Devel::CheckLib|Devel::CheckLib>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.14>
+
+=item *
+
+C<EXE_FILES: bin/use-devel-checklib>
+
+=back
+
+=head2 Thu Sep 30 09:29:24 2021: C<Module> L<DBI|DBI>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.642>
+
+=item *
+
+C<EXE_FILES: dbilogstrip dbiprof dbiproxy>
+
+=back
+
+=head2 Thu Sep 30 09:29:28 2021: C<Module> L<DBD::mysql|DBD::mysql>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 4.050>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Thu Sep 30 09:30:50 2021: C<Module> L<mod_perl2|mod_perl2>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.0.11>
+
+=item *
+
+C<EXE_FILES: bin/mp2bug>
+
+=back
+
+=head2 Thu Sep 30 12:28:08 2021: C<Module> L<Image::Magick|Image::Magick>
+
+=over 4
+
+=item *
+
+C<installed into: /Applications/MAMP/Library/lib/perl5/site_perl/5.30.1>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.96>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
