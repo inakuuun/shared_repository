@@ -1,0 +1,443 @@
+@charset "utf-8";
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+
+.top-wrapper {
+  background-color: #faf5e5;
+  height: 500px;
+  padding-bottom: 50px;
+  margin-top: -70px;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+body {
+  width: 100%;
+}
+
+
+/* ヘッダー */
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+  margin: auto;
+  height: 70px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 10;
+  z-index: 1;
+}
+
+.logo img{
+  width: 70px;
+}
+
+.soudan {
+  background-color: #e6650c;
+  width: 120px;
+  padding: 15px 20px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.soudan:hover {
+  opacity: 0.6;
+}
+
+.soudan a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* メイン */
+
+main {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+  position: relative;
+  padding-top: 70px;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: bold;
+  padding-top: 70px;
+}
+
+h2 span {
+  color: #e6650c;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.left p {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 3px;
+  margin-top: 20px;
+}
+
+.flex img {
+  width: 80px;
+}
+
+.flex {
+  margin-top: 20px;
+}
+
+.soudan2 {
+  background-color: #e6650c;
+  width: 180px;
+  padding: 20px 30px;
+  border-radius: 3px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.soudan2:hover {
+  opacity: 0.6;
+}
+
+.soudan2 a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.right img {
+  width: 500px;
+  position: absolute;
+  bottom: 40px;
+  top: 130px;
+  right: 0;
+  left: 470px;
+}
+
+/* label*/
+
+.label {
+  width: 65%;
+  margin: auto;
+  padding-top: 95px;
+  padding-bottom: 80px;
+}
+
+h3 {
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.label p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 2;
+  margin-top: 40px;
+}
+
+span {
+  color: #e6650c;
+}
+
+.hyouji img {
+  width: 337px;
+  height: 300px;
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hyouji {
+  display: flex;
+  column-gap: 40px;
+  width: 745px;
+  margin: auto;
+}
+
+/* higai */
+
+.higai {
+  background-color: #fff9f0;
+}
+
+.higai-wrapper {
+  width: 65%;
+  margin: auto;
+}
+
+h4 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bottom {
+  padding-top: 80px;
+  padding-bottom: 90px;
+}
+
+.flex2 {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 60px;
+}
+
+.flex2 img {
+  width: 450px;
+  display: block;
+  padding-top: 20px;
+}
+
+.higai-text {
+  background-color: #fff;
+  width: 455px;
+  height: 170px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2;
+}
+
+.higai-wrapper h3 {
+  padding: 100px;
+}
+
+/* mikata */
+
+.mikata {
+  width: 65%;
+  margin: auto;
+}
+
+.mikata h3 {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.flex3 {
+  display: flex;
+  margin-bottom: 60px;
+  column-gap: 30px;
+}
+
+.flex3 img {
+  width: 450px;
+  height: 300px;
+}
+
+.mikata .soudan2 {
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.setumei .hs {
+  background-color: #fff9f0;
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-size: 18px;
+  width: 60px;
+  font-weight: bold;
+}
+
+.setumei-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.setumei-text {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+
+/* anzen */
+
+.anzen {
+  background-image: url(images/img-performance-bg.jpg);
+  padding-bottom: 80px;
+}
+
+.anzen-wrapper {
+  width: 65%;
+  margin: auto;
+}
+
+.anzen h3 {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.images2 img {
+  width: 184px;
+  height: 227px;
+  margin-right: 11px;
+  margin-left: 11px;
+}
+
+.images2 {
+  width: 700px;
+  margin: auto;
+}
+
+.flex4 {
+  display: flex;
+  column-gap: 40px;
+}
+
+.flex4 p {
+  font-size: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 280px;
+  height: 200px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.flex5 {
+  display: flex;
+  column-gap: 60px;
+  margin-top: 60px;
+  width: 960px;
+}
+
+.flex5 img {
+  width: 450px;
+  height: 250px;
+}
+
+.anzen-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.anzen-text {
+  font-size: 14px;
+  line-height: 2;
+  padding: 14px 20px 23px 20px;
+}
+
+.left3,.right3 {
+  background-color: #fff;
+}
+
+.anzen h4 {
+  margin-top: 75px;
+  margin-bottom: 50px;
+}
+
+.omise {
+  color: #888;
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+/* muryou */
+
+.muryou {
+  background-color: #faf5e5;
+}
+
+.muryou-text {
+  font-size: 24px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.muryou-wrapper {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  padding-top: 80px;
+  column-gap: 60px;
+}
+
+.right4 img {
+  width: 490px;
+}
+
+.h3 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.left4 h3 {
+  margin-top: 25px;
+}
+
+/* office */
+
+.office {
+  width: 65%;
+  margin: auto;
+  padding-bottom: 80px;
+}
+
+.office h3 {
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
+.office img {
+  width: 440px;
+  height: 315px;
+}
+
+th {
+  font-weight: bold;
+  padding: 14px 0;
+  text-align: left;
+  width: 120px;
+}
+
+tr {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+table {
+  font-size: 14px;
+  width: 460px;
+}
+
+/* footer */
+
+.f-text {
+  padding: 15px;
+  text-align: center;
+  background-color: #e6650c;
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+@media(max-width:390px) {
+  main {
+    width: max-content;
+  }
+}
