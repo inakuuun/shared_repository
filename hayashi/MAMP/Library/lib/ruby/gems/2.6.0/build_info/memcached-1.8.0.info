@@ -1,0 +1,4 @@
+--prefix=/Applications/MAMP/Library
+--with-iconv-dir=/Applications/MAMP/Library
+--with-libmemcached-dir=/Applications/MAMP/Library
+--with-memcached

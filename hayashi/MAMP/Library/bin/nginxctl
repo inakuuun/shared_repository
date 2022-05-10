@@ -1,0 +1,106 @@
+#!/bin/sh
+
+ARGV="$@"
+
+#
+# |||||||||||||||||||| START CONFIGURATION SECTION  ||||||||||||||||||||
+# --------------------                              --------------------
+# 
+# the path to your nginx binary, including options if necessary
+NGINX='/Applications/MAMP/Library/sbin/nginx'
+#
+# pick up any necessary environment variables
+if test -f /Applications/MAMP/Library/bin/envvars; then
+  . /Applications/MAMP/Library/bin/envvars
+fi
+#
+# Set this variable to a command that increases the maximum
+# number of file descriptors allowed per child process. This is
+# critical for configurations that use many file descriptors,
+# such as mass vhosting, or a multithreaded server.
+ULIMIT_MAX_FILES=$( ulimit -H -n )
+# --------------------                              --------------------
+# ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+
+# Set the maximum number of file descriptors allowed per child process.
+if [ "$ULIMIT_MAX_FILES" != "unlimited" ] ; then
+    if [ $? -eq 0 ]; then
+        ulimit -S -n "$ULIMIT_MAX_FILES"
+    fi
+fi
+
+ERROR=0
+if [ "x$ARGV" = "x" ] ; then 
+    ARGV="-h"
+fi
+
+case $ARGV in
+	start)  # used by /Applications/MAMP/bin/startNginx.sh
+		$NGINX
+		ERROR=$?
+		;;
+
+	stop)  # used by /Applications/MAMP/bin/stopNginx.sh
+		if [[ -r /Applications/MAMP/Library/logs/nginx.pid ]]; then
+			/bin/kill -QUIT $( cat /Applications/MAMP/Library/logs/nginx.pid )
+			ERROR=$?
+		fi
+		;;
+
+	restart)  # used by /Applications/MAMP/bin/restartNginx.sh
+		if [[ -r /Applications/MAMP/Library/logs/nginx.pid ]]; then
+			/bin/kill -HUP $( cat /Applications/MAMP/Library/logs/nginx.pid )
+			ERROR=$?
+		fi
+		;;
+
+	test|configtest)  #unused
+		$NGINX -t
+		ERROR=$?
+		;;
+
+	status)  #unused
+		$NGINX -V
+		ERROR=$?
+		;;
+
+	startFcgiInstances\ *)  # used by MAMP PRO
+		RESULT=1
+		USERNAME=$( echo $ARGV | head -n1 | cut -d " " -f2 )
+		USERID=$( /usr/bin/id -u $USERNAME )
+		PHPSINUSE=$( echo $ARGV | head -n1 | cut -d " " -f3- )
+
+		if [[ ! -z $PHPSINUSE ]]; then
+			for V in $PHPSINUSE; do
+				SOCKET=/Applications/MAMP/Library/logs/fastcgi/nginxFastCGI_php${V}.sock
+				PIDFILE=/Applications/MAMP/Library/logs/nginxFastCGI_php${V}.pid
+				if [ -x $PHPCGI ]; then
+					INIFILE="/Library/Application Support/appsolute/MAMP PRO/conf/php${V}.ini"
+					if [ $USERID == 0 ]; then
+						/Applications/MAMP/Library/bin/spawn-fcgi -s $SOCKET -P $PIDFILE -C 4 -- /Applications/MAMP/bin/php/php${V}/bin/php-cgi -c "$INIFILE"
+					else
+						/Applications/MAMP/Library/bin/spawn-fcgi -u $USERID -s $SOCKET -P $PIDFILE -C 4 -- /Applications/MAMP/bin/php/php${V}/bin/php-cgi -c "$INIFILE"
+					fi
+				fi
+			done
+			RESULT=$?
+		fi
+		ERROR=$RESULT
+		;;
+
+	stopFcgiInstances)  # used by MAMP PRO
+		for PID in $( /usr/bin/pgrep php-cgi ); do 
+			/bin/kill -9 ${PID} 2> /dev/null
+		done
+		/usr/bin/find /Applications/MAMP/Library/logs -maxdepth 1 -type f -name "nginxFastCGI_php[0123456789.]*\.pid" -delete
+		/usr/bin/find /Applications/MAMP/Library/logs/fastcgi -maxdepth 1 -type s -name "nginxFastCGI_php[0123456789.]*\.sock" -delete
+		ERROR=$?
+		;;
+
+	*)  # used by MAMP PRO
+		$NGINX "$@"
+		ERROR=$?
+esac
+
+exit $ERROR
+

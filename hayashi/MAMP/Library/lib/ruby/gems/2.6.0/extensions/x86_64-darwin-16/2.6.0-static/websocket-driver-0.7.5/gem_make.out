@@ -1,0 +1,8 @@
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/Applications/MAMP/Library/bin/ruby -I /Applications/MAMP/Library/lib/ruby/2.6.0 -r ./siteconf20210930-38720-193k0g1.rb extconf.rb --prefix\=/Applications/MAMP/Library --with-iconv-dir\=/Applications/MAMP/Library --with-mysql-config\=/Applications/MAMP/Library/bin/mysql_config --with-mysql-lib\=/Applications/MAMP/Library/lib
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" clean
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR="
+current directory: /Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make "DESTDIR=" install

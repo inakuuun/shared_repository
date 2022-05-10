@@ -1,0 +1,10 @@
+prefix=/Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/memcached-1.8.0/ext
+exec_prefix=${prefix}
+libdir=/Applications/MAMP/Library/lib/ruby/gems/2.6.0/gems/memcached-1.8.0/ext/lib
+includedir=${prefix}/include
+
+Name: libmemcached
+Description: libmemcached C library.
+Version: 0.32
+Libs: -L${libdir} -lmemcached
+Cflags: -I${includedir}

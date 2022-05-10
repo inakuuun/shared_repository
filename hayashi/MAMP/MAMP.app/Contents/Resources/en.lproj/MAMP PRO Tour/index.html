@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+  
+		<style type="text/css">
+			#slides{
+				position: relative;
+				padding: 0px;
+				margin: 0px;
+				list-style-type: none;
+			}
+
+			.slide{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				opacity: 0;
+				z-index: 1;
+				-webkit-transition: opacity 1s;
+			}
+
+			.showing{
+				opacity: 1;
+				z-index: 2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul id="slides">
+			<li class="slide showing"><img src="1.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+			<li class="slide"><img src="2.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+			<li class="slide"><img src="3.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+			<li class="slide"><img src="4.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+			<li class="slide"><img src="5.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+			<li class="slide"><img src="6.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+			<li class="slide"><img src="7.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+            <li class="slide"><img src="8.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+            <li class="slide"><img src="9.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+            <li class="slide"><img src="10.png" width="700" height="555" alt="Discovering MAMP PRO" /></li>
+		</ul>
+
+		<script type="text/javascript">
+			var slides = document.querySelectorAll('#slides .slide');
+			var currentSlide = 0;
+
+			function canGoPrevious() {
+				if (currentSlide == 0)
+					return "NO";
+				else
+					return "YES";
+			}
+
+			function canGoNext() {
+				if (currentSlide == slides.length - 1)
+					return "NO";
+				else
+					return "YES";
+			}
+
+			function goPrevious() {
+				if (currentSlide > 0) {
+					slides[currentSlide].className = 'slide';
+					currentSlide = currentSlide - 1;
+					slides[currentSlide].className = 'slide showing';
+				}
+			}
+
+			function goNext() {
+				if (currentSlide < slides.length - 1) {
+					slides[currentSlide].className = 'slide';
+					currentSlide = currentSlide + 1;
+					slides[currentSlide].className = 'slide showing';
+				}
+			}
+		</script>
+
+	</body>
+</html>

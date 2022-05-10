@@ -1,0 +1,64 @@
+* {
+	font-family: 'Raleway';
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+pre[class*="language-"] {
+	margin: 0;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f8f9fa !important;
+}
+
+code[class*="language-"],
+code[class*="language-"] *,
+pre[class*="language-"],
+pre[class*="language-"] * {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+html, body {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+.text-twitter {
+	color: #4da0eb;
+}
+
+.bg-mamppro {
+	background-color:#00729a;
+}
+
+.bg-mamp {
+	background-color:#8a8b8b;
+}
+
+.hm {
+	-webkit-hyphens: manual;
+	-moz-hyphens: manual;
+	-ms-hyphens: manual;
+	hyphens: manual;
+}
+
+.btn-twitter {
+	color: #fff;
+	background-color: #4794da;
+	border-color: #4794da;
+}
+
+.btn-twitter:hover {
+	color: #fff;
+	background-color: #3779ba;
+	border-color: #3779ba;
+}
