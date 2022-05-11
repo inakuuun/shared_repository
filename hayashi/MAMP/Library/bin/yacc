@@ -1,2 +1,0 @@
-#! /bin/sh
-exec '/Applications/MAMP/Library/bin/bison' -y "$@"
