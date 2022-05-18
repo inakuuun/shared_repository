@@ -1,0 +1,20 @@
+@use '../foundation/index' as f;
+
+.c-link{
+    color: f.$color-link-font;
+    text-decoration: underline;
+    font-size: 1rem;
+    display: block;
+    margin-top: 24px;
+
+    &:focus,
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.c-link--home{
+    font-size: 0.75rem;
+}
+.c-link--signup{
+    color: f.$color-link-signUp;
+}

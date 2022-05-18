@@ -1,0 +1,53 @@
+@use '../foundation/index' as f;
+
+.p-login__title{
+    font-size: 24px;
+    padding: 0 0 24px;
+    font-weight: bold;
+
+    @include f.mq('sp'){
+        font-size: 20px;
+        padding: 0 0 20px;
+    }
+}
+.p-login__error{
+    color: red;
+}
+.p-login__form{
+    height: 250px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+}
+.p-login__label{
+    width: 30%;
+    height: 40px;
+    padding-top: 1em;
+
+    @include f.mq('sp'){
+        width: 100%;
+    }
+}
+.p-login__input{
+    width: 70%;
+    border-bottom: 1px solid f.$color-body-border;
+    height: 40px;
+    padding: 0.5em 1em;
+
+    @include f.mq('sp'){
+        width: 100%;
+    }
+}
+.p-login__btn{
+    width: 50%;
+    height: 60px;
+    background-color: #3F51B5;
+    margin-top: 24px;
+
+    @include f.mq('sp'){
+        height: 40px;
+        width: 250px;
+    }
+}

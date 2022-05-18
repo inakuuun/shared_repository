@@ -1,0 +1,27 @@
+@use 'setting' as s;
+
+//メディアクエリ
+$breakpoint: (
+  'sp': 'screen and (max-width: 767px)',
+  'tab': 'screen and (min-width: 768px) and (max-width: #{(s.$layout-with-inner)-1px})', 
+  'pc': 'screen and (min-width: #{s.$layout-with-inner})'
+)!default;
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+
+//textArea
+@mixin lead {
+  font-size: 24px;
+  font-family: s.$font-Jp;
+  line-height: (48 / 24);  
+}
+
+@mixin text{
+  font-size: 14px;
+  font-family: s.$font-Jp;
+  line-height: (30 / 14);
+}

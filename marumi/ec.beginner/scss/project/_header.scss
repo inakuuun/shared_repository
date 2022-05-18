@@ -1,0 +1,53 @@
+@use "../foundation/index" as f;
+
+.p-header__logo{
+    width: 110px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.p-header__menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @include f.mq('sp'){
+        justify-content: center;
+    }
+    
+}
+.p-header__itemList,
+.p-header__userList{
+    display: flex;
+}
+.p-header__item,
+.p-header__userItem{
+    margin-left: 14px;
+
+    &:first-child{
+        margin-left: 0;
+    }
+
+    a{
+        color: f.$color-link-font;
+        font-size: 0.75rem;
+        line-height: 56px;
+
+        @include f.mq('sp'){
+            line-height: 40px;
+        }
+
+        &:hover {
+            opacity: 0.7;;
+        }
+    }
+}
+.p-header__userItem{
+    @include f.mq('sp'){
+        display: none;
+    }
+}
+
+

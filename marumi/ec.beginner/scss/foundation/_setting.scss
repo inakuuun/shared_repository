@@ -1,0 +1,31 @@
+//カラーパレット
+$palette-white: #FFFFFF;
+$palette-black: #333333;
+$palette-gravel: #4b4b4b;
+$palette-cararra: #ecebeb;
+$palette-paleSlate: #c3c3c3;
+$palette-blue: #3F51B5;
+
+//機能ごとのカラー定義
+$color-body-font: $palette-black;
+$color-body-background: $palette-white;
+$color-link-font: $palette-black;
+$color-body-border: $palette-paleSlate;
+
+$color-btn-background: $palette-gravel;
+$color-btn-font: $palette-white;
+$color-btn-back: $palette-gravel;
+$color-btn-disabled : $palette-paleSlate;
+
+$color-table-background: $palette-cararra;
+
+$color-login-background: $palette-cararra;
+$color-form-background: $palette-white;
+$color-link-signUp: $palette-blue;
+$color-form-check: $palette-blue;
+
+//フォント
+$font-family: 'メイリオ', Meiryo,sans-serif;
+
+//インナー幅
+$layout-with-inner: 1080px;
