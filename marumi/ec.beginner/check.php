@@ -51,7 +51,7 @@ if (!empty($_POST['check'])) {
 
  
     unset($_SESSION['join']);   // セッションを破棄
-    header('Location: thanks.php');   // thank.phpへ移動
+    header('Location: thanks.html');   // thanks.htmlへ移動
     exit();
 }
 ?>
