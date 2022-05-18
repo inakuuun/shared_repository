@@ -1,0 +1,122 @@
+@use '../foundation/index' as f;
+
+//product
+.p-product__image{
+    flex: 0 0 50%;
+
+    @include f.mq('sp'){
+        flex-basis: 100%;
+    }
+}
+.p-product__box{
+    flex: 0 1 50%;
+    margin-left: 60px;
+    font-size: 0.75rem;
+
+    @include f.mq('sp'){
+        flex-basis: 100%;
+        margin-left: 0;
+        padding: 10px 18px;
+    }
+}
+.p-product__name{
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 18px 0;
+    border-top: 1px solid f.$color-body-border;
+    border-bottom: 1px solid f.$color-body-border;
+}
+.p-product__text{
+    margin-top: 20px;
+}
+.p-product__price{
+    margin-top: 30px;
+}
+.p-product__orderTable{
+    width: 340px;
+    max-width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    line-height: 38px;
+    text-align: center;
+
+    thead{
+        border-bottom: 1px solid f.$color-body-border;
+        font-weight: normal;
+    }
+
+    th,td{
+        font-weight: normal;
+        &:nth-child(1){
+            width: 68px;
+            border-right: 1px solid f.$color-body-border; 
+        }
+        &:nth-child(2){
+            width: 68px;
+            border-right: 1px solid f.$color-body-border; 
+        }
+    }
+    tr{
+        border-bottom: 1px solid f.$color-body-border;
+
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+}
+.p-product__selectTd{
+    position: relative;
+    padding: 0 1em;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: block;
+        border-style: solid;
+        border-width: 12px 7px 0 7px;
+        border-color: f.$color-body-border transparent transparent transparent;
+        pointer-events: none;
+    }
+}
+.p-product__select{
+    width: 184px;
+    max-width: 100%;
+    line-height: 18px;
+    border: 1px solid f.$color-body-border;
+    background-color: f.$color-body-background;
+    padding: 0 2em 0 1em;
+    text-align: right;
+}
+.p-product__btn{
+    margin-top: 20px;
+    width: 100%;
+    padding: 18px 0;
+    text-align: center;
+    background-color: f.$color-btn-background;
+    color: f.$color-btn-font;
+}
+.p-product__sizeTable{
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 38px;
+    text-align: center;
+
+    th,td{
+        border: 1px solid f.$color-body-border;
+        font-weight: normal;
+    }
+    th{
+        background-color: f.$color-table-background;
+    }
+}
+
+//footer
+.p-footer__copyright{
+    text-align: center;
+    padding: 10px;
+    font-size: 0.675rem;
+}

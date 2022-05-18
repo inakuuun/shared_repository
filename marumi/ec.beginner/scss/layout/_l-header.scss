@@ -1,0 +1,19 @@
+@use "../foundation/index" as f;
+
+//header
+.l-header{
+    width: 100%;
+}
+.l-header__inner{
+    width: f.$layout-with-inner;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    border-bottom: 1px solid f.$color-body-border;
+
+    @include f.mq('sp'){
+        padding: 0 20px;
+        border: none;
+    }
+}
+

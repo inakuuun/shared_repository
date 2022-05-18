@@ -1,0 +1,26 @@
+@use 'function' as f;
+@use 'setting' as s;
+
+
+body{
+    font-family: s.$font-family;
+    color: s.$color-body-font;
+    font-size: 100%;
+    line-height: 1.6;
+    background-color: s.$color-body-background;
+
+    @include f.mq('sp'){
+        font-size: 0.875rem;
+    }
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+a{
+    text-decoration: none;
+    color: s.$color-link-font;
+    display: block;
+}

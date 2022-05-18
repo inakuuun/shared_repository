@@ -1,0 +1,37 @@
+@use "../foundation/index" as  f;
+
+//product
+.l-product{
+    width: f.$layout-with-inner;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    @include f.mq('sp'){
+        padding: 0;
+    }
+}
+.l-product__inner{
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    display: flex;
+
+    @include f.mq('sp'){
+        padding-top: 0;
+        flex-direction: column;
+    }
+}
+
+//footer
+.l-footer{
+    width: 100%;
+    margin-top: 90px;
+}
+.l-footer__inner{
+    width: f.$layout-with-inner;
+    max-width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
