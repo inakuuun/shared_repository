@@ -92,7 +92,6 @@ if (!empty($_POST['check'])) {
             
             <a href="signup.php" class="c-btn p-fix__btn">変更する</a>
             <button type="submit" class="c-btn p-check__btn">登録する</button>
-            <div class="clear"></div>
             <input type="hidden" name="check" value="checked">
             </form>
 

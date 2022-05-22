@@ -1,0 +1,17 @@
+@use "../foundation/index" as f;
+
+.l-mypage{
+    width: 100%;
+    margin-top: 100px;
+}
+.l-mypage__inner{
+    width: f.$layout-with-inner;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+
+    @include f.mq('sp'){
+        padding: 40px 16px;
+    }
+}

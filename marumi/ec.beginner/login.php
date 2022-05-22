@@ -4,30 +4,31 @@ require ('sanitize.php');
 
 session_start();
 
+$error = '';
+
 if (isset($_POST['name']) && isset($_POST['password'])) { //ログインしていないがユーザー名とパスワードが送信された場合
 
-$name = $_POST['name'];
+    $name = $_POST['name'];
 
-$stmt = $db->prepare("SELECT * FROM users WHERE name = :name");
-$stmt->bindParam(':name', $name, PDO::PARAM_STR);
-$stmt->execute();
+    $stmt = $db->prepare("SELECT * FROM users WHERE name = :name");
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->execute();
 
-if ($row = $stmt->fetch()){ //ユーザーが存在していたら、セッションにユーザーIDをセット
-    //指定したハッシュがパスワードにマッチしているかチェック
-    if (password_verify($_POST['password'], $row['password'])) {
-        session_regenerate_id(true); //セッションIDを再作成
-        //DBのユーザー情報をセッションに保存
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['name'] = $row['name'];
-        header('Location: index.php');
-        exit();
+    if ($row = $stmt->fetch()){ //ユーザーが存在していたら、セッションにユーザーIDをセット
+        //指定したハッシュがパスワードにマッチしているかチェック
+        if (password_verify($_POST['password'], $row['password'])) {
+            session_regenerate_id(true); //セッションIDを再作成
+            //DBのユーザー情報をセッションに保存
+            $_SESSION['user'] = $row;
+            header('Location: index.php');
+            exit();
+        } else {
+            $error = "ユーザー名、またはパスワードが違います。";
+        }
     } else {
+        //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
         $error = "ユーザー名、またはパスワードが違います。";
     }
-} else {
-    //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
-    $error = "ユーザー名、またはパスワードが違います。";
-}
 }
 
 ?>

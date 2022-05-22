@@ -1,0 +1,66 @@
+@use "../foundation/index" as f;
+
+.p-mypage__form{
+    width: 600px;
+    max-width: 100%;
+    padding: 24px 40px;
+    margin: 0 auto;
+    font-size: 0.75rem;
+}
+.p-mypage__comment{
+    width: 100%;
+    text-align: center;
+}
+.p-mypage__list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include f.mq('sp'){
+        text-align: left;
+    }
+
+    dt {
+        width: 20%;
+        padding-top: 1.5em;
+        margin-top: 24px;
+        font-weight: bold;
+    
+        @include f.mq('sp'){
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    dd{
+        width: calc(80% - 32px);
+        border-bottom: 1px solid f.$color-body-border;
+        padding: 1.5em 1em 0;
+        margin: 24px 0 0 32px;
+    
+        @include f.mq('sp'){
+            width: 100%;
+            margin: 0;
+        }    
+    }
+
+    .p-mypage__name{
+        width: 100%;
+        font-weight: bold;
+        font-size: 1.25rem;
+        border-bottom: none;
+        margin-left: 0;
+    }
+}
+.p-edit__btn{
+    width: 50%;
+    font-size: 0.75rem;
+    margin-top: 32px;
+
+    @include f.mq('sp'){
+        width: 100%;
+    }
+}
+.p-mypage__notice{
+    font-size: 0.625rem;
+}

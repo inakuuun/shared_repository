@@ -3,66 +3,60 @@ require("db_connect.php");
 
 session_start();
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$year = (!($_POST["year"] == 'none'))  ? $_POST["year"] : null;
-$month = (!($_POST["month"] == 'none'))  ? $_POST["month"] : null;
-$day = (!($_POST["day"] == 'none'))  ? $_POST["day"] : null;
-$gender = $_POST['gender'];
-$password = $_POST['password'];
-$password2 = $_POST['password2'];
-
-// 重複を検知 
-$stmt = $db->prepare("SELECT * FROM users WHERE name = :name AND email = :email");
-$stmt->bindParam(':name', $name, PDO::PARAM_STR);
-$stmt->bindParam(':email', $email, PDO::PARAM_STR);
-$stmt->execute();
-
-$row = $stmt->fetch();
-$error = '';
+$error = [];
 
 if (isset($_POST["signup"])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $birth_year = (!($_POST["year"] == 'none'))  ? $_POST["year"] : null;
+    $birth_month = (!($_POST["month"] == 'none'))  ? $_POST["month"] : null;
+    $birth_day = (!($_POST["day"] == 'none'))  ? $_POST["day"] : null;
+    $gender = $_POST['gender'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password2'];
+
+    // 重複を検知 
+    $stmt = $db->prepare("SELECT * FROM users WHERE name = :name AND email = :email");
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+
+    $row = $stmt->fetch();
+
     //ユーザー名チェック
     if ($name == $row['name']) {
-        $error_name = "ユーザー名は既に存在しています";
-        $error = 'double';
+        $error['name'] = "ユーザー名は既に存在しています";
     }
 
     //メールアドレスチェック
     if ($email == $row['email']) {
-        $error_email = "メールアドレスは既に存在しています";
-        $error = 'double';
+        $error['email'] = "メールアドレスは既に存在しています";
     } else if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $email)){
-        $error_email = "メールアドレスが正しくありません";
-        $error = 'wrong';
+        $error['email'] = "メールアドレスが正しくありません";
     }
 
     //生年月日チェック
-    if (isset($year)) {
-        if (!isset($month) || !isset($day)) {
-            $error_birthday = "入力が正しくありません";
-            $error = 'wrong';
+    if (isset($birth_year)) {
+        if (!isset($birth_month) || !isset($birth_day)) {
+            $error['birthday'] = "入力が正しくありません";
         }
-    } else if (isset($month)) {
-        if (!isset($day)) {
-            $error_birthday = "入力が正しくありません";
-            $error = 'wrong';    
+    } else if (isset($birth_month)) {
+        if (!isset($birth_day)) {
+            $error['birthday'] = "入力が正しくありません";
         }
     } 
     
     //パスワードチェック
     if ($password !== $password2) {
-        $error_password2 = "確認のためもう一度入力してください";
-        $error = 'wrong';
+        $error['password2'] = "確認のためもう一度入力してください";
     } else {
         if (!preg_match("/^[a-z0-9]{4}$/", $password)) {
-            $error_password = "4桁の英数字を入力してください";
-            $error = 'wrong';
+            $error['password']= "4桁の英数字を入力してください";
         } 
     }
     
     //エラーがなければ次のページへ
-    if ($error == '') {
+    if (!$error > 0) {
         $_SESSION['join'] = $_POST;   // フォームの内容をセッションで保存
         header('Location: check.php');   // check.phpへ移動
         exit();
@@ -94,15 +88,18 @@ if (isset($_POST["signup"])) {
                 <h2 class="c-section__title">新規会員登録</h2>
                 <form action="" method="post" id="js-form" class="p-signup__form">
 
-                    <label class="p-signup__label">ユーザー名<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo $error_name; ?></span></label>
+                    <label class="p-signup__label">ユーザー名<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['name']); ?></span></label>
                     <input class="p-signup__input" type="text" name="name">
 
-                    <label class="p-signup__label">メールアドレス<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo $error_email; ?></span></label>
+                    <label class="p-signup__label">メールアドレス<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['email']); ?></span></label>
                     <input class="p-signup__input" type="text" name="email">
 
-                    <label class="p-signup__label">生年月日<span class="p-signup__error"><?php echo $error_birthday; ?></span></label>
+                    <label class="p-signup__label">生年月日<span class="p-signup__error"><?php echo isset($error['birthday']); ?></span></label>
                     <div class="p-signup__selectWrap">
                     <?php
+                        $year = '';
+                        $month = '';
+                        $day = '';
                         for ($i=1980; $i <= 2022; $i++) {
 		                    $year .= '<option value="'.$i.'">'.$i.'</option>';
                         }
@@ -145,11 +142,11 @@ if (isset($_POST["signup"])) {
                         </label>
                     </div>
 
-                    <label class="p-signup__label">パスワード<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo $error_password; ?></span></label>
+                    <label class="p-signup__label">パスワード<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['password']); ?></span></label>
                     <input class="p-signup__input" type="password" name="password" placeholder="4桁の半角英数字">
                     <!--<span><i class="fas fa-eye-slash p-signup__eye" id="js-password"></i></span>-->
 
-                    <label class="p-signup__label">パスワード(確認用)<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo $error_password2; ?></span></label>
+                    <label class="p-signup__label">パスワード(確認用)<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['password2']); ?></span></label>
                     <input class="p-signup__input" type="password" name="password2" value="" placeholder="再度パスワードを入力">
                     <!--<span><i class="fas fa-eye-slash p-signup__eye" id="js-password"></i></span>-->
 

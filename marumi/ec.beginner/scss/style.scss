@@ -6,6 +6,8 @@
 @use "layout/l-signup";
 @use "layout/l-check";
 @use "layout/l-thanks";
+@use "layout/l-mypage";
+
 
 @use "component/btn";
 @use "component/link";
@@ -18,6 +20,7 @@
 @use "project/signup";
 @use "project/check";
 @use "project/thanks";
+@use "project/mypage";
 
-@use "utility/u-main";
+//@use "utility/u-main";
 
