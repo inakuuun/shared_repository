@@ -6,12 +6,12 @@ session_start();
 
 $error = '';
 
-if (isset($_POST['name']) && isset($_POST['password'])) { //ログインしていないがユーザー名とパスワードが送信された場合
+if (isset($_POST['email']) && isset($_POST['password'])) { //ログインしていないがメールアドレスとパスワードが送信された場合
 
-    $name = $_POST['name'];
+    $email = $_POST['email'];
 
-    $stmt = $db->prepare("SELECT * FROM users WHERE name = :name");
-    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
     if ($row = $stmt->fetch()){ //ユーザーが存在していたら、セッションにユーザーIDをセット
@@ -55,8 +55,8 @@ if (isset($_POST['name']) && isset($_POST['password'])) { //ログインして�
         <p class="c-section__title p-login__title">LOGIN</p>
         <p class="p-login__error"><?php echo $error; ?></p>
             <form class="p-login__form" action="login.php" method="POST">
-                <label class="p-login__label" for="name">ユーザー名</label>
-                <input type="text" id="name" name="name" class="p-login__input" required>
+                <label class="p-login__label" for="email">メールアドレス</label>
+                <input type="text" id="name" name="email" class="p-login__input" required>
                 <label class="p-login__label" for="password">パスワード</label>
                 <input type="password" id="password" name="password" class="p-login__input" required>
                 <input type="submit" class="c-btn p-login__btn" value="ログイン">

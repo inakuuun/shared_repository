@@ -1,24 +1,7 @@
 $(function(){
   /*
   
-    //ドロワーメニュー
-    $(".js-drawerIcon").on("click",function(e){
-      e.preventDefault();
-      $(".p-drawerIcon").toggleClass("is-active");
-      $(".p-drawerBack").toggleClass("is-active");
-      $(".p-drawer__menu").toggleClass("is-active");
-        return false;
-    });
-    
-      //ヘッダーナビゲーション
-      $('.js-nav').click(function() {
-        $(this).removeClass('is-action');
-        $(this).addClass('is-action');
-        return false;
-      });
-
-      */
-     /*//ログイン画面：モーダル
+     //ログイン画面：モーダル
       $('.js-open').click(function(e){
         e.preventDefault();
         $('.js-login').addClass('is-open');
@@ -33,18 +16,28 @@ $(function(){
         return false;
       });*/
 
-      //必須項目入力しないと押せないボタン
-      let $submit = $('#js-submit');
-      $('#js-form input').on('change', function(){
+      //必須項目入力しないと押せないボタン(新規登録)
+      let $submit = $('#js-signupBtn');
+      $('#js-signup input').on('change', function(){
         if(
-          $('#js-form input[name="name"]').val() !== "" &&
-          $('#js-form input[name="email"]').val() !== "" &&
-          $('#js-form input[name="password"]').val() !== "" &&
-          $('#js-form input[name="password2"]').val() !== "" 
+          $('#js-signup input[name="name"]').val() !== "" &&
+          $('#js-signup input[name="email"]').val() !== "" &&
+          $('#js-signup input[name="password"]').val() !== "" &&
+          $('#js-signup input[name="password2"]').val() !== "" 
         ){
-          $submit.prop('disabled', false)
+          $submit.prop('disabled', false);
         } else {
-          $submit.prop('disabled', true)
+          $submit.prop('disabled', true);
+        }
+      });
+
+      //変更しないと押せないボタン(マイページ編集)
+      let $edit = $('#js-editBtn');
+      $('#js-edit input').on('change', function(){
+        if( $('#js-edit input[name="name"]').val() !== "") {
+          $edit.prop('disabled', false);
+        } else {
+          $edit.prop('disabled', true);
         }
       });
 

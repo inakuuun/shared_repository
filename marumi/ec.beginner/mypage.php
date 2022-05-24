@@ -9,11 +9,17 @@
         exit();
     }
 
+    //編集した人のために、セッション更新
+    $stmt = $db->prepare("SELECT * FROM users WHERE id = :id");
+    $stmt->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    $_SESSION['user'] = $stmt->fetch();
+
+
     //フォームからの値をそれぞれ変数に代入
     $name = $_SESSION['user']['name'];
     $email = $_SESSION['user']['email'];
     $birthday = $_SESSION['user']['birthday'];
-    //(isset($year)) ? $year.'-'.$month.'-'.$day : null;
     $gender = $_SESSION['user']['gender'];
 
 

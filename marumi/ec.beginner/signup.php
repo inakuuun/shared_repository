@@ -23,11 +23,6 @@ if (isset($_POST["signup"])) {
 
     $row = $stmt->fetch();
 
-    //ユーザー名チェック
-    if ($name == $row['name']) {
-        $error['name'] = "ユーザー名は既に存在しています";
-    }
-
     //メールアドレスチェック
     if ($email == $row['email']) {
         $error['email'] = "メールアドレスは既に存在しています";
@@ -86,9 +81,9 @@ if (isset($_POST["signup"])) {
         <section class="l-signup">
             <div class="l-signup__inner">
                 <h2 class="c-section__title">新規会員登録</h2>
-                <form action="" method="post" id="js-form" class="p-signup__form">
+                <form action="" method="post" id="js-signup" class="p-signup__form">
 
-                    <label class="p-signup__label">ユーザー名<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['name']); ?></span></label>
+                    <label class="p-signup__label">ユーザー名<span class="p-label__essential">必須</span></label>
                     <input class="p-signup__input" type="text" name="name">
 
                     <label class="p-signup__label">メールアドレス<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['email']); ?></span></label>
@@ -150,7 +145,7 @@ if (isset($_POST["signup"])) {
                     <input class="p-signup__input" type="password" name="password2" value="" placeholder="再度パスワードを入力">
                     <!--<span><i class="fas fa-eye-slash p-signup__eye" id="js-password"></i></span>-->
 
-                    <input class="c-btn p-signup__btn" id="js-submit" type="submit" name="signup" value="確認する" disabled>
+                    <input class="c-btn p-signup__btn" id="js-signupBtn" type="submit" name="signup" value="確認する" disabled>
                 </form>
                 <a class="c-link c-link--home" href="index.php">戻る</a>
             </div>
