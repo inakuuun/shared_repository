@@ -19,7 +19,7 @@ session_start(); //セッション開始
 
 </head>
 <body>
-    <?php require('header.php') ?>
+    <?php include('header.php') ?>
     <main>
         <section class="l-product">
             <div class="l-product__inner">

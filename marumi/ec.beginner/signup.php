@@ -24,7 +24,7 @@ if (isset($_POST["signup"])) {
     $row = $stmt->fetch();
 
     //メールアドレスチェック
-    if ($email == $row['email']) {
+    if ($email === $row['email']) {
         $error['email'] = "メールアドレスは既に存在しています";
     } else if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $email)){
         $error['email'] = "メールアドレスが正しくありません";

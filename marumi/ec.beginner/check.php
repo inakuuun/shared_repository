@@ -12,29 +12,29 @@ if (!isset($_SESSION['join'])) {
 //フォームからの値をそれぞれ変数に代入
 $name = $_SESSION['join']['name'];
 $email = $_SESSION['join']['email'];
-$year = (!($_SESSION['join']['year'] == 'none'))  ? $_SESSION['join']['year'] : null;
-$month = (!($_SESSION['join']['month'] == 'none'))  ? $_SESSION['join']['month'] : null;
-$day = (!($_SESSION['join']['day'] == 'none'))  ? $_SESSION['join']['day'] : null;
+$year = (!($_SESSION['join']['year'] === 'none'))  ? $_SESSION['join']['year'] : null;
+$month = (!($_SESSION['join']['month'] === 'none'))  ? $_SESSION['join']['month'] : null;
+$day = (!($_SESSION['join']['day'] === 'none'))  ? $_SESSION['join']['day'] : null;
 $birthday = (isset($year)) ? $year.'-'.$month.'-'.$day : null;
 $gender = $_SESSION['join']['gender'];
 $password = password_hash($_SESSION['join']['password'], PASSWORD_DEFAULT);
 
 //表示用
     //生年月日
-    $display_birthday = (isset($year)) ? $year.'年'.$month.'月'.$day.'日' : null;
+    $displayBirthday = (isset($year)) ? $year.'年'.$month.'月'.$day.'日' : null;
     //性別
     switch ($gender) {
         case 1:
-            $display_gender = '男性';
+            $displayGender = '男性';
             break;
         case 2:
-            $display_gender = '女性';
+            $displayGender = '女性';
             break;
         case 3:
-            $display_gender = '未回答';
+            $displayGender = '未回答';
             break;
         default:
-            $display_gender = null;
+            $displayGender = null;
             break;
     }
  
@@ -85,9 +85,9 @@ if (!empty($_POST['check'])) {
                     <dt class="p-check__label">メールアドレス</dt>
                     <dd class="p-check__input"><?php echo escape($email); ?></dd>
                     <dt class="p-check__label">生年月日</dt>
-                    <dd class="p-check__input"><?php echo escape($display_birthday); ?></dd>
+                    <dd class="p-check__input"><?php echo escape($displayBirthday); ?></dd>
                     <dt class="p-check__label">性別</dt>
-                    <dd class="p-check__input"><?php echo escape($display_gender); ?></dd>
+                    <dd class="p-check__input"><?php echo escape($displayGender); ?></dd>
                 </dl>
             
             <a href="signup.php" class="c-btn p-fix__btn">変更する</a>

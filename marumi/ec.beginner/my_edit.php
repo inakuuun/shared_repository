@@ -19,41 +19,41 @@ if (!$_SESSION['user']) {
 
     $error = [];
 
-if (isset($_POST["my_edit"])) {
+if (isset($_POST["myEdit"])) {
 
     //生年月日の登録をしたかチェック
     if (isset($_POST["year"])) {
-        $birth_year = (!($_POST["year"] == 'none'))  ? $_POST["year"] : null;
-        $birth_month = (!($_POST["month"] == 'none'))  ? $_POST["month"] : null;
-        $birth_day = (!($_POST["day"] == 'none'))  ? $_POST["day"] : null;
+        $yearBirth = (!($_POST["year"] == 'none'))  ? $_POST["year"] : null;
+        $monthBirth = (!($_POST["month"] == 'none'))  ? $_POST["month"] : null;
+        $dayBirth = (!($_POST["day"] == 'none'))  ? $_POST["day"] : null;
 
         //生年月日チェック
-        if (isset($birth_year)) {
-            if (!isset($birth_month) || !isset($birth_day)) {
+        if (isset($yearBirth)) {
+            if (!isset($monthBirth) || !isset($dayBirth)) {
                 $error['birthday'] = "入力が正しくありません";
             }
-        } else if (isset($birth_month)) {
-            if (!isset($birth_day)) {
+        } else if (isset($monthBirth)) {
+            if (!isset($birthDay)) {
                 $error['birthday'] = "入力が正しくありません";
             }
         } else {
-            $edit_birthday = $year.'-'.$month.'-'.$day;
+            $editBirthday = $year.'-'.$month.'-'.$day;
         }
 
     } else {
-        $edit_birthday = $birthday;
+        $editBirthday = $birthday;
     }
 
-    $edit_name = $_POST['name'];
-    $edit_gender = $_POST['gender'];
+    $editName = $_POST['name'];
+    $editGender = $_POST['gender'];
     
     //エラーがなければ変更を保存し、マイページへ戻る
     if (empty($error)) {
         $stmt = $db->prepare("UPDATE users SET name = :name, birthday = :birthday, gender = :gender WHERE id = :id");
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':name', $edit_name, PDO::PARAM_STR);
-        $stmt->bindParam(':birthday', $edit_birthday, PDO::PARAM_STR);
-        $stmt->bindParam(':gender', $edit_gender, PDO::PARAM_INT);
+        $stmt->bindParam(':name', $editName, PDO::PARAM_STR);
+        $stmt->bindParam(':birthday', $editBirthday, PDO::PARAM_STR);
+        $stmt->bindParam(':gender', $editGender, PDO::PARAM_INT);
         $stmt->execute();
 
         header('Location: mypage.php');   // mypage.phpへ移動
@@ -81,12 +81,12 @@ if (isset($_POST["my_edit"])) {
 
 </head>
 <body>
-    <?php require('header.php'); ?>
+    <?php include('header.php'); ?>
     <section class="l-mypage">
             <div class="l-mypage__inner">
                 <h2 class="c-section_title">会員情報の変更</h2>
 
-                <form action="" method="post" id="js-form" class="p-signup__form">
+                <form action="" method="post" id="js-edit" class="p-signup__form">
 
                     <label class="p-signup__label">ユーザー名<span class="p-signup__error"><?php echo isset($error['name']); ?></span></label>
                     <input class="p-signup__input" type="text" name="name" value="<?php echo $name; ?>">
@@ -144,7 +144,7 @@ if (isset($_POST["my_edit"])) {
                         </label>
                     </div>
 
-                    <input class="c-btn p-signup__btn" id="js-editBtn" type="submit" name="my_edit" value="変更を登録する" disabled>
+                    <input class="c-btn p-signup__btn" id="js-editBtn" type="submit" name="myEdit" value="変更を登録する" disabled>
                 </form>
             </div>
         </section>

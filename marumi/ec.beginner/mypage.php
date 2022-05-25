@@ -4,7 +4,7 @@
     require("sanitize.php");
 
     if (!$_SESSION['user']) {
-       $_SESSION['login_error'] = 'ログインしてください。';
+       $_SESSION['loginError'] = 'ログインしてください。';
         header('Location: index.php');
         exit();
     }
@@ -27,14 +27,14 @@
         //生年月日
         //$display_birthday = (isset($year)) ? $year.'年'.$month.'月'.$day.'日' : null;
         //性別
-        switch ($gender) {
-            case 1:
+        switch (true) {
+            case $gender === 1:
                 $display_gender = '男性';
                 break;
-            case 2:
+            case $gender === 2:
                 $display_gender = '女性';
                 break;
-            case 3:
+            case $gender === 3:
                 $display_gender = '未回答';
                 break;
             default:
@@ -69,13 +69,13 @@
                 <h2 class="c-section_title">MY PAGE</h2>
                 <div class="p-mypage__form">
                     <dl class="p-mypage__list">
-                        <dd class="p-mypage__name"><?php echo $name; ?></dd>
+                        <dd class="p-mypage__name"><?php echo escape($name); ?></dd>
                         <dt>メールアドレス</dt>
-                        <dd><?php echo $email; ?></dd>
+                        <dd><?php echo escape($email); ?></dd>
                         <dt>生年月日</dt>
-                        <dd><?php echo $birthday; ?></dd>
+                        <dd><?php echo escape($birthday); ?></dd>
                         <dt>性別</dt>
-                        <dd><?php echo $display_gender; ?></dd>
+                        <dd><?php echo escape($display_gender); ?></dd>
                     </dl>
                 
                     <a href="#" class="c-btn p-edit__btn">メールアドレスを変更する</a>

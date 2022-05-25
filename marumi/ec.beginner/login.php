@@ -6,25 +6,25 @@ session_start();
 
 $error = '';
 
-if (isset($_POST['email']) && isset($_POST['password'])) { //ログインしていないがメールアドレスとパスワードが送信された場合
+if (isset($_POST['email'], $_POST['password'])) { //ログインしていないがメールアドレスとパスワードが送信された場合
 
     $email = $_POST['email'];
+    $password = $_POST['password'];
 
     $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    if ($row = $stmt->fetch()){ //ユーザーが存在していたら、セッションにユーザーIDをセット
-        //指定したハッシュがパスワードにマッチしているかチェック
-        if (password_verify($_POST['password'], $row['password'])) {
+    $row = $stmt->fetch();
+
+    //ユーザーが存在していたら、セッションにユーザーIDをセット
+    //指定したハッシュがパスワードにマッチしているかチェック
+    if ($row && password_verify($password, $row['password'])){ 
             session_regenerate_id(true); //セッションIDを再作成
             //DBのユーザー情報をセッションに保存
             $_SESSION['user'] = $row;
             header('Location: index.php');
             exit();
-        } else {
-            $error = "ユーザー名、またはパスワードが違います。";
-        }
     } else {
         //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
         $error = "ユーザー名、またはパスワードが違います。";
