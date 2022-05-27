@@ -1,59 +1,65 @@
 <?php
-require("db_connect.php");
-require("sanitize.php");
-session_start();
- 
-/* 会員登録の手続き以外のアクセスを飛ばす */
-if (!isset($_SESSION['join'])) {
-    header('Location: signup.php');
-    exit();
-}
-
-//フォームからの値をそれぞれ変数に代入
-$name = $_SESSION['join']['name'];
-$email = $_SESSION['join']['email'];
-$year = (!($_SESSION['join']['year'] === 'none'))  ? $_SESSION['join']['year'] : null;
-$month = (!($_SESSION['join']['month'] === 'none'))  ? $_SESSION['join']['month'] : null;
-$day = (!($_SESSION['join']['day'] === 'none'))  ? $_SESSION['join']['day'] : null;
-$birthday = (isset($year)) ? $year.'-'.$month.'-'.$day : null;
-$gender = $_SESSION['join']['gender'];
-$password = password_hash($_SESSION['join']['password'], PASSWORD_DEFAULT);
-
-//表示用
-    //生年月日
-    $displayBirthday = (isset($year)) ? $year.'年'.$month.'月'.$day.'日' : null;
-    //性別
-    switch ($gender) {
-        case 1:
-            $displayGender = '男性';
-            break;
-        case 2:
-            $displayGender = '女性';
-            break;
-        case 3:
-            $displayGender = '未回答';
-            break;
-        default:
-            $displayGender = null;
-            break;
+    session_start();
+    require("db_connect.php");
+    require("sanitize.php");
+    require("create_token.php");
+    
+    /* 会員登録の手続き以外のアクセスを飛ばす */
+    if (!isset($_SESSION['join'])) {
+        $_SESSION['login_error'] = '不正なアクセスです。再度入力してください。';
+        header('Location: signup.php');
+        exit();
     }
- 
-if (!empty($_POST['check'])) {
 
-    // 入力情報をデータベースに登録
-    $stmt = $db->prepare("INSERT INTO users(name, email, birthday, gender, password) VALUES (:name, :email, :birthday, :gender, :password)");
-    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
-    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-    $stmt->bindParam(':birthday', $birthday, PDO::PARAM_STR);
-    $stmt->bindParam(':gender', $gender, PDO::PARAM_INT);
-    $stmt->bindParam(':password', $password, PDO::PARAM_STR);
-    $stmt->execute();
+    //フォームからの値を変数に代入
+    $checkUser = $_SESSION['join'];
 
- 
-    unset($_SESSION['join']);   // セッションを破棄
-    header('Location: thanks.html');   // thanks.htmlへ移動
-    exit();
-}
+    $birthday = ($checkUser['year'] !== 'none') ? $checkUser['year'].'-'.$checkUser['month'].'-'.$checkUser['day'] : null;
+    $gender = isset($checkUser['gender']) ? (int)$checkUser['gender'] : null;
+
+    //表示用
+        //生年月日
+        $displayBirthday = ($checkUser['year'] !== 'none') ? $checkUser['year'].'年'.$checkUser['month'].'月'.$checkUser['day'].'日' : '';
+        //性別
+        switch (true) {
+            case $gender === 1:
+                $displayGender = '男性';
+                break;
+            case $gender === 2:
+                $displayGender = '女性';
+                break;
+            case $gender === 3:
+                $displayGender = '未回答';
+                break;
+            default:
+                $displayGender = '';
+                break;
+        }
+    
+    if (isset($_POST['check'])) {
+
+        //トークンが正しいかチェック
+        if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+
+            // 入力情報をデータベースに登録
+            $stmt = $db->prepare("INSERT INTO users(name, email, birthday, gender, password) VALUES (:name, :email, :birthday, :gender, :password)");
+            $stmt->bindParam(':name', $checkUser['name'], PDO::PARAM_STR);
+            $stmt->bindParam(':email', $checkUser['email'], PDO::PARAM_STR);
+            $stmt->bindParam(':birthday', $birthday, PDO::PARAM_STR);
+            $stmt->bindParam(':gender', $gender, PDO::PARAM_INT);
+            $stmt->bindParam(':password', password_hash($checkUser['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $stmt->execute();
+
+        
+            unset($_SESSION['join']);   // セッションを破棄
+            header('Location: thanks.html');   // thanks.htmlへ移動
+            exit();
+        } else {
+            $_SESSION['login_error'] = '不正なアクセスです。再度入力してください。';
+            header('Location: index.php');
+            exit();
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -78,22 +84,23 @@ if (!empty($_POST['check'])) {
                 <h2 class="c-section_title">入力情報の確認</h2>
 
                 <form action="" method="POST" class="p-check__form">
-                <p class="p-check__comment">※登録情報はあとから変更することもできます。</p>
-                <dl class="p-check__list">
-                    <dt class="p-check__label">ニックネーム</dt>
-                    <dd class="p-check__input"><?php echo escape($name); ?></dd>
-                    <dt class="p-check__label">メールアドレス</dt>
-                    <dd class="p-check__input"><?php echo escape($email); ?></dd>
-                    <dt class="p-check__label">生年月日</dt>
-                    <dd class="p-check__input"><?php echo escape($displayBirthday); ?></dd>
-                    <dt class="p-check__label">性別</dt>
-                    <dd class="p-check__input"><?php echo escape($displayGender); ?></dd>
-                </dl>
+                    <p class="p-check__comment">※登録情報はあとから変更することもできます。</p>
+                    <dl class="p-check__list">
+                        <dt class="p-check__label">ニックネーム</dt>
+                        <dd class="p-check__input"><?php echo escape($checkUser['name']); ?></dd>
+                        <dt class="p-check__label">メールアドレス</dt>
+                        <dd class="p-check__input"><?php echo escape($checkUser['email']); ?></dd>
+                        <dt class="p-check__label">生年月日</dt>
+                        <dd class="p-check__input"><?php echo escape($displayBirthday) ?></dd>
+                        <dt class="p-check__label">性別</dt>
+                        <dd class="p-check__input"><?php echo escape($displayGender); ?></dd>
+                    </dl>
             
-            <a href="signup.php" class="c-btn p-fix__btn">変更する</a>
-            <button type="submit" class="c-btn p-check__btn">登録する</button>
-            <input type="hidden" name="check" value="checked">
-            </form>
+                    <a href="signup.php" class="c-btn p-fix__btn">変更する</a>
+
+                    <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+                    <input type="submit" name="check" class="c-btn p-check__btn">登録する</input>
+                </form>
 
             </div>
         </section>

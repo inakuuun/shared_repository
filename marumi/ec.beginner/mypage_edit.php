@@ -1,67 +1,26 @@
 <?php 
-session_start();
-require('db_connect.php');
-require("sanitize.php");
+    session_start();
+    require('db_connect.php');
+    require("sanitize.php");
+    require("create_token.php");
 
-if (!$_SESSION['user']) {
-   $_SESSION['login_error'] = 'ログインしてください。';
-    header('Location: index.php');
-    exit();
-}
-
-    //セッションの値をそれぞれ変数に代入
-    $id = $_SESSION['user']['id'];
-    $name = $_SESSION['user']['name'];
-    $email = $_SESSION['user']['email'];
-    $birthday = $_SESSION['user']['birthday'];
-    $gender = $_SESSION['user']['gender'];
-    $password = $_SESSION['user']['password'];
-
-    $error = [];
-
-if (isset($_POST["myEdit"])) {
-
-    //生年月日の登録をしたかチェック
-    if (isset($_POST["year"])) {
-        $yearBirth = (!($_POST["year"] == 'none'))  ? $_POST["year"] : null;
-        $monthBirth = (!($_POST["month"] == 'none'))  ? $_POST["month"] : null;
-        $dayBirth = (!($_POST["day"] == 'none'))  ? $_POST["day"] : null;
-
-        //生年月日チェック
-        if (isset($yearBirth)) {
-            if (!isset($monthBirth) || !isset($dayBirth)) {
-                $error['birthday'] = "入力が正しくありません";
-            }
-        } else if (isset($monthBirth)) {
-            if (!isset($birthDay)) {
-                $error['birthday'] = "入力が正しくありません";
-            }
-        } else {
-            $editBirthday = $year.'-'.$month.'-'.$day;
-        }
-
-    } else {
-        $editBirthday = $birthday;
-    }
-
-    $editName = $_POST['name'];
-    $editGender = $_POST['gender'];
-    
-    //エラーがなければ変更を保存し、マイページへ戻る
-    if (empty($error)) {
-        $stmt = $db->prepare("UPDATE users SET name = :name, birthday = :birthday, gender = :gender WHERE id = :id");
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        $stmt->bindParam(':name', $editName, PDO::PARAM_STR);
-        $stmt->bindParam(':birthday', $editBirthday, PDO::PARAM_STR);
-        $stmt->bindParam(':gender', $editGender, PDO::PARAM_INT);
-        $stmt->execute();
-
-        header('Location: mypage.php');   // mypage.phpへ移動
+    //ログインしてない場合
+    if (!$_SESSION['user']) {
+        $_SESSION['login_error'] = 'ログインしてください。';
+        header('Location: index.php');
         exit();
+    } 
+    
+    if (isset($_SESSION['mypage_error'])) {
+        //編集画面でのエラーがある場合
+        //セッションの値を変数に代入
+        $error = $_SESSION['mypage_error'];
+        //エラーメッセージ表示後、セッションを破棄
+        unset($error);
     }
-}
 
-
+    //セッションの値を変数に代入
+    $currentUser = $_SESSION['user'];
 
 ?>
 
@@ -86,12 +45,12 @@ if (isset($_POST["myEdit"])) {
             <div class="l-mypage__inner">
                 <h2 class="c-section_title">会員情報の変更</h2>
 
-                <form action="" method="post" id="js-edit" class="p-signup__form">
+                <form action="mypage_update.php" method="post" id="js-edit" class="p-signup__form">
 
-                    <label class="p-signup__label">ユーザー名<span class="p-signup__error"><?php echo isset($error['name']); ?></span></label>
-                    <input class="p-signup__input" type="text" name="name" value="<?php echo $name; ?>">
+                    <label class="p-signup__label">ユーザー名<span class="p-signup__error"></span></label>
+                    <input class="p-signup__input" type="text" name="name" value="<?php echo escape($currentUser['name']); ?>">
 
-                    <label class="p-signup__label">生年月日<span class="p-signup__error"><?php echo isset($error['birthday']); ?></span></label>
+                    <label class="p-signup__label">生年月日<span class="p-signup__error"><?php echo isset($error) ? escape($error) : ''; ?></span></label>
                     <div class="p-signup__selectWrap">
                     <?php
                         $year = '';
@@ -107,8 +66,8 @@ if (isset($_POST["myEdit"])) {
                             $day .= '<option value="'.$i.'">'.$i.'</option>';
                         }
 
-                        if (isset($birthday)) {
-                            echo "<p class='p-signup__input'>$birthday<span class='p-signup__comment'>※変更できません</span></p>";
+                        if (isset($currentUser['birthday'])) {
+                            echo "<p class='p-signup__input'>".escape($currentUser['birthday'])."<span class='p-signup__comment'>※変更できません</span></p>";
                         } else {
                             echo '
                                 <select class="p-signup__select" name="year">
@@ -131,20 +90,21 @@ if (isset($_POST["myEdit"])) {
                     <p class="p-signup__label">性別</p>
                     <div class="p-signup__radioWrap">
                         <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="1" <?php echo $gender == 1 ? 'checked' : null ?>>
+                            <input class="p-radio__gender" type="radio" name="gender" value="1" <?php echo $currentUser['gender'] == 1 ? 'checked' : null ?>>
                             <span>男性</span>
                         </label>
                         <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="2" <?php echo $gender == 2 ? 'checked' : null ?>>
+                            <input class="p-radio__gender" type="radio" name="gender" value="2" <?php echo $currentUser['gender'] == 2 ? 'checked' : null ?>>
                             <span>女性</span>
                         </label>
                         <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="3" <?php echo $gender == 3 ? 'checked' : null ?>>
+                            <input class="p-radio__gender" type="radio" name="gender" value="3" <?php echo $currentUser['gender'] == 3 ? 'checked' : null ?>>
                             <span>無回答</span>
                         </label>
                     </div>
 
-                    <input class="c-btn p-signup__btn" id="js-editBtn" type="submit" name="myEdit" value="変更を登録する" disabled>
+                    <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+                    <input class="c-btn p-signup__btn" id="js-editBtn" type="submit" name="my_edit" value="変更を登録する" disabled>
                 </form>
             </div>
         </section>

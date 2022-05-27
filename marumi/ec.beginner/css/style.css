@@ -426,6 +426,12 @@ a {
   }
 }
 
+.p-top__errorMessage {
+  color: red;
+  text-align: center;
+  padding-top: 32px;
+}
+
 .p-product__image {
   flex: 0 0 50%;
 }

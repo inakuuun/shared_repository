@@ -1,33 +1,42 @@
 <?php 
+session_start();
 require ('db_connect.php');
 require ('sanitize.php');
-
-session_start();
+require("create_token.php");
 
 $error = '';
 
 if (isset($_POST['email'], $_POST['password'])) { //ログインしていないがメールアドレスとパスワードが送信された場合
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    //トークンが正しいかチェック
+    if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
 
-    $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
-    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-    $stmt->execute();
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-    $row = $stmt->fetch();
+        $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
 
-    //ユーザーが存在していたら、セッションにユーザーIDをセット
-    //指定したハッシュがパスワードにマッチしているかチェック
-    if ($row && password_verify($password, $row['password'])){ 
-            session_regenerate_id(true); //セッションIDを再作成
-            //DBのユーザー情報をセッションに保存
-            $_SESSION['user'] = $row;
-            header('Location: index.php');
-            exit();
+        $row = $stmt->fetch();
+
+        //ユーザーが存在していたら、セッションにユーザーIDをセット
+        //指定したハッシュがパスワードにマッチしているかチェック
+        if ($row && password_verify($password, $row['password'])){ 
+                session_regenerate_id(true); //セッションIDを再作成
+                //DBのユーザー情報をセッションに保存
+                $_SESSION['user'] = $row;
+                header('Location: index.php');
+                exit();
+        } else {
+            //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
+            $error = "ユーザー名、またはパスワードが違います。";
+        }
     } else {
-        //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
-        $error = "ユーザー名、またはパスワードが違います。";
+        $_SESSION['login_error'] = '不正なアクセスです。再度ログインしてください。';
+        header('Location: index.php');
+        exit();
+
     }
 }
 
@@ -59,7 +68,9 @@ if (isset($_POST['email'], $_POST['password'])) { //ログインしていない�
                 <input type="text" id="name" name="email" class="p-login__input" required>
                 <label class="p-login__label" for="password">パスワード</label>
                 <input type="password" id="password" name="password" class="p-login__input" required>
-                <input type="submit" class="c-btn p-login__btn" value="ログイン">
+
+                <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+                <input type="submit" class="c-btn p-login__btn" name="login" value="ログイン">
             </form> <!--p-login__form-->
         <a href="signup.php" class="c-link c-link--signup">新規登録はこちら</a>
         <a class="c-link c-link--home" href="index.php">戻る</a>
