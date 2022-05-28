@@ -1,15 +1,23 @@
 <?php
-require("db_connect.php");
-require("create_token.php");
-
 session_start();
+require("db_connect.php");
+require_once("security.php");
 
 $error = [];
 
 if (isset($_POST["signup"])) {
 
+    $token = filter_input(INPUT_POST, 'token');
+
     //トークンが正しいかチェック
-    if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+    if (!isset($_SESSION['token']) || $token !== $_SESSION['token']) {
+        $_SESSION['login_error'] = '不正なリクエストです。再度入力してください。';
+        header('Location: index.php');
+        exit();
+    }
+
+    unset($_SESSION['token']);
+
 
         $gender = isset($_POST['gender']) ? $_POST['gender'] : null;
         $password = $_POST['password'];
@@ -25,18 +33,18 @@ if (isset($_POST["signup"])) {
         //メールアドレスチェック
         if (isset($row['email'])) {
             $error['email'] = "メールアドレスは既に存在しています";
-        } else if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $email)){
+        } else if (!preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9._-]+)+$/", $_POST['email'])){
             $error['email'] = "メールアドレスが正しくありません";
         }
 
         //生年月日チェック
-        if ($_POST['year'] !== 'none' || $_POST['month'] !== 'none' && $_POST['day'] === 'none') {
+        if (($_POST['year'] !== 'none' || $_POST['month'] !== 'none') && ($_POST['day'] === 'none')) {
             //年：選択ありor月：選択あり、日：選択なしの場合
             $error['birthday'] = "入力が正しくありません";
-        } else if ($_POST['year'] === 'none' || $_POST['month'] === 'none' && $_POST['day'] !== 'none') {
+        } else if (($_POST['year'] === 'none' || $_POST['month'] === 'none') && ($_POST['day'] !== 'none')) {
             //年：選択なしor月：選択なし、日：選択ありの場合
             $error['birthday'] = "入力が正しくありません";
-        }     
+        } 
         
         //パスワードチェック
         if ($_POST['password'] !== $_POST['password2']) {
@@ -53,11 +61,6 @@ if (isset($_POST["signup"])) {
             header('Location: check.php');   // check.phpへ移動
             exit();
         } 
-    } else {
-        $_SESSION['login_error'] = '不正なアクセスです。再度入力してください。';
-        header('Location: index.php');
-        exit();
-    }
 }
 ?>
 
@@ -147,7 +150,7 @@ if (isset($_POST["signup"])) {
                     <input class="p-signup__input" type="password" name="password2" value="" placeholder="再度パスワードを入力">
                     <!--<span><i class="fas fa-eye-slash p-signup__eye" id="js-password"></i></span>-->
 
-                    <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+                    <input type="hidden" name="token" value="<?php echo escape(setToken()); ?>">
                     <input class="c-btn p-signup__btn" id="js-signupBtn" type="submit" name="signup" value="確認する" disabled>
                 </form>
                 <a class="c-link c-link--home" href="index.php">戻る</a>

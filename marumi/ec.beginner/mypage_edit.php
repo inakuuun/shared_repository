@@ -1,8 +1,7 @@
 <?php 
     session_start();
     require('db_connect.php');
-    require("sanitize.php");
-    require("create_token.php");
+    require_once("security.php");
 
     //ログインしてない場合
     if (!$_SESSION['user']) {
@@ -103,7 +102,7 @@
                         </label>
                     </div>
 
-                    <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+                    <input type="hidden" name="token" value="<?php echo escape(setToken()); ?>">
                     <input class="c-btn p-signup__btn" id="js-editBtn" type="submit" name="my_edit" value="変更を登録する" disabled>
                 </form>
             </div>

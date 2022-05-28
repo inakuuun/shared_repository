@@ -1,8 +1,7 @@
 <?php
     session_start();
     require("db_connect.php");
-    require("sanitize.php");
-    require("create_token.php");
+    require_once("security.php");
     
     /* 会員登録の手続き以外のアクセスを飛ばす */
     if (!isset($_SESSION['join'])) {
@@ -38,8 +37,17 @@
     
     if (isset($_POST['check'])) {
 
+        $token = filter_input(INPUT_POST, 'token');
+
         //トークンが正しいかチェック
-        if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+        if (!isset($_SESSION['token']) || $token !== $_SESSION['token']) {
+            $_SESSION['login_error'] = '不正なアクセスです。再度入力してください。';
+            header('Location: index.php');
+            exit();
+        }
+    
+        unset($_SESSION['token']);
+    
 
             // 入力情報をデータベースに登録
             $stmt = $db->prepare("INSERT INTO users(name, email, birthday, gender, password) VALUES (:name, :email, :birthday, :gender, :password)");
@@ -54,11 +62,6 @@
             unset($_SESSION['join']);   // セッションを破棄
             header('Location: thanks.html');   // thanks.htmlへ移動
             exit();
-        } else {
-            $_SESSION['login_error'] = '不正なアクセスです。再度入力してください。';
-            header('Location: index.php');
-            exit();
-        }
     }
 ?>
 
@@ -98,8 +101,8 @@
             
                     <a href="signup.php" class="c-btn p-fix__btn">変更する</a>
 
-                    <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
-                    <input type="submit" name="check" class="c-btn p-check__btn">登録する</input>
+                    <input type="hidden" name="token" value="<?php echo escape(setToken()); ?>">
+                    <input type="submit" name="check" class="c-btn p-check__btn" value="登録する"></input>
                 </form>
 
             </div>

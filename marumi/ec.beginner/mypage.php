@@ -1,7 +1,7 @@
 <?php
     session_start();
     require('db_connect.php');
-    require("sanitize.php");
+    require_once("security.php");
 
     if (!$_SESSION['user']) {
        $_SESSION['login_error'] = 'ログインしてください。';

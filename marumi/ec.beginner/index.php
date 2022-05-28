@@ -26,7 +26,7 @@
 <body>
     <?php include('header.php') ?>
     <main>
-        <p class="p-top__errorMessage"><?php isset($error) ? $error : null ?></p>
+        <p class="p-top__errorMessage"><?php echo isset($error) ? $error : null; ?></p>
         <section class="l-product">
             <div class="l-product__inner">
                 <figure class="p-product__image">

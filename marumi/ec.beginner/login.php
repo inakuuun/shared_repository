@@ -1,15 +1,23 @@
 <?php 
 session_start();
 require ('db_connect.php');
-require ('sanitize.php');
-require("create_token.php");
+require_once ('security.php');
 
 $error = '';
 
 if (isset($_POST['email'], $_POST['password'])) { //ログインしていないがメールアドレスとパスワードが送信された場合
 
+    $token = filter_input(INPUT_POST, 'token');
+
     //トークンが正しいかチェック
-    if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+    if (!isset($_SESSION['token']) || $token !== $_SESSION['token']) {
+        $_SESSION['login_error'] = '不正なリクエストです。再度入力してください。';
+        header('Location: index.php');
+        exit();
+    }
+
+    unset($_SESSION['token']);
+
 
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -32,12 +40,6 @@ if (isset($_POST['email'], $_POST['password'])) { //ログインしていない�
             //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
             $error = "ユーザー名、またはパスワードが違います。";
         }
-    } else {
-        $_SESSION['login_error'] = '不正なアクセスです。再度ログインしてください。';
-        header('Location: index.php');
-        exit();
-
-    }
 }
 
 ?>
@@ -69,7 +71,7 @@ if (isset($_POST['email'], $_POST['password'])) { //ログインしていない�
                 <label class="p-login__label" for="password">パスワード</label>
                 <input type="password" id="password" name="password" class="p-login__input" required>
 
-                <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+                <input type="hidden" name="token" value="<?php echo escape(setToken()); ?>">
                 <input type="submit" class="c-btn p-login__btn" name="login" value="ログイン">
             </form> <!--p-login__form-->
         <a href="signup.php" class="c-link c-link--signup">新規登録はこちら</a>

@@ -1,7 +1,7 @@
 <?php 
     session_start();
     require('db_connect.php');
-    require("sanitize.php");
+    require_once("security.php");
 
     if (!$_SESSION['user']) {
     $_SESSION['login_error'] = 'ログインしてください。';
@@ -9,7 +9,16 @@
         exit();
     }
 
-    if (isset($_POST['token']) && $_POST['token'] === $_SESSION['token']) {
+    $token = filter_input(INPUT_POST, 'token');
+
+    //トークンが正しいかチェック
+    if (!isset($_SESSION['token']) || $token !== $_SESSION['token']) {
+        $_SESSION['login_error'] = '不正なリクエストです。再度入力してください。';
+        header('Location: index.php');
+        exit();
+    }
+
+    unset($_SESSION['token']);
 
         //セッションの値を変数に代入
         $currentUser = $_SESSION['user'];
@@ -55,9 +64,4 @@
             exit();
         } 
 
-    } else {
-        $_SESSION['login_error'] = '不正なアクセスです。再度ログインしてください。';
-        header('Location: logout.php');
-        exit();
-    }
 ?>
