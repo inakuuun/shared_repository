@@ -15,7 +15,7 @@
         //セッションの値を変数に代入
         $error = $_SESSION['mypage_error'];
         //エラーメッセージ表示後、セッションを破棄
-        unset($error);
+        unset($_SESSION['mypage_error']);
     }
 
     //セッションの値を変数に代入
