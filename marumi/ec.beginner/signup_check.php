@@ -2,6 +2,7 @@
     session_start();
     require("db_connect.php");
     require_once("security.php");
+    require_once("display_gender.php");
     
     $token = filter_input(INPUT_POST, 'token');
     
@@ -52,22 +53,7 @@
     //生年月日
     $displayBirthday = ($_POST['year'] !== 'none') ? $_POST['year'].'年'.$_POST['month'].'月'.$_POST['day'].'日' : '';
     //性別
-    $gender = isset($_POST['gender']) ? (int)$_POST['gender'] : null;
-    switch (true) {
-        case $gender === 1:
-            $displayGender = '男性';
-            break;
-        case $gender === 2:
-            $displayGender = '女性';
-            break;
-        case $gender === 3:
-            $displayGender = '未回答';
-            break;
-        default:
-            $displayGender = '';
-            break;
-    }
-
+    $displayGender = isset($_POST['gender']) ? Gender::cases()[$_POST['gender'] - 1]->description() : '';
             
     //エラーがあったら新規登録画面に戻す
     if (!empty($error)) {

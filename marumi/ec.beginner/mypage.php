@@ -2,6 +2,7 @@
     session_start();
     require('db_connect.php');
     require_once("security.php");
+    require_once("display_gender.php");
 
     if (!$_SESSION['user']) {
        $_SESSION['login_error'] = 'ログインしてください。';
@@ -13,32 +14,11 @@
     $stmt = $db->prepare("SELECT * FROM users WHERE id = :id");
     $stmt->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
     $stmt->execute();
-    $_SESSION['user'] = $stmt->fetch();
-
-
-    //セッションの値を変数に代入
-    $currentUser = $_SESSION['user'];
-
+    $user = $stmt->fetch();
+    $_SESSION['user'] = $user;
 
     //表示用
-        //性別
-        switch (true) {
-            case $currentUser['gender'] === 1:
-                $displayGender = '男性';
-                break;
-            case $currentUser['gender'] === 2:
-                $displayGender = '女性';
-                break;
-            case $currentUser['gender'] === 3:
-                $displayGender = '未回答';
-                break;
-            default:
-                $displayGender = '';
-                break;
-        }
-
-
-
+    $displayGender = isset($user['gender']) ? Gender::cases()[$user['gender'] - 1]->description() : '';
 
 ?>
 
@@ -64,17 +44,17 @@
                 <h2 class="c-section__title">MY PAGE</h2>
                 <div class="p-mypage__form">
                     <dl class="p-mypage__list">
-                        <dd class="p-mypage__name"><?php echo escape($currentUser['name']); ?></dd>
+                        <dd class="p-mypage__name"><?php echo escape($user['name']); ?></dd>
                         <dt>メールアドレス</dt>
-                        <dd><?php echo escape($currentUser['email']); ?></dd>
+                        <dd><?php echo escape($user['email']); ?></dd>
                         <dt>生年月日</dt>
-                        <dd><?php echo isset($currentUser['birthday']) ? escape($currentUser['birthday']) : ''; ?></dd>
+                        <dd><?php echo isset($user['birthday']) ? escape($user['birthday']) : ''; ?></dd>
                         <dt>性別</dt>
                         <dd><?php echo escape($displayGender); ?></dd>
                     </dl>
                 
                     <a href="#" class="c-btn p-edit__btn">メールアドレスを変更する</a>
-                    <a href="mypage_edit.php" class="c-btn p-edit__btn">その他の会員情報を変更する</a>
+                    <a href="mypage_edit.php?id=<?php echo $user['id']; ?>" class="c-btn p-edit__btn">その他の会員情報を変更する</a>
                     <p class="p-mypage__notice">※生年月日は1度登録すると変更ができません</p>
                 </div>
             </div>

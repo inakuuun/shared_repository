@@ -2,6 +2,7 @@
     session_start();
     require('db_connect.php');
     require_once("security.php");
+    require_once("display_gender.php");
 
     //ログインしてない場合
     if (!$_SESSION['user']) {
@@ -9,7 +10,7 @@
         header('Location: index.php');
         exit();
     } 
-    
+
     if (isset($_SESSION['mypage_error'])) {
         //編集画面でのエラーがある場合
         //セッションの値を変数に代入
@@ -18,8 +19,11 @@
         unset($_SESSION['mypage_error']);
     }
 
-    //セッションの値を変数に代入
-    $currentUser = $_SESSION['user'];
+    //クエリ文字列(id)からユーザー情報を取得
+    $stmt = $db->prepare("SELECT * FROM users WHERE id = :id");
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    $user = $stmt->fetch();
 
 ?>
 
@@ -47,7 +51,7 @@
                 <form action="mypage_update.php" method="post" id="js-edit" class="p-signup__form">
 
                     <label class="p-signup__label">ユーザー名<span class="p-signup__error"></span></label>
-                    <input class="p-signup__input" type="text" name="name" value="<?php echo escape($currentUser['name']); ?>">
+                    <input class="p-signup__input" type="text" name="name" value="<?php echo escape($user['name']); ?>">
 
                     <label class="p-signup__label">生年月日<span class="p-signup__error"><?php echo isset($error) ? escape($error) : ''; ?></span></label>
                     <div class="p-signup__selectWrap">
@@ -65,8 +69,8 @@
                             $day .= '<option value="'.$i.'">'.$i.'</option>';
                         }
 
-                        if (isset($currentUser['birthday'])) {
-                            echo "<p class='p-signup__input'>".escape($currentUser['birthday'])."<span class='p-signup__comment'>※変更できません</span></p>";
+                        if (isset($user['birthday'])) {
+                            echo "<p class='p-signup__input'>".escape($user['birthday'])."<span class='p-signup__comment'>※変更できません</span></p>";
                         } else {
                             echo '
                                 <select class="p-signup__select" name="year">
@@ -88,18 +92,12 @@
 
                     <p class="p-signup__label">性別</p>
                     <div class="p-signup__radioWrap">
+                        <?php foreach (Gender::cases() as $v): ?>
                         <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="1" <?php echo $currentUser['gender'] == 1 ? 'checked' : null ?>>
-                            <span>男性</span>
+                            <input class="p-radio__gender" type="radio" name="gender" value="<?php echo $v->value; ?>" <?php echo $user['gender'] == $v->value ? 'checked' : null ?>>
+                            <span><?php echo escape($v->description()); ?></span>
                         </label>
-                        <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="2" <?php echo $currentUser['gender'] == 2 ? 'checked' : null ?>>
-                            <span>女性</span>
-                        </label>
-                        <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="3" <?php echo $currentUser['gender'] == 3 ? 'checked' : null ?>>
-                            <span>無回答</span>
-                        </label>
+                        <?php endforeach; ?>
                     </div>
 
                     <input type="hidden" name="token" value="<?php echo escape(setToken()); ?>">
