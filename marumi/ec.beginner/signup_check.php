@@ -53,7 +53,7 @@
     //生年月日
     $displayBirthday = ($_POST['year'] !== 'none') ? $_POST['year'].'年'.$_POST['month'].'月'.$_POST['day'].'日' : '';
     //性別
-    $displayGender = isset($_POST['gender']) ? Gender::cases()[$_POST['gender'] - 1]->description() : '';
+    $displayGender = isset($_POST['gender']) ? Gender::cases()[$_POST['gender']]->description() : '';
             
     //エラーがあったら新規登録画面に戻す
     if (!empty($error)) {

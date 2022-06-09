@@ -35,9 +35,9 @@
                         <a href="#" class="js-nav">BLOG</a></li>
                 </ul>
                 <ul class="p-header__userList">
-                    <?php if (isset($_SESSION['user'])): ?>
+                    <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="p-header__userItem">
-                            <a href="mypage.php">MY PAGE</a>
+                            <a href="mypage.php?id=<?php echo $_SESSION['user_id']; ?>">MY PAGE</a>
                         </li>
                         <li class="p-header__userItem">
                             <a href="logout.php">LOGOUT</a>

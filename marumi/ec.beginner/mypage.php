@@ -4,21 +4,21 @@
     require_once("security.php");
     require_once("display_gender.php");
 
-    if (!$_SESSION['user']) {
+    if (!$_SESSION['user_id']) {
        $_SESSION['login_error'] = 'ログインしてください。';
         header('Location: index.php');
         exit();
     }
 
     //編集した人のために、セッション更新
+    //クエリ文字列(id)からユーザー情報を取得
     $stmt = $db->prepare("SELECT * FROM users WHERE id = :id");
-    $stmt->bindParam(':id', $_SESSION['user']['id'], PDO::PARAM_INT);
+    $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
     $stmt->execute();
     $user = $stmt->fetch();
-    $_SESSION['user'] = $user;
 
     //表示用
-    $displayGender = isset($user['gender']) ? Gender::cases()[$user['gender'] - 1]->description() : '';
+    $displayGender = isset($user['gender']) ? Gender::cases()[$user['gender']]->description() : '';
 
 ?>
 

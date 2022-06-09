@@ -29,7 +29,7 @@
     if ($row && password_verify($password, $row['password'])){ 
             session_regenerate_id(true); //セッションIDを再作成
             //DBのユーザー情報をセッションに保存
-            $_SESSION['user'] = $row;
+            $_SESSION['user_id'] = $row['id'];
             header('Location: index.php');
             exit();
     } else {

@@ -4,9 +4,9 @@
 
     enum Gender: int
     {
-        case MAN = 1;
-        case WOMAN = 2;
-        case UNKNOWN = 3;
+        case MAN = 0;
+        case WOMAN = 1;
+        case UNKNOWN = 2;
 
         /**
          * @return string

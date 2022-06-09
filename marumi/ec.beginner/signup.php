@@ -2,6 +2,7 @@
     session_start();
     require("db_connect.php");
     require_once("security.php");
+    require_once("display_gender.php");
 
     if (isset($_SESSION['signup_error'])) {
         $error = $_SESSION['signup_error'];    
@@ -74,18 +75,12 @@
 
                     <p class="p-signup__label">性別</p>
                     <div class="p-signup__radioWrap">
+                        <?php foreach (Gender::cases() as $v): ?>
                         <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="1">
-                            <span>男性</span>
+                            <input class="p-radio__gender" type="radio" name="gender" value="<?php echo $v->value; ?>">
+                            <span><?php echo escape($v->description()); ?></span>
                         </label>
-                        <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="2">
-                            <span>女性</span>
-                        </label>
-                        <label class="p-signup__radio">
-                            <input class="p-radio__gender" type="radio" name="gender" value="3">
-                            <span>無回答</span>
-                        </label>
+                        <?php endforeach; ?>
                     </div>
 
                     <label class="p-signup__label">パスワード(4桁の半角英数字)<span class="p-label__essential">必須</span><span class="p-signup__error"><?php echo isset($error['password']) ? $error['password'] : null; ?></span></label>

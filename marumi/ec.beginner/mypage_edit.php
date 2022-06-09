@@ -5,7 +5,7 @@
     require_once("display_gender.php");
 
     //ログインしてない場合
-    if (!$_SESSION['user']) {
+    if (!$_SESSION['user_id']) {
         $_SESSION['login_error'] = 'ログインしてください。';
         header('Location: index.php');
         exit();
@@ -49,6 +49,7 @@
                 <h2 class="c-section_title">会員情報の変更</h2>
 
                 <form action="mypage_update.php" method="post" id="js-edit" class="p-signup__form">
+                    <input type="hidden" name="id" value="<?php echo escape($user['id']); ?>">
 
                     <label class="p-signup__label">ユーザー名<span class="p-signup__error"></span></label>
                     <input class="p-signup__input" type="text" name="name" value="<?php echo escape($user['name']); ?>">
