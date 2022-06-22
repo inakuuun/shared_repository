@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require('db_connect.php');
+    require_once('db_connect.php');
     require_once("security.php");
 
     if (!$_SESSION['user_id']) {

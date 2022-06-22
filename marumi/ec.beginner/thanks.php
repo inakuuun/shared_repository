@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require("db_connect.php");
+    require_once("db_connect.php");
 
     $token = filter_input(INPUT_POST, 'token');
 

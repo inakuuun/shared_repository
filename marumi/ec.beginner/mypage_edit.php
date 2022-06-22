@@ -1,13 +1,13 @@
 <?php 
     session_start();
-    require('db_connect.php');
+    require_once('db_connect.php');
     require_once("security.php");
     require_once("display_gender.php");
 
     //ログインしてない場合
-    if (!$_SESSION['user_id']) {
+    if (!$_SESSION['user_id'] || $_SESSION['user_id'] !== (int)$_GET['id']) {
         $_SESSION['login_error'] = 'ログインしてください。';
-        header('Location: index.php');
+        header('Location: logout.php');
         exit();
     } 
 
