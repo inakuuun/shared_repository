@@ -57,6 +57,7 @@ textarea {
   border-radius: 0;
   font: inherit;
   outline: none;
+  margin: 0;
 }
 
 textarea {
@@ -235,6 +236,24 @@ a {
   text-align: center;
 }
 
+.l-mypage {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.l-mypage__inner {
+  width: 1080px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+}
+@media screen and (max-width: 767px) {
+  .l-mypage__inner {
+    padding: 40px 16px;
+  }
+}
+
 .c-btn {
   display: inline-block;
   width: 304px;
@@ -405,6 +424,12 @@ a {
     height: 40px;
     width: 250px;
   }
+}
+
+.p-top__errorMessage {
+  color: red;
+  text-align: center;
+  padding-top: 32px;
 }
 
 .p-product__image {
@@ -614,12 +639,15 @@ a {
 }
 
 .p-radio__gender {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
 }
 .p-radio__gender + span {
-  cursor: pointer;
+  pointer-events: none;
   display: inline-block;
   position: relative;
   padding: 0 1.2em;
@@ -653,9 +681,6 @@ a {
   background: #3F51B5;
   border-radius: 50%;
   padding: 0.125em;
-}
-.p-radio__gender + span:active::before {
-  background: #FFFFFF;
 }
 .p-radio__gender:checked + span::after {
   opacity: 1;
@@ -764,6 +789,72 @@ a {
   padding-left: 1rem;
 }
 
-.u-mt--5 {
-  margin-top: 50px;
+.p-mypage__form {
+  width: 600px;
+  max-width: 100%;
+  padding: 24px 40px;
+  margin: 0 auto;
+  font-size: 0.75rem;
+}
+
+.p-mypage__comment {
+  width: 100%;
+  text-align: center;
+}
+
+.p-mypage__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .p-mypage__list {
+    text-align: left;
+  }
+}
+.p-mypage__list dt {
+  width: 20%;
+  padding-top: 1.5em;
+  margin-top: 24px;
+  font-weight: bold;
+}
+@media screen and (max-width: 767px) {
+  .p-mypage__list dt {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.p-mypage__list dd {
+  width: calc(80% - 32px);
+  border-bottom: 1px solid #c3c3c3;
+  padding: 1.5em 1em 0;
+  margin: 24px 0 0 32px;
+}
+@media screen and (max-width: 767px) {
+  .p-mypage__list dd {
+    width: 100%;
+    margin: 0;
+  }
+}
+.p-mypage__list .p-mypage__name {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border-bottom: none;
+  margin-left: 0;
+}
+
+.p-edit__btn {
+  width: 50%;
+  font-size: 0.75rem;
+  margin-top: 32px;
+}
+@media screen and (max-width: 767px) {
+  .p-edit__btn {
+    width: 100%;
+  }
+}
+
+.p-mypage__notice {
+  font-size: 0.625rem;
 }

@@ -1,5 +1,10 @@
 <?php 
-session_start(); //セッション開始
+    session_start(); //セッション開始
+
+    if (isset($_SESSION['login_error'])) {
+        $error = $_SESSION['login_error'];
+        unset($_SESSION['login_error']);
+    }
 ?>
 
 
@@ -19,8 +24,9 @@ session_start(); //セッション開始
 
 </head>
 <body>
-    <?php require_once('header.php') ?>
+    <?php include('header.php') ?>
     <main>
+        <p class="p-top__errorMessage"><?php echo isset($error) ? $error : null; ?></p>
         <section class="l-product">
             <div class="l-product__inner">
                 <figure class="p-product__image">

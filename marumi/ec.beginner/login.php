@@ -1,33 +1,11 @@
 <?php 
-require ('db_connect.php');
-require ('sanitize.php');
-
 session_start();
+require_once('db_connect.php');
+require_once ('security.php');
 
-if (isset($_POST['name']) && isset($_POST['password'])) { //ログインしていないがユーザー名とパスワードが送信された場合
-
-$name = $_POST['name'];
-
-$stmt = $db->prepare("SELECT * FROM users WHERE name = :name");
-$stmt->bindParam(':name', $name, PDO::PARAM_STR);
-$stmt->execute();
-
-if ($row = $stmt->fetch()){ //ユーザーが存在していたら、セッションにユーザーIDをセット
-    //指定したハッシュがパスワードにマッチしているかチェック
-    if (password_verify($_POST['password'], $row['password'])) {
-        session_regenerate_id(true); //セッションIDを再作成
-        //DBのユーザー情報をセッションに保存
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['name'] = $row['name'];
-        header('Location: index.php');
-        exit();
-    } else {
-        $error = "ユーザー名、またはパスワードが違います。";
-    }
-} else {
-    //1レコードも取得できなかったとき、ユーザー名・パスワードが間違っている可能性あり
-    $error = "ユーザー名、またはパスワードが違います。";
-}
+if (isset($_SESSION['login_error'])) {
+    $error = $_SESSION['login_error'];
+    unset($_SESSION['login_error']);
 }
 
 ?>
@@ -52,12 +30,14 @@ if ($row = $stmt->fetch()){ //ユーザーが存在していたら、セッシ�
     <div class="l-login">
     <div class="l-login__inner">
         <p class="c-section__title p-login__title">LOGIN</p>
-        <p class="p-login__error"><?php echo $error; ?></p>
-            <form class="p-login__form" action="login.php" method="POST">
-                <label class="p-login__label" for="name">ユーザー名</label>
-                <input type="text" id="name" name="name" class="p-login__input" required>
+        <p class="p-login__error"><?php echo isset($error) ? $error : ''; ?></p>
+            <form class="p-login__form" action="login_check.php" method="POST">
+                <label class="p-login__label" for="email">メールアドレス</label>
+                <input type="text" id="name" name="email" class="p-login__input" required>
                 <label class="p-login__label" for="password">パスワード</label>
                 <input type="password" id="password" name="password" class="p-login__input" required>
+
+                <input type="hidden" name="token" value="<?php echo escape(setToken()); ?>">
                 <input type="submit" class="c-btn p-login__btn" value="ログイン">
             </form> <!--p-login__form-->
         <a href="signup.php" class="c-link c-link--signup">新規登録はこちら</a>
